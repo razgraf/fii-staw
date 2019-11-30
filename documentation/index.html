@@ -372,12 +372,65 @@
           <h4>How will it work?</h4>
           <p>
             Our library will mainly be made up of requests. The
-            <code>build()</code> request will send us (among other stuff) a
-            Definition of the Fractal required by the user. If this is a valid
+            <code>build()</code> functionality will send us (among other stuff)
+            a Definition of the Fractal required by the user. If this is a valid
             request (user is authorized and definition is valid), we'll rely on
             a AWS Lambda function to compute the shape of the fractal, create an
-            image and drop it into our S3 storage
+            image and drop it into our S3. Additional data will be stored in a
+            NoSQL DynamoDB instance.
           </p>
+          <p>The language used to design these functions will be Node JS.</p>
+        </section>
+      </section>
+
+      <section id="structure-platform">
+        <h3>Platform</h3>
+        <p>
+          Our Platform will run in a static context and it will be hosted with
+          AWS S3. It will also access Lambda Functions which will act as an API
+          for our platform.
+        </p>
+        <section id="structure-server-how">
+          <h4>Features</h4>
+          <p>
+            All the following features will be linked to AWS Lamda functions.
+          </p>
+          <ol>
+            <li>
+              <p>Stage 1: User/Token manager</p>
+              <ul>
+                <li>create user</li>
+                <li>remove user</li>
+                <li>create token for user with given quota</li>
+                <li>remove token for user</li>
+                <li>extend quota for token of user</li>
+                <li>constrain quota for token of user</li>
+                <li>get user with tokens with quota</li>
+                <li><b>is user - token pair valid</b></li>
+                <li><b>is user - token (quota) available</b></li>
+              </ul>
+            </li>
+            <li>
+              <p>Stage 2: Fractal explorer and builder</p>
+              <p>Pages</p>
+              <ul>
+                <li>Fractal Builder (editor + publisher)</li>
+                <li>Fractal Explorer</li>
+                <li>
+                  Fractal Leaderboard (voting system for best looking fractals)
+                </li>
+              </ul>
+              <p>Requests</p>
+              <ul>
+                <li>retrieve fractal image</li>
+                <li>retrieve fractal definition</li>
+                <li>retrieve user fractals</li>
+                <li>retrieve leaderboard fractals</li>
+                <li>retrieve latest fractals</li>
+                <li>...</li>
+              </ul>
+            </li>
+          </ol>
         </section>
       </section>
     </section>
