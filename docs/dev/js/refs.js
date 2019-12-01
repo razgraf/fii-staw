@@ -29,6 +29,16 @@ by
 <a href="https://developer.mozilla.org/" property="schema:name">MDN</a>
 </span>;
 </dd>
+  `,
+  JWT: `
+  <dd property="schema:citation" typeof="schema:ScholarlyArticle"
+  resource="https://jwt.io/">
+<cite property="schema:name"><a href="https://jwt.io/"/>JWT: JSON Web Token</a></cite>,
+by
+<span property="schema:author" typeof="schema:Person">
+<a href="https://auth0.com/" property="schema:name">Auth0</a>
+</span>;
+</dd>
   `
 };
 export default refs;
