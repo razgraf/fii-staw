@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <canvas
+      id="canvas"
+      width="800px"
+      height="800px"
+      style="display: block; margin: 0 auto;"
+    ></canvas>
+    <script src="Fractal.js"></script>
+
+    <script>
+      //   let { Fractal, COMMON_DEFINITIONS } = require("./Fractal");
+
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+
+      let a = new Fractal(ctx);
+
+      a.create("lSystem", {
+        iterations: 3,
+        start: {
+          symbol: "X",
+          x: 400,
+          y: canvas.height
+        },
+        rules: DEFINITIONS.plant,
+        angle: 25
+      });
+    </script>
+  </body>
+</html>

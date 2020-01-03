@@ -1,0 +1,19 @@
+service: fiistaw
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+  stage: dev
+  region: eu-west-2
+
+functions:
+  hello:
+    handler: handler.hello
+    layers:
+      - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
+      - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
+    events:
+      - http:
+          path: fractal/generate
+          method: get
