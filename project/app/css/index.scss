@@ -1,0 +1,212 @@
+@import "structure";
+
+@keyframes heading-color {
+  0% {
+    color: $colorSecondary;
+  }
+  100% {
+    color: $colorSecondaryLight;
+  }
+}
+@keyframes header-color {
+  0% {
+    color: $colorSecondary;
+  }
+  100% {
+    color: $colorSecondaryLight;
+  }
+}
+
+body {
+  width: 100vw;
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+
+  & > header {
+    width: 100%;
+    height: 600px;
+    background: url("../image/header.jpg") no-repeat center;
+    background-size: cover;
+
+    .content {
+      @include standard-container;
+      align-items: center;
+      height: 100%;
+
+      & > .card {
+        width: 400px;
+        height: 320px;
+        border-radius: 8px;
+        box-shadow: $shadowSpecialElement;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        background: #ffffff;
+
+        h1 {
+          font-family: $fontPrimary;
+          font-weight: 600;
+          color: $black;
+          font-size: 24pt;
+          line-height: 1.4;
+          max-width: 500px;
+          margin: 0 0 20px 0;
+          span {
+            font-family: $fontPrimary;
+            font-weight: 600;
+            font-size: 24pt;
+            color: $colorPrimary;
+            animation-name: heading-color;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-duration: 2s;
+          }
+        }
+
+        h4 {
+          font-weight: 300;
+          font-size: 13pt;
+          max-width: 400px;
+          line-height: 1.4;
+          margin: 0 0 10px 0;
+          flex: 1;
+        }
+        .actions {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: center;
+          width: 100%;
+
+          .button-build {
+            flex: 1;
+            @extend .buttonPrimary;
+            margin-bottom: 0;
+            box-shadow: 0 10px 10px -12px rgba($colorPrimary, 0.3);
+            transition: 0.2s box-shadow, 0.2s background;
+
+            &:hover,
+            &:active {
+              box-shadow: 0 15px 20px -12px rgba($colorPrimary, 0.5);
+              transition: 0.2s box-shadow, 0.2s background;
+            }
+          }
+        }
+      }
+    }
+  }
+  main {
+    width: 100%;
+    min-height: 60vh;
+
+    section#recommendations {
+      @include slider-section;
+    }
+
+    section#recommendations {
+      & > .content {
+        header {
+          h2 {
+            span {
+              color: $colorSecondary;
+            }
+          }
+        }
+      }
+      & > .content-outside {
+        padding-bottom: 60px;
+      }
+    }
+  }
+
+  footer {
+    margin-top: auto;
+  }
+}
+
+@media all and (max-width: $col-lg) {
+  body {
+    & > header {
+      width: 100%;
+      height: 500px;
+      background: url("../image/header.jpg") no-repeat center;
+      background-size: cover;
+
+      .content {
+        @include standard-container;
+        align-items: flex-end;
+        height: 100%;
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+
+        & > .card {
+          margin-bottom: -20px;
+          width: 90%;
+          height: auto;
+          padding: 5%;
+          text-align: center;
+          border-radius: 0;
+
+          h1 {
+            font-size: 22pt;
+            max-width: 100%;
+            margin: 0 0 20px 0;
+
+            span {
+              font-family: $fontPrimary;
+              font-weight: 600;
+              font-size: 22pt;
+            }
+          }
+          h4 {
+            font-size: 13pt;
+            max-width: 100%;
+            display: none;
+            margin: 0 0 15px 0;
+            text-align: justify;
+          }
+          .actions {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .button-buy {
+              margin-bottom: 0;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      width: 100%;
+      height: 100%;
+
+      section#recommendations {
+        & > .content {
+          padding-top: 60px;
+          flex-direction: column;
+
+          header {
+            padding: 0;
+            margin: 0 0 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            h2 {
+              font-size: 20pt;
+              margin: 0 0 15px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

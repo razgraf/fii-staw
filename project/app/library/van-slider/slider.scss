@@ -1,0 +1,404 @@
+/**
+  ENVIRONMENT STYLING
+ */
+$colorPrimary : #ea0031;//#006bd5;
+$colorSecondary : #262626;
+$black : #262626;
+$colorSection : #222627;
+
+
+$shadow : 0 5px 30px 0 rgba(90, 92, 107,0.07), 0 2px 9px 0 rgba(90, 92, 107,0.08);
+
+
+$shadowMini : 0 1px 5px 0 rgba(90, 92, 107,0.05), 0 1px 5px 0 rgba(90, 92, 107,0.05);
+$shadowNormal :$shadow;
+$shadowHover : 0 5px 30px 0 rgba(90, 92, 107,0.15), 0 2px 9px 0 rgba(90, 92, 107,0.1);
+$shadowSpecialElement : 0 0 30px 0 rgba(0,0,0,.085);
+$shadowSpecialElementHover : 0 0 30px 0 rgba(0,0,0,.15);
+
+
+/**
+  ENVIRONMENT SIZING
+ */
+
+$col-lg-extended : 1100px;
+$col-lg : 992px;
+$col-md: 768px;
+$col-sm : 500px;
+
+
+$tablet-big: "all and (max-width : #{$col-lg-extended}) and (min-width : #{$col-lg  + 1})";
+$tablet : "all and (max-width : #{$col-lg}) and (min-width : #{$col-md  + 1})";
+$mobile-big: "all and (max-width : #{$col-md}) and (min-width : #{$col-sm  + 1})";
+$mobile : "all and (max-width : #{$col-sm})";
+
+$top-tablet-big : "all and (max-width : #{$col-lg-extended})";
+$top-tablet : "all and (max-width : #{$col-lg})";
+$top-mobile-big: "all and (max-width : #{$col-md})";
+$bottom-mobile-big: "all and (min-width : #{$col-md + 1})";
+$top-mobile : "all and (max-width : #{$col-sm})";
+
+
+
+
+
+
+.van-slider[data-library="van"]{
+
+
+  @keyframes van-slider-fade-in {
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+  }
+
+  @keyframes van-slider-fade-out {
+    0%{ opacity: 1; }
+    100%{ opacity: 0; }
+  }
+
+  width: 600px;
+  height: 380px;
+  border-radius: 4px;
+  box-shadow: $shadow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  &:hover{
+    & > .arrows,& > .dots, & > .actions, & > .slides > .slide > .controls > .play{
+      opacity: 1;
+      transform: translate(0,0);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+  }
+
+  & > .actions{
+    z-index: 10;
+    position: absolute;
+    right: 20px;
+    bottom: 16px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    will-change: opacity;
+
+    & > .open{
+      width: 40px;
+      height: 40px;
+      background: #000;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+
+
+      img,svg{
+        height: 17px;
+        width: 17px;
+        object-fit: contain;
+      }
+      &:hover, &:active, &:focus{
+        opacity: 1;
+        transition: opacity 0.2s;
+      }
+    }
+
+
+  }
+
+  & > .arrows{
+    z-index: 10;
+    width: calc(100% + 70px);
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0,-2px);
+    transition: transform 0.2s, opacity 0.2s;
+
+    & > .arrow{
+      height: 70px;
+      width: 70px;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+      transition: background 0.2s;
+      background: rgba(0,0,0,0.7);
+      box-shadow: $shadow;
+      user-select: none;
+      pointer-events:all;
+
+
+      img, svg{
+        height: 30px;
+        width: 30px;
+        object-fit: contain;
+      }
+
+      &.left{
+        img,svg{margin-left: 25px;}
+      }
+
+      &.right{
+        img,svg{margin-right: 25px;}
+      }
+
+      &.disabled{
+        pointer-events:none
+      }
+
+
+
+      &:hover, &:active, &:focus, &.active{
+        background: rgba(0,0,0,0.95);
+        transition: background 0.2s;
+      }
+
+
+    }
+  }
+
+  & > .slides{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+
+    &.initialized{
+      animation: van-slider-fade-in 0.1s 1 linear;
+      animation-fill-mode: forwards;
+    }
+
+    & > .slide{
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 4px;
+
+
+      & > .controls{
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+
+        &  > .play{
+          border-radius: 50%;
+          pointer-events: all;
+          width: 70px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: rgba(0,0,0,0.8);
+          box-shadow: $shadow;
+          cursor: pointer;
+          opacity: 0;
+          transform: translate(0,-1px);
+          transition: background 0.2s, transform 0.2s, opacity 0.2s;
+
+
+          img,svg{
+            height: 30px;
+            width: 30px;
+            object-fit: contain;
+          }
+
+          &:hover, &:active, &:focus, &.active{
+            background: rgba(0,0,0,0.95);
+            transition: background 0.2s;
+          }
+        }
+      }
+
+      & > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+      &:not(.active){
+        animation: van-slider-fade-out 0.1s 1 linear;
+        animation-fill-mode: forwards;
+      }
+
+      &.active{
+        animation: van-slider-fade-in 0.1s 1 linear;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  & > .dots{
+
+    $dot-size : 11px;
+    z-index: 10;
+    height: $dot-size;
+    width: auto;
+    padding: 6px 4px;
+    max-width: calc(100% - 20px - 2 * 8px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    opacity: 0;
+    transform: translate(0,-1px);
+    transition: transform 0.2s, opacity 0.2s;
+    background: #000;
+    background: rgba(0,0,0,0.7);
+    border-radius: 12px;
+
+    & > .dot{
+      margin-left: 4px;
+      margin-right: 4px;
+      grid-column: span 1;
+      height: $dot-size - 1;
+      width: $dot-size - 1;
+      background: #444;
+      transition: background 0.2s;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &.active{
+        background: $colorPrimary;
+      }
+
+      &:hover{
+        background: #fff;
+        transition: background 0.2s;
+      }
+    }
+
+  }
+
+  @media #{$top-mobile-big} {
+
+
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+    border-radius: 4px;
+    box-shadow: $shadowMini;
+
+    & > .arrows,& > .dots, & > .actions, & > .slides > .slide > .controls > .play{
+      opacity: 1;
+      transform: translate(0,0);
+    }
+
+    & > .dots{
+      bottom: 10px;
+    }
+    & > .actions{
+      right: 10px;
+      bottom: 10px;
+    }
+
+  }
+
+
+}
+
+.van-modal[data-library="van"][data-extra="slider-modal"].full-screen{
+  & > .container> {
+    width: calc(100vw - 2 * 15px);
+    height: calc(100vh - 2 * 15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .card {
+      padding: 0;
+      max-height: 100%;
+      background: transparent;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+
+      & > .header{
+        position: absolute;
+        padding: 30px;
+        width: calc(100% - 2 * 30px);
+        top: 0;
+        justify-content: flex-end;
+        & > h3{
+          display: none;
+        }
+        & > .btn-close{
+          box-shadow: $shadowSpecialElement;
+          background: #fff;
+        }
+      }
+      & > .content{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        & > .main{
+          & > .image{
+            height: auto;
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & > img{
+              border-radius: 4px;
+              object-fit: contain;
+              width: auto;
+              max-height: 100%;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+
+      & > .footer{
+        display: none;
+      }
+
+    }
+
+  }
+}
+
+
+
+@media #{$top-mobile-big}{
+
+
+  .van-modal[data-library="van"][data-extra="slider-modal"].full-screen{
+    & > .container> .card{
+      max-width: 1200px;
+      height: 400px !important;
+      min-height: 100px !important;
+    }
+  }
+
+}

@@ -1,0 +1,371 @@
+.van-modal[data-library="van"]{
+
+  $fontPrimary : "Ubuntu", "Open Sans", sans-serif;
+  $side: 20px;
+
+  $red : #F44336;
+  $green : #43e97b;
+  $redWarning : #F44336;
+  $redWarningDark : #c5362c;
+
+  $yellowWarning : #FFC107;
+
+  /**
+  ENVIRONMENT SIZING
+ */
+
+  $col-lg-extended : 1100px;
+  $col-lg : 992px;
+  $col-md: 768px;
+  $col-sm : 500px;
+
+
+  $tablet-big: "all and (max-width : #{$col-lg-extended}) and (min-width : #{$col-lg  + 1})";
+  $tablet : "all and (max-width : #{$col-lg}) and (min-width : #{$col-md  + 1})";
+  $mobile-big: "all and (max-width : #{$col-md}) and (min-width : #{$col-sm  + 1})";
+  $mobile : "all and (max-width : #{$col-sm})";
+
+  $top-tablet-big : "all and (max-width : #{$col-lg-extended})";
+  $top-tablet : "all and (max-width : #{$col-lg})";
+  $top-mobile-big: "all and (max-width : #{$col-md})";
+  $bottom-mobile-big: "all and (min-width : #{$col-md + 1})";
+  $top-mobile : "all and (max-width : #{$col-sm})";
+
+  @mixin buttonCustom($background, $text : #fff, $highlightText: #fff){
+    background: $background;
+    user-select: none;
+    min-height: 36px;
+    padding: 5px 30px;
+    min-width: 100px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    -webkit-appearance: none !important;
+    border: none;
+    outline: none;
+    box-sizing: content-box !important;
+    transition: background 0.2s;
+
+    .loader i {  color: #ffffff !important;}
+    i{
+      color: #ffffff;
+      font-size: 14pt;
+      margin-right: 6px;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    span{
+      color: #ffffff;
+      font-size: 12pt;
+      font-weight: 500;
+      text-transform: none;
+      text-decoration: none;
+      text-underline: none;
+      user-select: none;
+      transition: color 0.2s;
+    }
+
+    i{
+      color: $text!important;
+    }
+
+    span{
+      color: $text !important;
+    }
+
+    &:hover,&:active,&:focus{
+      background: darken($background,6%);
+      transition: background 0.2s;
+      outline: none;
+      i,span,.loader i{color: $highlightText !important; transition: color 0.2s;}
+    }
+
+  }
+
+  @keyframes van-overlay-fade-in {
+    0%{ opacity: 0; visibility: hidden }
+    1% {visibility: visible}
+    100%{ opacity: 1; visibility: visible }
+  }
+  @keyframes van-overlay-fade-out {
+    0%{ opacity: 1; visibility: visible }
+    99%{visibility: hidden}
+    100%{ opacity: 0;visibility: hidden}
+  }
+
+  @keyframes van-card-slide-in {
+    0%{ opacity: 0; }  100%{ opacity: 1; }
+  }
+  @keyframes van-card-slide-out {
+    0%{ opacity: 1; }
+    100%{ opacity: 0; }
+  }
+
+
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  top: 0; bottom: 0; left: 0; right: 0;
+  position: fixed;
+  overflow: hidden;
+  display: none;
+
+
+  &.mini{
+    & > .container > .card{
+      max-width: 600px;
+      min-height: 100px;
+    }
+  }
+
+  &.full-screen{
+    & > .container> .card{
+      max-width: 1200px;
+      min-height: 500px;
+    }
+  }
+
+  &.block{
+    & > .container{
+      & > .card{
+        & > .header{
+          h3{
+            color: #F44336;
+          }
+        }
+      }
+    }
+  }
+
+  &.remove{
+    & > .container{
+      & > .card{
+        & > .header{
+          h3{
+            color: #F44336;
+          }
+        }
+      }
+    }
+  }
+
+
+  &.open{
+    display: flex;
+    & > .overlay{
+      animation: van-overlay-fade-in 0.3s ease 1 ;
+      animation-fill-mode: forwards;
+      will-change: transform, opacity;
+    }
+    & > .container > .card{
+      animation: van-card-slide-in  0.3s ease 1;
+      animation-fill-mode: forwards;
+      will-change: transform, opacity;
+    }
+  }
+
+
+  & > .overlay{
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0,0,0,0.85);
+    animation: van-overlay-fade-out 0.3s ease 1;
+    animation-fill-mode: forwards;
+    will-change: transform, opacity;
+    pointer-events: all;
+  }
+
+  & > .container{
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 2 * 30px);
+    height: calc(100% - 2 * 30px);
+    padding: 30px;
+    overflow-y: auto;
+    flex-wrap: wrap;
+
+    & > .card{
+      width: calc(100% - 2 * #{$side});
+      padding: $side;
+      max-width: 900px;
+      min-height: 400px;
+      border-radius: 4px;
+      background: #ffffff;
+      box-shadow:  0 0 30px 0 rgba(0,0,0,.15);
+      display: flex;
+      flex-direction: column;
+      animation: van-card-slide-out 0.3s ease 1;
+      animation-fill-mode: forwards;
+      will-change: transform, opacity;
+      pointer-events: all;
+
+
+      & > .header{
+        width: 100%;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 30px;
+        align-items: center;
+
+        & > h3{
+          font-size: 18pt;
+          font-weight: 500;
+          font-family: $fontPrimary;
+          color: #2c2c2c;
+          flex: 1;
+          text-align: left;
+        }
+
+        & > .btn-close{
+          flex-shrink: 0;
+          justify-self: flex-end;
+          height: 46px;
+          width: 46px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background 0.2s;
+          margin-left: 15px;
+
+          & > svg{
+            line{
+              stroke: #4c4c4c;
+              transition: stroke 0.2s;
+            }
+          }
+
+          &:hover, &:active, &:focus{
+            background: #eee;
+            transition: background 0.2s;
+
+            & > svg{
+              line{
+                stroke: #ea0031;
+                transition: stroke 0.2s;
+              }
+            }
+
+          }
+
+        }
+
+      }
+
+      & > .content{
+        width: 100%;
+        flex: 1;
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+        & > p.description{
+          color: #4c4c4c;
+          font-size: 12pt;
+          font-weight: 300;
+          line-height: 1.4;
+          text-align: left;
+        }
+
+        .van-modal-common-title{
+          margin:30px 0;
+          font-size: 25pt;
+          font-weight: 500;
+          font-family: $fontPrimary;
+          text-align: center;
+
+        }
+
+
+      }
+
+      & > .footer{
+        width: 100%;
+        flex-shrink: 0;
+        margin-top: 20px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        & > *{
+          margin-left: 10px;
+        }
+        & > *:last-child{
+          margin-left: 0;
+        }
+
+        & > .btn-close{
+          order: 9999;
+          @include buttonCustom(#eee, #888, #2c2c2c);
+          padding: 5px 15px;
+          min-width: 80px;
+          font-size: 14pt;
+        }
+
+        & > .btn-accept{
+          @include buttonCustom($green, #fff);
+          padding: 5px 15px;
+          min-width: 80px;
+          font-size: 14pt;
+        }
+
+        & > .btn-default{
+          @include buttonCustom(#eee, #4c4c4c, #2c2c2c );
+          padding: 5px 15px;
+          min-width: 80px;
+          font-size: 14pt;
+        }
+
+
+        & > .btn-deny,  & > .btn-remove{
+          @include buttonCustom($red, #fff);
+          padding: 5px 15px;
+          min-width: 80px;
+          font-size: 14pt;
+        }
+
+      }
+
+
+    }
+  }
+
+
+  @media #{$top-mobile-big}{
+    & > .container{
+      padding: 10px !important;
+      width: calc(100% - 2*10px);
+      height: calc(100% - 2*10px);
+      & > .card{
+        width: calc(100% - 2 * 15px);
+        padding: 15px !important;
+
+        & > .header{
+          padding-bottom: 15px;
+          & > .btn-close{
+            background: #eee;
+          }
+        }
+        & > .footer{
+          padding-top: 15px;
+          justify-content: center;
+          .btn-close{
+            background: #eee;
+          }
+        }
+      }
+    }
+  }
+
+}
+

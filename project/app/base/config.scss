@@ -1,0 +1,401 @@
+@import "normalize";
+
+$mainPurplePrimary: #8c23c5;
+$mainPurpleSecondary: #851f83;
+
+$mainBluePrimary: #005cff;
+$mainBlueSecondary: #0099ff;
+
+$mainGreenPrimary: #7ed321;
+$mainGreenSecondary: #b4ec51;
+
+$mainYellowPrimary: #fb7622;
+$mainYellowSecondary: #f9c025;
+
+$black: #262626;
+
+$colorPrimary: #1a1a1d; //#006bd5;
+$colorSecondary: #c3073f;
+
+$colorPrimaryLight: lighten($colorPrimary, 10%);
+$colorSecondaryLight: lighten($colorSecondary, 5%);
+
+$colorPrimaryDark: darken($colorPrimary, 10%);
+$colorSecondaryDark: darken($colorSecondary, 5%);
+
+$fontPrimary: "Ubuntu", "Lato", sans-serif;
+$fontSecondary: "Lato", sans-serif;
+
+$backgroundColor: #fff;
+$canvasWidth: 1160px;
+$canvasSide: 20px;
+
+$colorPurplePrimary: #7f00ff; //#b721ff;
+$colorPurpleSecondary: #e100ff; //#21d4fd;
+
+$shadowPrimary: 0 0 20px 0 rgba($colorPrimary, 0.4);
+$shadowSecondary: 0 0 20px 0 rgba($colorSecondary, 0.35);
+
+$shadowSecondaryMini: 0 0 15px 0 rgba($colorSecondary, 0.15);
+
+$col-lg-extended: 1100px;
+$col-lg: 992px;
+$col-md: 768px;
+
+@mixin gradientCustom(
+  $first: $colorPrimary,
+  $second: $colorSecondary,
+  $angle: 45deg,
+  $primaryDistance: 30%
+) {
+  background: $colorPrimaryLight; //for browsers that do not support gradient
+  background: linear-gradient($angle, $first $primaryDistance, $second);
+  background: -webkit-linear-gradient($angle, $first $primaryDistance, $second);
+  background: -moz-linear-gradient($angle, $first $primaryDistance, $second);
+  background: -o-linear-gradient($angle, $first $primaryDistance, $second);
+}
+
+@mixin gradient($angle: 45deg, $primaryDistance: 30%) {
+  background: $colorPrimaryLight; //for browsers that do not support gradient
+  background: linear-gradient(
+    $angle,
+    $colorPrimary $primaryDistance,
+    $colorSecondary
+  );
+  background: -webkit-linear-gradient(
+    $angle,
+    $colorPrimary $primaryDistance,
+    $colorSecondary
+  );
+  background: -moz-linear-gradient(
+    $angle,
+    $colorPrimary $primaryDistance,
+    $colorSecondary
+  );
+  background: -o-linear-gradient(
+    $angle,
+    $colorPrimary $primaryDistance,
+    $colorSecondary
+  );
+}
+
+@mixin gradientOrange($angle: 45deg, $primaryDistance: 30%) {
+  background: rgba(252, 102, 33, 1); //for browsers that do not support gradient
+  background: linear-gradient(
+    $angle,
+    rgba(252, 102, 33, 1) $primaryDistance,
+    rgba(249, 171, 35, 1)
+  );
+  background: -webkit-linear-gradient(
+    $angle,
+    rgba(252, 102, 33, 1) $primaryDistance,
+    rgba(249, 171, 35, 1)
+  );
+  background: -moz-linear-gradient(
+    $angle,
+    rgba(252, 102, 33, 1) $primaryDistance,
+    rgba(249, 171, 35, 1)
+  );
+  background: -o-linear-gradient(
+    $angle,
+    rgba(252, 102, 33, 1) $primaryDistance,
+    rgba(249, 171, 35, 1)
+  );
+}
+
+.gradient25Orange {
+  background: rgba(252, 102, 33, 1); //for browsers that do not support gradient
+  background: linear-gradient(
+    25deg,
+    rgba(252, 102, 33, 1),
+    rgba(249, 171, 35, 1)
+  );
+  background: -webkit-linear-gradient(
+    25deg,
+    rgba(252, 102, 33, 1),
+    rgba(249, 171, 35, 1)
+  );
+  background: -moz-linear-gradient(
+    25deg,
+    rgba(252, 102, 33, 1),
+    rgba(249, 171, 35, 1)
+  );
+  background: -o-linear-gradient(
+    25deg,
+    rgba(252, 102, 33, 1),
+    rgba(249, 171, 35, 1)
+  );
+}
+
+@mixin gradientPurple($angle: 45deg, $primaryDistance: 30%) {
+  background: $colorPurplePrimary; //for browsers that do not support gradient
+  background: linear-gradient(
+    $angle,
+    $colorPurplePrimary $primaryDistance,
+    $colorPurpleSecondary
+  );
+  background: -webkit-linear-gradient(
+    $angle,
+    $colorPurplePrimary $primaryDistance,
+    $colorPurpleSecondary
+  );
+  background: -moz-linear-gradient(
+    $angle,
+    $colorPurplePrimary $primaryDistance,
+    $colorPurpleSecondary
+  );
+  background: -o-linear-gradient(
+    $angle,
+    $colorPurplePrimary $primaryDistance,
+    $colorPurpleSecondary
+  );
+}
+
+$colorOrangePrimary: rgb(249, 212, 35);
+$colorOrangeSecondary: rgb(255, 78, 80);
+
+$shadowOrangeNormal: 0 0 10px 0 rgba(249, 212, 35, 0.9);
+$shadowOrangeHover: 0 0 10px 0 rgba(255, 78, 80, 0.6);
+
+$angleOrange: 25deg;
+
+.gradientOtherOrange {
+  background: $colorOrangePrimary; //for browsers that do not support gradient
+  background: linear-gradient(
+    $angleOrange,
+    $colorOrangePrimary,
+    $colorOrangeSecondary
+  );
+  background: -webkit-linear-gradient(
+    $angleOrange,
+    $colorOrangePrimary,
+    $colorOrangeSecondary
+  );
+  background: -moz-linear-gradient(
+    $angleOrange,
+    $colorOrangePrimary,
+    $colorOrangeSecondary
+  );
+  background: -o-linear-gradient(
+    $angleOrange,
+    $colorOrangePrimary,
+    $colorOrangeSecondary
+  );
+}
+
+$colorBluePrimary: #04befe;
+$colorBlueSecondary: #03a0dc;
+
+$colorBlueBootstrapLight: #328fff;
+$colorBlueBootstrap: #157efb;
+$colorBlueBootstrapHover: #0062cc;
+
+.gradientBlue {
+  background: $colorBluePrimary; //for browsers that do not support gradient
+  background: linear-gradient(
+    15deg,
+    rgba(68, 129, 235, 1),
+    rgba(4, 190, 254, 1)
+  );
+  background: -webkit-linear-gradient(
+    15deg,
+    rgba(68, 129, 235, 1),
+    rgba(4, 190, 254, 1)
+  );
+  background: -moz-linear-gradient(
+    15deg,
+    rgba(68, 129, 235, 1),
+    rgba(4, 190, 254, 1)
+  );
+  background: -o-linear-gradient(
+    15deg,
+    rgba(68, 129, 235, 1),
+    rgba(4, 190, 254, 1)
+  );
+}
+
+$red: #f44336;
+$green: #30ae59;
+$redWarning: #f44336;
+$redWarningDark: #c5362c;
+
+$yellowWarning: #ffc107;
+
+$shadow: 0 5px 30px 0 rgba(90, 92, 107, 0.07),
+  0 2px 9px 0 rgba(90, 92, 107, 0.08);
+
+$shadowMini: 0 1px 5px 0 rgba(90, 92, 107, 0.05),
+  0 1px 5px 0 rgba(90, 92, 107, 0.05);
+$shadowNormal: $shadow;
+$shadowHover: 0 5px 30px 0 rgba(90, 92, 107, 0.15),
+  0 2px 9px 0 rgba(90, 92, 107, 0.1);
+$shadowSpecialElement: 0 0 30px 0 rgba(0, 0, 0, 0.085);
+$shadowSpecialElementHover: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+
+$shadowGradientNormal: 0 0 20px 0 rgba(4, 190, 254, 0.3);
+$shadowGradientHover: 0 0 30px 0 rgba(4, 190, 254, 0.6);
+
+$shadowOrangeNormal: 0 0 20px 0 rgba(252, 102, 33, 0.3);
+$shadowOrangeHover: 0 0 20px 0 rgba(252, 102, 33, 0.6);
+
+$shadowWhiteNormal: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+$shadowWhiteHover: 0 0 30px 0 rgba(255, 255, 255, 0.6);
+$shadowWhiteSpecial: 0 0 35px 0 rgba(255, 255, 255, 0.8);
+
+.colorPrimary {
+  color: $colorPrimary !important;
+}
+.colorSecondary {
+  color: $colorSecondary !important;
+}
+.backgroundPrimary {
+  background: $colorPrimary !important;
+}
+.backgroundSecondary {
+  background: $colorSecondary !important;
+}
+
+.disableClick {
+  filter: grayscale(100%);
+  opacity: 0.8;
+  pointer-events: none;
+  position: relative;
+  .loader {
+    position: absolute;
+    right: 10px;
+  }
+}
+
+.disableClickInvisible {
+  pointer-events: none;
+}
+
+.truncate {
+  //width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transition01 {
+  transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+}
+.transition02 {
+  transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+
+.transition03 {
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.transition05 {
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+.disableClick {
+  filter: grayscale(50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.initWithFade {
+  animation-name: fadein;
+  animation-duration: 0.3s;
+}
+.exitWithFade {
+  animation-name: fadeout;
+  animation-duration: 0.3s;
+}
+
+* {
+  font-family: $fontSecondary;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: $backgroundColor;
+  overflow-x: hidden;
+}
+
+/**
+  PROJECT SPECIFIC
+ */
+
+$primaryToolbarHeight: 80px;
+$primaryMenuWidth: 226px;
+
+$backgroundColorPicture: darken(#f6f7f9, 10%);
+
+$noteBackgroundColor: #fffece;
+$noteBorderColor: #fff792;
+$noteAccentColor: #ffc91d;
+
+$listingCardHeight: 360px;
+$listingCardWidth: 360px;
+
+@media all and (min-width: $col-lg) {
+  body {
+    .mobile {
+      display: none !important;
+    }
+  }
+}
+
+body a,
+body p,
+body div {
+  text-decoration: none !important;
+  -webkit-appearance: (none !important);
+  -moz-appearance: (none !important);
+}
+html body {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@keyframes prevent-blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@mixin prevent-blink {
+  animation-name: prevent-blink;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FrIC | Browse</title>
+    <title>FrIC | Account</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"
@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
 
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/account.css" />
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
@@ -24,14 +24,17 @@
   </head>
 
   <body id="body">
+    <div class="loading-block active"></div>
+
     <nav>
       <div class="nav-content">
         <a href="./" class="nav-logo"
           ><img alt="Logo" src="image/logo.svg" draggable="false"
         /></a>
         <div class="nav-spacer"></div>
+
         <menu class="nav-menu">
-          <li class="nav-menu-item active">
+          <li class="nav-menu-item">
             <a class="container" href="./"
               ><i class="material-icons-round">public</i><span>Browse</span></a
             >
@@ -41,7 +44,7 @@
               ><i class="material-icons-round">build</i><span>Build</span></a
             >
           </li>
-          <li class="nav-menu-item">
+          <li class="nav-menu-item active">
             <a class="container" href="account.html"
               ><i class="material-icons-round">vpn_key</i
               ><span>Account & Keys</span></a
@@ -51,39 +54,62 @@
       </div>
     </nav>
 
-    <header>
-      <div class="content">
-        <div class="card">
-          <h1>
-            Create <span>beautiful</span> shapes,<br />
-            with an intuitive <span>tool & library</span>.
-          </h1>
-          <h4>
-            Use our API Key to create Fractals directly inside your website or
-            create and publish them using our proprietary builder.
-          </h4>
-          <div class="actions">
-            <a class="button-build" href="./build.html"
-              ><span>Build your own</span></a
-            >
-          </div>
-        </div>
-      </div>
-    </header>
-
     <main role="main">
-      <section id="recommendations">
+      <section id="account">
         <div class="content">
           <header>
-            <h2>The most popular <span>creations</span></h2>
-            <p>
-              Based on people's votes. Have a look at all of them for
-              inspiration.
-            </p>
+            <h2 id="greeting">👋 Hey there, <span></span></h2>
           </header>
         </div>
-        <div class="content-outside">
-          <div class="grid"></div>
+      </section>
+
+      <section id="keys">
+        <div class="content">
+          <header>
+            <h2><span>API Keys</span></h2>
+            <p>Register keys to be used with our library</p>
+          </header>
+          <div class="info">
+            <div class="key-list">
+                <p class="key">sadisadhsaidsaiudsaidiasdashdhuiash <span> - 28 queries left today</span> </p>
+            </div>
+            <form class="box">
+                <div class="explain">
+                    <p>Each key has a quota of 300 queries per day.</p>
+                </div>
+              
+                <button type="button" id="account-editButton" class="buttonPrimary"><span>Generate new key</span></button>
+            </form>
+        </div>
+      </section>
+
+      <section id="votes">
+        <div class="content">
+          <header>
+            <h2><span>Your votes</span></h2>
+            <p>
+              See what fractals left a good impression on you. Vote one to save
+              it to the list.
+            </p>
+          </header>
+          <div class="list"></div>
+        </div>
+      </section>
+
+      <section id="actions">
+        <div class="content">
+          <header>
+            <h2><span>Actions</span></h2>
+            <p>Do more with your account</p>
+          </header>
+          <div class="info">
+            <a style="margin-right: 20px" href="./" class="buttonPrimary"
+              ><span>Explore</span></a
+            >
+            <div id="button-logOut" class="buttonGray">
+              <span>Log Out</span>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -98,8 +124,7 @@
         </div>
       </div>
     </footer>
-
     <script src="base/config.js"></script>
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/account.js"></script>
   </body>
 </html>

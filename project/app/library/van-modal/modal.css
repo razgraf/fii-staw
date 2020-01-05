@@ -1,0 +1,694 @@
+.van-modal[data-library="van"] {
+  /**
+  ENVIRONMENT SIZING
+ */
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  overflow: hidden;
+  display: none;
+}
+
+@-webkit-keyframes van-overlay-fade-in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  1% {
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes van-overlay-fade-in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  1% {
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes van-overlay-fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes van-overlay-fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes van-card-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes van-card-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes van-card-slide-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes van-card-slide-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.van-modal[data-library="van"].mini > .container > .card {
+  max-width: 600px;
+  min-height: 100px;
+}
+
+.van-modal[data-library="van"].full-screen > .container > .card {
+  max-width: 1200px;
+  min-height: 500px;
+}
+
+.van-modal[data-library="van"].block > .container > .card > .header h3 {
+  color: #F44336;
+}
+
+.van-modal[data-library="van"].remove > .container > .card > .header h3 {
+  color: #F44336;
+}
+
+.van-modal[data-library="van"].open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.van-modal[data-library="van"].open > .overlay {
+  -webkit-animation: van-overlay-fade-in 0.3s ease 1;
+          animation: van-overlay-fade-in 0.3s ease 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+.van-modal[data-library="van"].open > .container > .card {
+  -webkit-animation: van-card-slide-in  0.3s ease 1;
+          animation: van-card-slide-in  0.3s ease 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+.van-modal[data-library="van"] > .overlay {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-animation: van-overlay-fade-out 0.3s ease 1;
+          animation: van-overlay-fade-out 0.3s ease 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  will-change: transform, opacity;
+  pointer-events: all;
+}
+
+.van-modal[data-library="van"] > .container {
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: calc(100% - 2 * 30px);
+  height: calc(100% - 2 * 30px);
+  padding: 30px;
+  overflow-y: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.van-modal[data-library="van"] > .container > .card {
+  width: calc(100% - 2 * 20px);
+  padding: 20px;
+  max-width: 900px;
+  min-height: 400px;
+  border-radius: 4px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation: van-card-slide-out 0.3s ease 1;
+          animation: van-card-slide-out 0.3s ease 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  will-change: transform, opacity;
+  pointer-events: all;
+}
+
+.van-modal[data-library="van"] > .container > .card > .header {
+  width: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-bottom: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.van-modal[data-library="van"] > .container > .card > .header > h3 {
+  font-size: 18pt;
+  font-weight: 500;
+  font-family: "Ubuntu", "Open Sans", sans-serif;
+  color: #2c2c2c;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: left;
+}
+
+.van-modal[data-library="van"] > .container > .card > .header > .btn-close {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  justify-self: flex-end;
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  margin-left: 15px;
+}
+
+.van-modal[data-library="van"] > .container > .card > .header > .btn-close > svg line {
+  stroke: #4c4c4c;
+  -webkit-transition: stroke 0.2s;
+  transition: stroke 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .header > .btn-close:hover, .van-modal[data-library="van"] > .container > .card > .header > .btn-close:active, .van-modal[data-library="van"] > .container > .card > .header > .btn-close:focus {
+  background: #eee;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .header > .btn-close:hover > svg line, .van-modal[data-library="van"] > .container > .card > .header > .btn-close:active > svg line, .van-modal[data-library="van"] > .container > .card > .header > .btn-close:focus > svg line {
+  stroke: #ea0031;
+  -webkit-transition: stroke 0.2s;
+  transition: stroke 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .content {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.van-modal[data-library="van"] > .container > .card > .content > p.description {
+  color: #4c4c4c;
+  font-size: 12pt;
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.van-modal[data-library="van"] > .container > .card > .content .van-modal-common-title {
+  margin: 30px 0;
+  font-size: 25pt;
+  font-weight: 500;
+  font-family: "Ubuntu", "Open Sans", sans-serif;
+  text-align: center;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer {
+  width: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > * {
+  margin-left: 10px;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > *:last-child {
+  margin-left: 0;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-close {
+  -webkit-box-ordinal-group: 10000;
+      -ms-flex-order: 9999;
+          order: 9999;
+  background: #eee;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  min-height: 36px;
+  padding: 5px 30px;
+  min-width: 100px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none !important;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: content-box !important;
+          box-sizing: content-box !important;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  padding: 5px 15px;
+  min-width: 80px;
+  font-size: 14pt;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-close .loader i {
+  color: #ffffff !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-close i {
+  color: #ffffff;
+  font-size: 14pt;
+  margin-right: 6px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-close span {
+  color: #ffffff;
+  font-size: 12pt;
+  font-weight: 500;
+  text-transform: none;
+  text-decoration: none;
+  text-underline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-close i {
+  color: #888 !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-close span {
+  color: #888 !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-close:hover, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:active, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:focus {
+  background: #dfdfdf;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  outline: none;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-close:hover i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:hover span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:hover .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:active i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:active span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:active .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:focus i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:focus span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-close:focus .loader i {
+  color: #2c2c2c !important;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-accept {
+  background: #43e97b;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  min-height: 36px;
+  padding: 5px 30px;
+  min-width: 100px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none !important;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: content-box !important;
+          box-sizing: content-box !important;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  padding: 5px 15px;
+  min-width: 80px;
+  font-size: 14pt;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-accept .loader i {
+  color: #ffffff !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-accept i {
+  color: #ffffff;
+  font-size: 14pt;
+  margin-right: 6px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-accept span {
+  color: #ffffff;
+  font-size: 12pt;
+  font-weight: 500;
+  text-transform: none;
+  text-decoration: none;
+  text-underline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-accept i {
+  color: #fff !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-accept span {
+  color: #fff !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:hover, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:active, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:focus {
+  background: #28e668;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  outline: none;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:hover i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:hover span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:hover .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:active i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:active span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:active .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:focus i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:focus span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-accept:focus .loader i {
+  color: #fff !important;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-default {
+  background: #eee;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  min-height: 36px;
+  padding: 5px 30px;
+  min-width: 100px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none !important;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: content-box !important;
+          box-sizing: content-box !important;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  padding: 5px 15px;
+  min-width: 80px;
+  font-size: 14pt;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-default .loader i {
+  color: #ffffff !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-default i {
+  color: #ffffff;
+  font-size: 14pt;
+  margin-right: 6px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-default span {
+  color: #ffffff;
+  font-size: 12pt;
+  font-weight: 500;
+  text-transform: none;
+  text-decoration: none;
+  text-underline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-default i {
+  color: #4c4c4c !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-default span {
+  color: #4c4c4c !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-default:hover, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:active, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:focus {
+  background: #dfdfdf;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  outline: none;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-default:hover i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:hover span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:hover .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:active i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:active span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:active .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:focus i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:focus span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-default:focus .loader i {
+  color: #2c2c2c !important;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-deny, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove {
+  background: #F44336;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  min-height: 36px;
+  padding: 5px 30px;
+  min-width: 100px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none !important;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: content-box !important;
+          box-sizing: content-box !important;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  padding: 5px 15px;
+  min-width: 80px;
+  font-size: 14pt;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-deny .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove .loader i {
+  color: #ffffff !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-deny i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove i {
+  color: #ffffff;
+  font-size: 14pt;
+  margin-right: 6px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-deny span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove span {
+  color: #ffffff;
+  font-size: 12pt;
+  font-weight: 500;
+  text-transform: none;
+  text-decoration: none;
+  text-underline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-deny i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove i {
+  color: #fff !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-deny span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove span {
+  color: #fff !important;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:hover, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:active, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:focus, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:hover, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:active, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:focus {
+  background: #f22819;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  outline: none;
+}
+
+.van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:hover i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:hover span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:hover .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:active i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:active span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:active .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:focus i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:focus span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-deny:focus .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:hover i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:hover span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:hover .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:active i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:active span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:active .loader i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:focus i, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:focus span, .van-modal[data-library="van"] > .container > .card > .footer > .btn-remove:focus .loader i {
+  color: #fff !important;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+@media all and (max-width: 768px) {
+  .van-modal[data-library="van"] > .container {
+    padding: 10px !important;
+    width: calc(100% - 2*10px);
+    height: calc(100% - 2*10px);
+  }
+  .van-modal[data-library="van"] > .container > .card {
+    width: calc(100% - 2 * 15px);
+    padding: 15px !important;
+  }
+  .van-modal[data-library="van"] > .container > .card > .header {
+    padding-bottom: 15px;
+  }
+  .van-modal[data-library="van"] > .container > .card > .header > .btn-close {
+    background: #eee;
+  }
+  .van-modal[data-library="van"] > .container > .card > .footer {
+    padding-top: 15px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .van-modal[data-library="van"] > .container > .card > .footer .btn-close {
+    background: #eee;
+  }
+}
+/*# sourceMappingURL=modal.css.map */

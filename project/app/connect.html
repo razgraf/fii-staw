@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FrIC RGABIB| Connect</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="pinterest" content="nopin" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <link rel="stylesheet" href="css/connect.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Ubuntu:300,400,500,700&amp;subset=latin-ext"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="body">
+    <header>
+      <nav>
+        <div class="nav-content">
+          <div style="cursor: default" class="nav-logo">
+            <img alt="Logo" src="image/logo_white.svg" draggable="false" />
+          </div>
+          <div class="nav-search"></div>
+          <menu class="nav-menu">
+            <li class="nav-menu-item">
+              <a class="container" href="./"
+                ><i class="material-icons-round">public</i
+                ><span>Browse</span></a
+              >
+            </li>
+            <li class="nav-menu-item">
+              <a class="container" href="build"
+                ><i class="material-icons-round">build</i><span>Build</span></a
+              >
+            </li>
+            <li class="nav-menu-item">
+              <a class="container" href="connect.html?register"
+                ><i class="material-icons-round">vpn_key</i
+                ><span>Get Key</span></a
+              >
+            </li>
+          </menu>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="left">
+          <div class="image">
+            <img src="image/tree_white.png" />
+          </div>
+          <h1 class="title login" style="display: none;">
+            Welcome to the world of Fractals!
+          </h1>
+          <h1 class="title register" style="display: none;">
+            Register to our Platform and API!
+          </h1>
+          <p>
+            Create awesome fractals with our library or browse some awesome
+            creations. Post your own!
+          </p>
+        </div>
+        <div class="right">
+          <div class="card register" style="display: none;">
+            <div class="container">
+              <div class="header">
+                <div class="title">
+                  <p>Create a new account</p>
+                </div>
+              </div>
+              <div class="main">
+                <div class="input" style="margin-bottom: 15px">
+                  <input
+                    id="register-username"
+                    type="text"
+                    placeholder="@johnconstantine"
+                  />
+                  <p>Username</p>
+                  <label for="register-username"></label>
+                </div>
+
+                <div class="input" style="margin-bottom: 15px">
+                  <input
+                    id="register-email"
+                    type="text"
+                    placeholder="john.constantine@gmail.com"
+                  />
+                  <p>Email</p>
+                  <label for="register-email"></label>
+                </div>
+
+                <div class="input">
+                  <input
+                    id="register-password"
+                    type="password"
+                    placeholder="Your strongest password"
+                  />
+                  <p>Password</p>
+                  <label for="register-password"></label>
+                </div>
+              </div>
+              <div class="actions">
+                <div id="button_register" class="button login">
+                  <span>Create account</span>
+                </div>
+                <a href="./login.html" class="button c2a"
+                  ><span>Already have an account? Log in.</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="card login" style="display: none;">
+            <div class="container">
+              <div class="header">
+                <div class="title">
+                  <p>Connect to your account</p>
+                </div>
+              </div>
+              <div class="main">
+                <div class="input" style="margin-bottom: 15px">
+                  <input
+                    id="login-username"
+                    type="text"
+                    placeholder="@johnconstantine"
+                  />
+                  <p>Username</p>
+                  <label for="login-username"></label>
+                </div>
+
+                <div class="input">
+                  <input
+                    id="login-password"
+                    type="password"
+                    placeholder="Your strongest password"
+                  />
+                  <p>Password</p>
+                  <label for="login-password"></label>
+                </div>
+              </div>
+              <div class="actions">
+                <div id="button_login" class="button login">
+                  <span>Log in</span>
+                </div>
+                <a href="./register.html" class="button c2a"
+                  ><span>Create an account and Get your API Key</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <footer>
+      <div class="content">
+        <div class="company">
+          <span
+            >©2020 - Project by Razvan Gabriel Apostu and Bogdan Iosif
+            Badarau</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="base/config.js"></script>
+    <script type="module" src="js/connect.js"></script>
+  </body>
+</html>

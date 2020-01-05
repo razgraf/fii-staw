@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-5.32907052e-15" y="0" width="14.875" height="9"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Toolbar" transform="translate(-1252.000000, -22.000000)">
+            <g id="Group-3" transform="translate(1253.000000, 23.000000)">
+                <circle id="parent" stroke="#410EEE" stroke-width="1.05" cx="17" cy="17" r="17"></circle>
+                <g id="Group-2" transform="translate(9.208333, 8.500000)">
+                    <g id="Combined-Shape" transform="translate(0.354167, 6.500000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Mask" transform="translate(7.437500, 4.500000) scale(1, -1) translate(-7.437500, -4.500000) "></g>
+                        <path d="M0.723049821,10.4166667 C0.713290196,10.2849737 0.708333333,10.1521155 0.708333333,10.0182292 C0.708333333,6.71746484 3.72108387,4.04166667 7.4375,4.04166667 C11.1539161,4.04166667 14.1666667,6.71746484 14.1666667,10.0182292 C14.1666667,10.1521155 14.1617098,10.2849737 14.1519502,10.4166667 L0.723049821,10.4166667 Z" stroke="#410EEE" stroke-width="1.05" mask="url(#mask-2)"></path>
+                    </g>
+                    <circle id="Head" stroke="#410EEE" stroke-width="1.05" cx="7.79166667" cy="5.3125" r="4.95833333"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
