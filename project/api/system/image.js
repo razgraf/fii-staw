@@ -4,22 +4,16 @@ const { RESOURCES } = require("./constants");
 const AWS = require("aws-sdk");
 const S3 = new AWS.S3();
 
-const OBJECT_KEY = "fractal/fractal.png";
-
 class Image {
-  static async saveToBucket(base64Image) {
+  static async saveToBucket({ key, data }) {
     const buffer = new Buffer(
-      base64Image.replace(/^data:image\/\w+;base64,/, ""),
+      data.replace(/^data:image\/\w+;base64,/, ""),
       "base64"
     );
 
-    await Image.uploadToS3(RESOURCES.BUCKET, OBJECT_KEY, buffer);
+    await Image.uploadToS3(RESOURCES.BUCKET, key, buffer);
 
-    return Image.getPublicUrlFromS3(
-      OBJECT_KEY,
-      RESOURCES.BUCKET,
-      RESOURCES.REGION
-    );
+    return Image.getPublicUrlFromS3(key, RESOURCES.BUCKET, RESOURCES.REGION);
   }
 
   static getFromS3(bucket, key, type = "image/jpeg") {

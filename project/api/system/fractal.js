@@ -1,4 +1,7 @@
 "use strict";
+
+const Image = require("./image");
+const Networking = require("./networking");
 /**
  * @typedef {Object} Definition - Parameters that will describe rules and attributes for the soon-to-be generated
  * @property {number} iterations - e.g. 3
@@ -14,40 +17,16 @@ class Fractal {
   constructor(canvas) {
     this.canvas = canvas;
     this.context = canvas.getContext("2d");
+    this.definition = null;
+    this.publicUrl = null;
+    this.type = null;
+    this.uuid = null;
+    this.id = null;
+    this.createdAt = null;
   }
 
   extract() {
-    try {
-      return this.canvas.toDataURL();
-    } catch (e) {
-      console.warn(e);
-    }
-    return "";
-  }
-
-  /**
-   *
-   * @param {string} structure  - e.g. "F+[[X]-X]-F[-FX]+X"
-   * @param {Array<Object>} rules  - e.g. [{left : "X", right : "X+YF+"}]
-   */
-
-  generate(structure, rules) {
-    var final = "";
-    var found = 0;
-    for (let symbol of structure) {
-      found = 0;
-      for (let i = 0; i < rules.length; ++i) {
-        if (rules[i].left === symbol) {
-          final += rules[i].right;
-          found = 1;
-          break;
-        }
-      }
-      if (found === 0) {
-        final += symbol;
-      }
-    }
-    return final;
+    return this.canvas.toDataURL();
   }
 
   /**
@@ -55,14 +34,62 @@ class Fractal {
    * @param {string} type
    * @param {Definition} definition
    */
-  create(type, definition) {
+  async create(type, definition) {
+    this.type = type;
+    this.definition = definition;
+
     switch (type) {
       case "lSystem":
         this.create_lSystem(definition);
         break;
       default:
         console.eror('Unknown type. Expected one of ["lSystem"]');
-        break;
+        return false;
+    }
+
+    return true;
+  }
+
+  async saveToBucket() {
+    if (!this.uuid) {
+      console.warn("Missing data. Cannot save to bucket without active uuid.");
+      return false;
+    }
+
+    const base64Image = this.extract();
+
+    if (!base64Image) {
+      console.warn("Missing data. Nothing to save into the bucket.");
+      return false;
+    }
+
+    this.publicUrl = await Image.saveToBucket({
+      key: `${this.uuid}.png`,
+      data: base64Image
+    });
+
+    return true;
+  }
+
+  async saveToDatabase() {
+    const inserted = await Networking.insertFractalIntoDB({
+      definition: JSON.stringify(this.definition)
+    });
+
+    console.log(inserted);
+
+    if (inserted !== null) {
+      this.id = inserted.id;
+      this.uuid = inserted.uuid;
+      this.createdAt = inserted.createdAt;
+      this.name = inserted.name;
+      return true;
+    } else {
+      this.id = null;
+      this.uuid = null;
+      this.createdAt = null;
+      this.name = null;
+      return false;
     }
   }
 
@@ -131,6 +158,31 @@ class Fractal {
           break;
       }
     }
+  }
+
+  /**
+   *
+   * @param {string} structure  - e.g. "F+[[X]-X]-F[-FX]+X"
+   * @param {Array<Object>} rules  - e.g. [{left : "X", right : "X+YF+"}]
+   */
+
+  generate(structure, rules) {
+    var final = "";
+    var found = 0;
+    for (let symbol of structure) {
+      found = 0;
+      for (let i = 0; i < rules.length; ++i) {
+        if (rules[i].left === symbol) {
+          final += rules[i].right;
+          found = 1;
+          break;
+        }
+      }
+      if (found === 0) {
+        final += symbol;
+      }
+    }
+    return final;
   }
 }
 

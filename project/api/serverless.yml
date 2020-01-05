@@ -2,6 +2,9 @@ service: fii-staw-fractal
 # org: razgraf
 # app: fii-staw-fractal
 
+plugins:
+  - serverless-dotenv-plugin
+
 provider:
   name: aws
   runtime: nodejs10.x
@@ -12,19 +15,17 @@ provider:
     - Effect: "Allow"
       Action:
         - "s3:*"
-        # - "s3:GetObject"
-        # - "s3:PutObject"
       Resource: "arn:aws:s3:::serverless-s3-fii-staw-fractal-bucket/*"
 
 functions:
-  generate:
-    handler: handler.generate
+  createFractal:
+    handler: handler.createFractal
     layers:
       - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
       - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
     events:
       - http:
-          path: generate
+          path: fractal
           method: get
 resources:
   Resources:
