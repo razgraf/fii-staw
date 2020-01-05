@@ -1,19 +1,34 @@
-service: fiistaw
+service: fii-staw-fractal
+# org: razgraf
+# app: fii-staw-fractal
 
 provider:
   name: aws
   runtime: nodejs10.x
-
   stage: dev
   region: eu-west-2
 
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+        # - "s3:GetObject"
+        # - "s3:PutObject"
+      Resource: "arn:aws:s3:::serverless-s3-fii-staw-fractal-bucket/*"
+
 functions:
-  hello:
-    handler: handler.hello
+  generate:
+    handler: handler.generate
     layers:
       - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
       - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
     events:
       - http:
-          path: fractal/generate
+          path: generate
           method: get
+resources:
+  Resources:
+    S3FiiStawFractalBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: serverless-s3-fii-staw-fractal-bucket

@@ -134,35 +134,4 @@ class Fractal {
   }
 }
 
-const DEFINITIONS = {
-  koch: [
-    {
-      left: "F",
-      right: "F+F-F-F+F"
-    }
-  ],
-  dragon: [
-    {
-      left: "X",
-      right: "X+YF+"
-    },
-    {
-      left: "Y",
-      right: "-FX-Y"
-    }
-  ],
-
-  plant: [
-    {
-      left: "X",
-      right: "F+[[X]-X]-F[-FX]+X"
-    },
-    {
-      left: "F",
-      right: "FF"
-    }
-  ]
-};
-
-module.exports.Fractal = Fractal;
-module.exports.DEFINITIONS = DEFINITIONS;
+module.exports = Fractal;
