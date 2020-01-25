@@ -24,7 +24,7 @@ var rulesPlant = [{
     "right": "FF"
 }];
 
-lsystem(6, "X", rulesPlant, 400, canvas.height, 25);
+//lsystem(6, "X", rulesPlant, 400, canvas.height, 25);
 
 function generate(S, R) {
     var new_S = "";
@@ -46,23 +46,26 @@ function generate(S, R) {
 }
 
 function lsystem(iterations, S, R, xs, ys, angle) {
-    var len = 256;
+    var len = 4096;
     var degrees = 270;
     var states = [];
 
-    console.log(S);
+    
     for (var i = 0; i < iterations; ++i) {
         S = generate(S, R);
-        console.log(S);
         len /= 2;
     }
-    ctx.moveTo(xs, ys);
+    console.log(S);
+    //ctx.moveTo(xs, ys);
 
     for (var s of S) {
         if (s == "F") {
+            ctx.beginPath()
+            ctx.moveTo(xs,ys);
             xf = xs + len * Math.cos(degrees * Math.PI / 180);
             yf = ys + len * Math.sin(degrees * Math.PI / 180);
             ctx.lineTo(xf, yf);
+            ctx.strokeStyle = "#0000ff";
             ctx.stroke();
             xs = xf;
             ys = yf;
@@ -83,3 +86,59 @@ function lsystem(iterations, S, R, xs, ys, angle) {
     }
 }
 
+let states = [];
+
+
+//mystring = "";
+
+function lsystemrec(iterations, start, rules, state, angle, states, len) {
+    for (let s of start) {
+        if ('A' <= s && s <= 'Z') {
+            let found = 0;
+            if(iterations > 0) {
+                for (let rule of rules) {
+                    if (rule.left == s) {
+                        found = 1;
+                        lsystemrec(iterations - 1, rule.right, rules, state, angle, states, len);
+                        break;
+                    }
+                }
+            } else {
+                //mystring += s;
+            }
+            if(s == 'F' && (found == 0 || iterations == 0)) {
+                ctx.beginPath();
+                ctx.moveTo(state.x, state.y);
+                let xf = state.x + len * Math.cos(state.degrees * Math.PI / 180);
+                let yf = state.y + len * Math.sin(state.degrees * Math.PI / 180);
+                ctx.lineTo(xf, yf);
+                ctx.stroke();
+                state.x = xf;
+                state.y = yf;
+                ctx.moveTo(state.x, state.y);
+            }
+        } else if (s == "+" ) {
+            //mystring += s;
+            state.degrees += angle;
+        } else if (s == "-") {
+            //mystring += s;
+            state.degrees -= angle;
+        } else if (s == "[") {
+            //mystring += s;
+            states.push({...state});
+        } else if (s == "]") {
+            //mystring += s;
+            state = states.pop();
+            ctx.moveTo(state.x, state.y);
+        }
+    }   
+}
+
+//lsystem(12, "F", rulesKoch, 500, canvas.height / 2, 90);
+
+// let state = {
+//     x: 300,
+//     y: canvas.height,
+//     degrees: 270
+// }
+lsystemrec(4, "F", rulesKoch, {x: 300, y: canvas.height / 2, degrees: 270}, 90, [], 2);
