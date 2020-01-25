@@ -27,6 +27,37 @@ functions:
       - http:
           path: fractal
           method: get
+
+  createUser:
+    handler: handler.createUser
+    layers:
+      - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
+      - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
+    events:
+      - http:
+          path: user
+          method: post
+
+  loginUser:
+    handler: handler.loginUser
+    layers:
+      - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
+      - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
+    events:
+      - http:
+          path: user/login
+          method: post
+
+  createKey:
+    handler: handler.createKey
+    layers:
+      - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
+      - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
+    events:
+      - http:
+          path: user/key
+          method: post
+
 resources:
   Resources:
     S3FiiStawFractalBucket:

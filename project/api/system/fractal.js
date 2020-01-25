@@ -1,7 +1,7 @@
 "use strict";
 
-const Image = require("./image");
-const Networking = require("./networking");
+const Image = require("./Image");
+const Networking = require("./Networking");
 /**
  * @typedef {Object} Definition - Parameters that will describe rules and attributes for the soon-to-be generated
  * @property {number} iterations - e.g. 3

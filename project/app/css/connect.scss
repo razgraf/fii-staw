@@ -44,6 +44,10 @@ body {
       top: 0;
       z-index: 100;
 
+      .nav-separator {
+        height: 1px;
+        flex: 1;
+      }
       .nav-content {
         height: 100%;
         @include standard-container;

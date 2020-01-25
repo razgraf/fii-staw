@@ -1,6 +1,6 @@
 const { createCanvas } = require("canvas");
-const { FRACTAL_DEFINITIONS } = require("../system/constants");
-const Fractal = require("../system/fractal");
+const { FRACTAL_DEFINITIONS, HTTP_STATUS } = require("../constants");
+const Fractal = require("../system/Fractal");
 
 async function createFractal(event) {
   try {
@@ -34,7 +34,7 @@ async function createFractal(event) {
     console.log("inS3");
 
     return {
-      statusCode: 200,
+      statusCode: HTTP_STATUS.CREATED,
       body: JSON.stringify(
         {
           message: "Done",
@@ -46,7 +46,7 @@ async function createFractal(event) {
     };
   } catch (error) {
     return {
-      statusCode: 400,
+      statusCode: HTTP_STATUS.BAD_REQUEST,
       body: JSON.stringify(
         {
           message: error

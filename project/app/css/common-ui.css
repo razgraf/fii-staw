@@ -341,10 +341,6 @@ template {
   display: none;
 }
 
-.test {
-  color: red;
-}
-
 .gradient25Orange {
   background: #fc6621;
   background: linear-gradient(25deg, #fc6621, #f9ab23);
@@ -364,19 +360,19 @@ template {
 }
 
 .colorPrimary {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 .colorSecondary {
-  color: #3b0ed8 !important;
+  color: #c3073f !important;
 }
 
 .backgroundPrimary {
-  background: #410eee !important;
+  background: #1a1a1d !important;
 }
 
 .backgroundSecondary {
-  background: #3b0ed8 !important;
+  background: #c3073f !important;
 }
 
 .disableClick, .dummy {
@@ -577,19 +573,19 @@ DEFAULT BUTTONS
 }
 
 .buttonPrimary {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 .buttonPrimary:hover, .buttonPrimary:active, .buttonPrimary:focus {
-  background: #340bbe;
+  background: #020202;
 }
 
 .buttonSecondary {
-  background: #3b0ed8;
+  background: #c3073f;
 }
 
 .buttonSecondary:hover, .buttonSecondary:active, .buttonSecondary:focus {
-  background: #2e0ba8;
+  background: #92052f;
 }
 
 .buttonGray {
@@ -680,19 +676,19 @@ MINI BUTTONS
 }
 
 .buttonMiniPrimary {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 .buttonMiniPrimary:hover, .buttonMiniPrimary:active, .buttonMiniPrimary:focus {
-  background: #653cf4;
+  background: #323238;
 }
 
 .buttonMiniSecondary {
-  background: #3b0ed8;
+  background: #c3073f;
 }
 
 .buttonMiniSecondary:hover, .buttonMiniSecondary:active, .buttonMiniSecondary:focus {
-  background: #4210f0;
+  background: #dc0847;
 }
 
 .buttonMiniGray {
@@ -735,9 +731,9 @@ STYLISH BUTTONS
  */
 .buttonGradient {
   background: #fff;
-  background: #653cf4;
-  background: linear-gradient(45deg, #410eee 30%, #3b0ed8);
-  background: -o-linear-gradient(45deg, #410eee 30%, #3b0ed8);
+  background: #323238;
+  background: linear-gradient(45deg, #1a1a1d 30%, #c3073f);
+  background: -o-linear-gradient(45deg, #1a1a1d 30%, #c3073f);
   background-size: 200%;
 }
 
@@ -779,9 +775,9 @@ STYLISH BUTTONS
   text-align: center !important;
   cursor: pointer !important;
   background: #fff;
-  background: #653cf4;
-  background: linear-gradient(45deg, #410eee 30%, #3b0ed8);
-  background: -o-linear-gradient(45deg, #410eee 30%, #3b0ed8);
+  background: #323238;
+  background: linear-gradient(45deg, #1a1a1d 30%, #c3073f);
+  background: -o-linear-gradient(45deg, #1a1a1d 30%, #c3073f);
   background-size: 200%;
 }
 
@@ -1018,7 +1014,7 @@ Checkbox, Radio, Input, Select, ImageUpload
   background: transparent;
   top: 8px;
   left: 7px;
-  border: 2px solid #3b0ed8;
+  border: 2px solid #c3073f;
   border-top: none;
   border-right: none;
   -webkit-transform: rotate(-45deg);
@@ -1045,7 +1041,7 @@ Checkbox, Radio, Input, Select, ImageUpload
 }
 
 .checkbox input[type=checkbox]:checked ~ p {
-  color: #3b0ed8;
+  color: #c3073f;
 }
 
 .checkbox p {
@@ -1098,7 +1094,7 @@ Checkbox, Radio, Input, Select, ImageUpload
   height: 14px;
   background: transparent;
   border-radius: 50%;
-  background: #3b0ed8;
+  background: #c3073f;
 }
 
 .radio label:hover {
@@ -1121,7 +1117,7 @@ Checkbox, Radio, Input, Select, ImageUpload
 }
 
 .radio input[type=radio]:checked ~ p {
-  color: #3b0ed8;
+  color: #c3073f;
 }
 
 .radio p {
@@ -1159,13 +1155,13 @@ Checkbox, Radio, Input, Select, ImageUpload
 }
 
 .input.force-active input, .input.force-active textarea {
-  border-color: #3b0ed8;
-  color: #3b0ed8 !important;
+  border-color: #c3073f;
+  color: #c3073f !important;
   background: #f5f5f5;
 }
 
 .input.force-active p {
-  color: #3b0ed8 !important;
+  color: #c3073f !important;
 }
 
 .select select {
@@ -1345,23 +1341,23 @@ Checkbox, Radio, Input, Select, ImageUpload
 .upload .upload-action .upload-button {
   grid-column: span 1;
   background: transparent;
-  border: 1px solid #410eee !important;
+  border: 1px solid #1a1a1d !important;
 }
 
 .upload .upload-action .upload-button .loader i {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 .upload .upload-action .upload-button i {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 .upload .upload-action .upload-button span {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 .upload .upload-action .upload-button:hover, .upload .upload-action .upload-button:active, .upload .upload-action .upload-button:focus {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 .upload .upload-action .upload-button:hover i, .upload .upload-action .upload-button:hover span, .upload .upload-action .upload-button:hover .loader i, .upload .upload-action .upload-button:active i, .upload .upload-action .upload-button:active span, .upload .upload-action .upload-button:active .loader i, .upload .upload-action .upload-button:focus i, .upload .upload-action .upload-button:focus span, .upload .upload-action .upload-button:focus .loader i {
@@ -1673,19 +1669,19 @@ PROJECT SPECIFIC
 }
 
 .listing-item[data-type='rent'].paginator {
-  background: #410eee !important;
-  -webkit-box-shadow: 0 10px 30px -15px rgba(65, 14, 238, 0.6) !important;
-          box-shadow: 0 10px 30px -15px rgba(65, 14, 238, 0.6) !important;
-  border: 1px solid #410eee !important;
+  background: #1a1a1d !important;
+  -webkit-box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
+          box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
+  border: 1px solid #1a1a1d !important;
   -webkit-transition: background 0.2s, border 0.2s !important;
   transition: background 0.2s, border 0.2s !important;
 }
 
 .listing-item[data-type='rent'].paginator:hover, .listing-item[data-type='rent'].paginator:active {
-  background: #3a0dd6 !important;
-  -webkit-box-shadow: 0 10px 30px -15px rgba(65, 14, 238, 0.6) !important;
-          box-shadow: 0 10px 30px -15px rgba(65, 14, 238, 0.6) !important;
-  border: 1px solid #3a0dd6 !important;
+  background: #0e0e10 !important;
+  -webkit-box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
+          box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
+  border: 1px solid #0e0e10 !important;
   -webkit-transition: background 0.2s, border 0.2s !important;
   transition: background 0.2s, border 0.2s !important;
 }
@@ -1695,7 +1691,7 @@ PROJECT SPECIFIC
 }
 
 .listing-item[data-type='rent'] > .main > .content > .heading > span:not(.title) {
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 .listing-item[data-type='buy'].paginator {
@@ -1803,7 +1799,7 @@ PROJECT SPECIFIC
   background: #fff;
   font-size: 12pt;
   font-weight: 400;
-  color: #410eee;
+  color: #1a1a1d;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1882,7 +1878,7 @@ PROJECT SPECIFIC
   text-align: center;
   font-size: 9pt;
   font-weight: 500;
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 .listing-item > .badges > .item:last-of-type {
@@ -1987,7 +1983,7 @@ PROJECT SPECIFIC
     border-radius: 2px;
     background: #f5f5f5;
     font-size: 10pt;
-    color: #410eee;
+    color: #1a1a1d;
   }
   body .listing-item > .main > .content > .info {
     color: #ccc;
@@ -2086,14 +2082,14 @@ ALERT
 }
 
 #customAlertContainer .customAlert.success {
-  -webkit-box-shadow: 0 15px 30px -12px rgba(65, 14, 238, 0.3);
-          box-shadow: 0 15px 30px -12px rgba(65, 14, 238, 0.3);
+  -webkit-box-shadow: 0 15px 30px -12px rgba(26, 26, 29, 0.3);
+          box-shadow: 0 15px 30px -12px rgba(26, 26, 29, 0.3);
   background: #ffffff !important;
   border: 1px solid #eeeeee;
 }
 
 #customAlertContainer .customAlert.success i, #customAlertContainer .customAlert.success span {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 #customAlertContainer .customAlert.failure {

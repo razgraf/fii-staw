@@ -341,10 +341,6 @@ template {
   display: none;
 }
 
-.test {
-  color: red;
-}
-
 .gradient25Orange {
   background: #fc6621;
   background: linear-gradient(25deg, #fc6621, #f9ab23);
@@ -364,19 +360,19 @@ template {
 }
 
 .colorPrimary {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 .colorSecondary {
-  color: #3b0ed8 !important;
+  color: #c3073f !important;
 }
 
 .backgroundPrimary {
-  background: #410eee !important;
+  background: #1a1a1d !important;
 }
 
 .backgroundSecondary {
-  background: #3b0ed8 !important;
+  background: #c3073f !important;
 }
 
 .disableClick, .dummy {
@@ -409,7 +405,7 @@ template {
   -o-transition: all 0.1s;
 }
 
-.transition02, .button i, .buttonPrimary i, .buttonSecondary i, .buttonGray i, .buttonOutline i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button i, .buttonGradient i, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] i, .button span, .buttonPrimary span, .buttonSecondary span, .buttonGray span, .buttonOutline span, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button span, .buttonGradient span, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] span, .button, .buttonPrimary, .buttonSecondary, .buttonGray, .buttonOutline, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]), body main section#price > .content > .actions .button, .buttonGradient, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"], .button:hover, .buttonPrimary:hover, .buttonSecondary:hover, .buttonGray:hover, .buttonOutline:hover, body main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]), body main section#price > .content > .actions .button:hover, .buttonGradient:hover, body main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"], .button:active, .buttonPrimary:active, .buttonSecondary:active, .buttonGray:active, .buttonOutline:active, body main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]), body main section#price > .content > .actions .button:active, .buttonGradient:active, body main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"], .button:focus, .buttonPrimary:focus, .buttonSecondary:focus, .buttonGray:focus, .buttonOutline:focus, body main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]), body main section#price > .content > .actions .button:focus, .buttonGradient:focus, body main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"], .button:hover i, .buttonPrimary:hover i, .buttonSecondary:hover i, .buttonGray:hover i, .buttonOutline:hover i, body main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button:hover i, .buttonGradient:hover i, body main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"] i, .button:hover span, .buttonPrimary:hover span, .buttonSecondary:hover span, .buttonGray:hover span, .buttonOutline:hover span, body main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button:hover span, .buttonGradient:hover span, body main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"] span, .button:active i, .buttonPrimary:active i, .buttonSecondary:active i, .buttonGray:active i, .buttonOutline:active i, body main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button:active i, .buttonGradient:active i, body main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"] i, .button:active span, .buttonPrimary:active span, .buttonSecondary:active span, .buttonGray:active span, .buttonOutline:active span, body main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button:active span, .buttonGradient:active span, body main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"] span, .button:focus i, .buttonPrimary:focus i, .buttonSecondary:focus i, .buttonGray:focus i, .buttonOutline:focus i, body main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button:focus i, .buttonGradient:focus i, body main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"] i, .button:focus span, .buttonPrimary:focus span, .buttonSecondary:focus span, .buttonGray:focus span, .buttonOutline:focus span, body main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button:focus span, .buttonGradient:focus span, body main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"] span, .buttonMini i, .buttonMiniPrimary i, .buttonMiniSecondary i, .buttonMiniGray i, .buttonMiniOutline i, .upload .upload-action .upload-button i, .upload .upload-action .upload-button-remove i, .buttonMiniGradient i, .buttonMini span, .buttonMiniPrimary span, .buttonMiniSecondary span, .buttonMiniGray span, .buttonMiniOutline span, .upload .upload-action .upload-button span, .upload .upload-action .upload-button-remove span, .buttonMiniGradient span, .buttonMini, .buttonMiniPrimary, .buttonMiniSecondary, .buttonMiniGray, .buttonMiniOutline, .upload .upload-action .upload-button, .upload .upload-action .upload-button-remove, .buttonMiniGradient, .buttonMini:hover, .buttonMiniPrimary:hover, .buttonMiniSecondary:hover, .buttonMiniGray:hover, .buttonMiniOutline:hover, .upload .upload-action .upload-button:hover, .upload .upload-action .upload-button-remove:hover, .buttonMiniGradient:hover, .buttonMini:active, .buttonMiniPrimary:active, .buttonMiniSecondary:active, .buttonMiniGray:active, .buttonMiniOutline:active, .upload .upload-action .upload-button:active, .upload .upload-action .upload-button-remove:active, .buttonMiniGradient:active, .buttonMini:focus, .buttonMiniPrimary:focus, .buttonMiniSecondary:focus, .buttonMiniGray:focus, .buttonMiniOutline:focus, .upload .upload-action .upload-button:focus, .upload .upload-action .upload-button-remove:focus, .buttonMiniGradient:focus, .buttonMini:hover i, .buttonMiniPrimary:hover i, .buttonMiniSecondary:hover i, .buttonMiniGray:hover i, .buttonMiniOutline:hover i, .upload .upload-action .upload-button:hover i, .upload .upload-action .upload-button-remove:hover i, .buttonMiniGradient:hover i, .buttonMini:hover span, .buttonMiniPrimary:hover span, .buttonMiniSecondary:hover span, .buttonMiniGray:hover span, .buttonMiniOutline:hover span, .upload .upload-action .upload-button:hover span, .upload .upload-action .upload-button-remove:hover span, .buttonMiniGradient:hover span, .buttonMini:active i, .buttonMiniPrimary:active i, .buttonMiniSecondary:active i, .buttonMiniGray:active i, .buttonMiniOutline:active i, .upload .upload-action .upload-button:active i, .upload .upload-action .upload-button-remove:active i, .buttonMiniGradient:active i, .buttonMini:active span, .buttonMiniPrimary:active span, .buttonMiniSecondary:active span, .buttonMiniGray:active span, .buttonMiniOutline:active span, .upload .upload-action .upload-button:active span, .upload .upload-action .upload-button-remove:active span, .buttonMiniGradient:active span, .buttonMini:focus i, .buttonMiniPrimary:focus i, .buttonMiniSecondary:focus i, .buttonMiniGray:focus i, .buttonMiniOutline:focus i, .upload .upload-action .upload-button:focus i, .upload .upload-action .upload-button-remove:focus i, .buttonMiniGradient:focus i, .buttonMini:focus span, .buttonMiniPrimary:focus span, .buttonMiniSecondary:focus span, .buttonMiniGray:focus span, .buttonMiniOutline:focus span, .upload .upload-action .upload-button:focus span, .upload .upload-action .upload-button-remove:focus span, .buttonMiniGradient:focus span, .field label, .input label, .select label, .field input:active + label, .input input:active + label, .select input:active + label, .field input:focus + label, .input input:focus + label, .select input:focus + label, .field textarea:active + label, .input textarea:active + label, .select textarea:active + label, .field textarea:focus + label, .input textarea:focus + label, .select textarea:focus + label, .input p, .input input:active ~ p, .input input:active + p, .input input:focus ~ p, .input input:focus + p, .input textarea:active ~ p, .input textarea:active + p, .input textarea:focus ~ p, .input textarea:focus + p, .upload label, .upload p, .listing-item, .listing-item > .main > .image:after, .listing-item:hover, .listing-item:hover > .main > .image:after, body main section#similar > .content header .arrows .action a, body main section#similar > .content header .arrows .arrow, body main section#similar > .content header .arrows .arrow:hover, body main section#similar > .content header .arrows .arrow.disabled {
+.transition02, .button i, .buttonPrimary i, .buttonSecondary i, .buttonGray i, .buttonOutline i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button i, .buttonGradient i, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] i, .button span, .buttonPrimary span, .buttonSecondary span, .buttonGray span, .buttonOutline span, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button span, .buttonGradient span, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] span, .button, .buttonPrimary, .buttonSecondary, .buttonGray, .buttonOutline, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]), body main section#price > .content > .actions .button, .buttonGradient, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"], .button:hover, .buttonPrimary:hover, .buttonSecondary:hover, .buttonGray:hover, .buttonOutline:hover, body main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]), body main section#price > .content > .actions .button:hover, .buttonGradient:hover, body main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"], .button:active, .buttonPrimary:active, .buttonSecondary:active, .buttonGray:active, .buttonOutline:active, body main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]), body main section#price > .content > .actions .button:active, .buttonGradient:active, body main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"], .button:focus, .buttonPrimary:focus, .buttonSecondary:focus, .buttonGray:focus, .buttonOutline:focus, body main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]), body main section#price > .content > .actions .button:focus, .buttonGradient:focus, body main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"], .button:hover i, .buttonPrimary:hover i, .buttonSecondary:hover i, .buttonGray:hover i, .buttonOutline:hover i, body main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button:hover i, .buttonGradient:hover i, body main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"] i, .button:hover span, .buttonPrimary:hover span, .buttonSecondary:hover span, .buttonGray:hover span, .buttonOutline:hover span, body main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button:hover span, .buttonGradient:hover span, body main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"] span, .button:active i, .buttonPrimary:active i, .buttonSecondary:active i, .buttonGray:active i, .buttonOutline:active i, body main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button:active i, .buttonGradient:active i, body main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"] i, .button:active span, .buttonPrimary:active span, .buttonSecondary:active span, .buttonGray:active span, .buttonOutline:active span, body main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button:active span, .buttonGradient:active span, body main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"] span, .button:focus i, .buttonPrimary:focus i, .buttonSecondary:focus i, .buttonGray:focus i, .buttonOutline:focus i, body main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button:focus i, .buttonGradient:focus i, body main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"] i, .button:focus span, .buttonPrimary:focus span, .buttonSecondary:focus span, .buttonGray:focus span, .buttonOutline:focus span, body main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button:focus span, .buttonGradient:focus span, body main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"] span, .buttonMini i, .buttonMiniPrimary i, .buttonMiniSecondary i, .buttonMiniGray i, .buttonMiniOutline i, .upload .upload-action .upload-button i, .upload .upload-action .upload-button-remove i, .buttonMiniGradient i, .buttonMini span, .buttonMiniPrimary span, .buttonMiniSecondary span, .buttonMiniGray span, .buttonMiniOutline span, .upload .upload-action .upload-button span, .upload .upload-action .upload-button-remove span, .buttonMiniGradient span, .buttonMini, .buttonMiniPrimary, .buttonMiniSecondary, .buttonMiniGray, .buttonMiniOutline, .upload .upload-action .upload-button, .upload .upload-action .upload-button-remove, .buttonMiniGradient, .buttonMini:hover, .buttonMiniPrimary:hover, .buttonMiniSecondary:hover, .buttonMiniGray:hover, .buttonMiniOutline:hover, .upload .upload-action .upload-button:hover, .upload .upload-action .upload-button-remove:hover, .buttonMiniGradient:hover, .buttonMini:active, .buttonMiniPrimary:active, .buttonMiniSecondary:active, .buttonMiniGray:active, .buttonMiniOutline:active, .upload .upload-action .upload-button:active, .upload .upload-action .upload-button-remove:active, .buttonMiniGradient:active, .buttonMini:focus, .buttonMiniPrimary:focus, .buttonMiniSecondary:focus, .buttonMiniGray:focus, .buttonMiniOutline:focus, .upload .upload-action .upload-button:focus, .upload .upload-action .upload-button-remove:focus, .buttonMiniGradient:focus, .buttonMini:hover i, .buttonMiniPrimary:hover i, .buttonMiniSecondary:hover i, .buttonMiniGray:hover i, .buttonMiniOutline:hover i, .upload .upload-action .upload-button:hover i, .upload .upload-action .upload-button-remove:hover i, .buttonMiniGradient:hover i, .buttonMini:hover span, .buttonMiniPrimary:hover span, .buttonMiniSecondary:hover span, .buttonMiniGray:hover span, .buttonMiniOutline:hover span, .upload .upload-action .upload-button:hover span, .upload .upload-action .upload-button-remove:hover span, .buttonMiniGradient:hover span, .buttonMini:active i, .buttonMiniPrimary:active i, .buttonMiniSecondary:active i, .buttonMiniGray:active i, .buttonMiniOutline:active i, .upload .upload-action .upload-button:active i, .upload .upload-action .upload-button-remove:active i, .buttonMiniGradient:active i, .buttonMini:active span, .buttonMiniPrimary:active span, .buttonMiniSecondary:active span, .buttonMiniGray:active span, .buttonMiniOutline:active span, .upload .upload-action .upload-button:active span, .upload .upload-action .upload-button-remove:active span, .buttonMiniGradient:active span, .buttonMini:focus i, .buttonMiniPrimary:focus i, .buttonMiniSecondary:focus i, .buttonMiniGray:focus i, .buttonMiniOutline:focus i, .upload .upload-action .upload-button:focus i, .upload .upload-action .upload-button-remove:focus i, .buttonMiniGradient:focus i, .buttonMini:focus span, .buttonMiniPrimary:focus span, .buttonMiniSecondary:focus span, .buttonMiniGray:focus span, .buttonMiniOutline:focus span, .upload .upload-action .upload-button:focus span, .upload .upload-action .upload-button-remove:focus span, .buttonMiniGradient:focus span, .field label, .input label, .select label, .field input:active + label, .input input:active + label, .select input:active + label, .field input:focus + label, .input input:focus + label, .select input:focus + label, .field textarea:active + label, .input textarea:active + label, .select textarea:active + label, .field textarea:focus + label, .input textarea:focus + label, .select textarea:focus + label, .input p, .input input:active ~ p, .input input:active + p, .input input:focus ~ p, .input input:focus + p, .input textarea:active ~ p, .input textarea:active + p, .input textarea:focus ~ p, .input textarea:focus + p, .upload label, .upload p, .listing-item, .listing-item > .main > .image:after, .listing-item:hover, .listing-item:hover > .main > .image:after, body nav .nav-content .nav-menu .nav-menu-item > .container, body nav .nav-content .nav-menu .nav-menu-item > .container span, body nav .nav-content .nav-menu .nav-menu-item > .container:hover, body main section#similar > .content header .arrows .action a, body main section#similar > .content header .arrows .arrow, body main section#similar > .content header .arrows .arrow:hover, body main section#similar > .content header .arrows .arrow.disabled {
   transition: all 0.2s;
   -moz-transition: all 0.2s;
   -webkit-transition: all 0.2s;
@@ -577,19 +573,19 @@ DEFAULT BUTTONS
 }
 
 .buttonPrimary {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 .buttonPrimary:hover, .buttonPrimary:active, .buttonPrimary:focus {
-  background: #340bbe;
+  background: #020202;
 }
 
 .buttonSecondary {
-  background: #3b0ed8;
+  background: #c3073f;
 }
 
 .buttonSecondary:hover, .buttonSecondary:active, .buttonSecondary:focus {
-  background: #2e0ba8;
+  background: #92052f;
 }
 
 .buttonGray {
@@ -680,19 +676,19 @@ MINI BUTTONS
 }
 
 .buttonMiniPrimary {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 .buttonMiniPrimary:hover, .buttonMiniPrimary:active, .buttonMiniPrimary:focus {
-  background: #653cf4;
+  background: #323238;
 }
 
 .buttonMiniSecondary {
-  background: #3b0ed8;
+  background: #c3073f;
 }
 
 .buttonMiniSecondary:hover, .buttonMiniSecondary:active, .buttonMiniSecondary:focus {
-  background: #4210f0;
+  background: #dc0847;
 }
 
 .buttonMiniGray {
@@ -735,9 +731,9 @@ STYLISH BUTTONS
  */
 .buttonGradient {
   background: #fff;
-  background: #653cf4;
-  background: linear-gradient(45deg, #410eee 30%, #3b0ed8);
-  background: -o-linear-gradient(45deg, #410eee 30%, #3b0ed8);
+  background: #323238;
+  background: linear-gradient(45deg, #1a1a1d 30%, #c3073f);
+  background: -o-linear-gradient(45deg, #1a1a1d 30%, #c3073f);
   background-size: 200%;
 }
 
@@ -779,9 +775,9 @@ STYLISH BUTTONS
   text-align: center !important;
   cursor: pointer !important;
   background: #fff;
-  background: #653cf4;
-  background: linear-gradient(45deg, #410eee 30%, #3b0ed8);
-  background: -o-linear-gradient(45deg, #410eee 30%, #3b0ed8);
+  background: #323238;
+  background: linear-gradient(45deg, #1a1a1d 30%, #c3073f);
+  background: -o-linear-gradient(45deg, #1a1a1d 30%, #c3073f);
   background-size: 200%;
 }
 
@@ -1018,7 +1014,7 @@ Checkbox, Radio, Input, Select, ImageUpload
   background: transparent;
   top: 8px;
   left: 7px;
-  border: 2px solid #3b0ed8;
+  border: 2px solid #c3073f;
   border-top: none;
   border-right: none;
   -webkit-transform: rotate(-45deg);
@@ -1045,7 +1041,7 @@ Checkbox, Radio, Input, Select, ImageUpload
 }
 
 .checkbox input[type=checkbox]:checked ~ p {
-  color: #3b0ed8;
+  color: #c3073f;
 }
 
 .checkbox p {
@@ -1098,7 +1094,7 @@ Checkbox, Radio, Input, Select, ImageUpload
   height: 14px;
   background: transparent;
   border-radius: 50%;
-  background: #3b0ed8;
+  background: #c3073f;
 }
 
 .radio label:hover {
@@ -1121,7 +1117,7 @@ Checkbox, Radio, Input, Select, ImageUpload
 }
 
 .radio input[type=radio]:checked ~ p {
-  color: #3b0ed8;
+  color: #c3073f;
 }
 
 .radio p {
@@ -1159,13 +1155,13 @@ Checkbox, Radio, Input, Select, ImageUpload
 }
 
 .input.force-active input, .input.force-active textarea {
-  border-color: #3b0ed8;
-  color: #3b0ed8 !important;
+  border-color: #c3073f;
+  color: #c3073f !important;
   background: #f5f5f5;
 }
 
 .input.force-active p {
-  color: #3b0ed8 !important;
+  color: #c3073f !important;
 }
 
 .select select {
@@ -1345,23 +1341,23 @@ Checkbox, Radio, Input, Select, ImageUpload
 .upload .upload-action .upload-button {
   grid-column: span 1;
   background: transparent;
-  border: 1px solid #410eee !important;
+  border: 1px solid #1a1a1d !important;
 }
 
 .upload .upload-action .upload-button .loader i {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 .upload .upload-action .upload-button i {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 .upload .upload-action .upload-button span {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 .upload .upload-action .upload-button:hover, .upload .upload-action .upload-button:active, .upload .upload-action .upload-button:focus {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 .upload .upload-action .upload-button:hover i, .upload .upload-action .upload-button:hover span, .upload .upload-action .upload-button:hover .loader i, .upload .upload-action .upload-button:active i, .upload .upload-action .upload-button:active span, .upload .upload-action .upload-button:active .loader i, .upload .upload-action .upload-button:focus i, .upload .upload-action .upload-button:focus span, .upload .upload-action .upload-button:focus .loader i {
@@ -1673,19 +1669,19 @@ PROJECT SPECIFIC
 }
 
 .listing-item[data-type='rent'].paginator {
-  background: #410eee !important;
-  -webkit-box-shadow: 0 10px 30px -15px rgba(65, 14, 238, 0.6) !important;
-          box-shadow: 0 10px 30px -15px rgba(65, 14, 238, 0.6) !important;
-  border: 1px solid #410eee !important;
+  background: #1a1a1d !important;
+  -webkit-box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
+          box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
+  border: 1px solid #1a1a1d !important;
   -webkit-transition: background 0.2s, border 0.2s !important;
   transition: background 0.2s, border 0.2s !important;
 }
 
 .listing-item[data-type='rent'].paginator:hover, .listing-item[data-type='rent'].paginator:active {
-  background: #3a0dd6 !important;
-  -webkit-box-shadow: 0 10px 30px -15px rgba(65, 14, 238, 0.6) !important;
-          box-shadow: 0 10px 30px -15px rgba(65, 14, 238, 0.6) !important;
-  border: 1px solid #3a0dd6 !important;
+  background: #0e0e10 !important;
+  -webkit-box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
+          box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
+  border: 1px solid #0e0e10 !important;
   -webkit-transition: background 0.2s, border 0.2s !important;
   transition: background 0.2s, border 0.2s !important;
 }
@@ -1695,7 +1691,7 @@ PROJECT SPECIFIC
 }
 
 .listing-item[data-type='rent'] > .main > .content > .heading > span:not(.title) {
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 .listing-item[data-type='buy'].paginator {
@@ -1803,7 +1799,7 @@ PROJECT SPECIFIC
   background: #fff;
   font-size: 12pt;
   font-weight: 400;
-  color: #410eee;
+  color: #1a1a1d;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1882,7 +1878,7 @@ PROJECT SPECIFIC
   text-align: center;
   font-size: 9pt;
   font-weight: 500;
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 .listing-item > .badges > .item:last-of-type {
@@ -1987,7 +1983,7 @@ PROJECT SPECIFIC
     border-radius: 2px;
     background: #f5f5f5;
     font-size: 10pt;
-    color: #410eee;
+    color: #1a1a1d;
   }
   body .listing-item > .main > .content > .info {
     color: #ccc;
@@ -2086,14 +2082,14 @@ ALERT
 }
 
 #customAlertContainer .customAlert.success {
-  -webkit-box-shadow: 0 15px 30px -12px rgba(65, 14, 238, 0.3);
-          box-shadow: 0 15px 30px -12px rgba(65, 14, 238, 0.3);
+  -webkit-box-shadow: 0 15px 30px -12px rgba(26, 26, 29, 0.3);
+          box-shadow: 0 15px 30px -12px rgba(26, 26, 29, 0.3);
   background: #ffffff !important;
   border: 1px solid #eeeeee;
 }
 
 #customAlertContainer .customAlert.success i, #customAlertContainer .customAlert.success span {
-  color: #410eee !important;
+  color: #1a1a1d !important;
 }
 
 #customAlertContainer .customAlert.failure {
@@ -2132,13 +2128,20 @@ body {
 body nav {
   height: calc(80px - 2 * 10px);
   width: 100%;
-  background: #fff;
+  background: #1a1a1d;
   -webkit-box-shadow: 0 5px 25px 0 rgba(90, 92, 107, 0.05), 0 2px 9px 0 rgba(90, 92, 107, 0.06);
           box-shadow: 0 5px 25px 0 rgba(90, 92, 107, 0.05), 0 2px 9px 0 rgba(90, 92, 107, 0.06);
   padding: 10px 0;
   position: fixed;
   top: 0;
   z-index: 100;
+}
+
+body nav .nav-spacer {
+  height: 1px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 body nav .nav-content {
@@ -2169,7 +2172,7 @@ body nav .nav-content {
 body nav .nav-content .nav-logo {
   height: 100%;
   padding: 10px 0;
-  max-width: 140px;
+  max-width: 90px;
   cursor: pointer;
   -moz-appearance: none;
        appearance: none;
@@ -2193,167 +2196,6 @@ body nav .nav-content .nav-logo img {
 
 body nav .nav-content .nav-logo:focus, body nav .nav-content .nav-logo:active {
   background: transparent;
-}
-
-body nav .nav-content .nav-search {
-  padding: 5px 60px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-transition: left 0.2s;
-  transition: left 0.2s;
-}
-
-body nav .nav-content .nav-search .nav-search-container {
-  border: 1px solid #e8e8e8;
-  width: 90%;
-  padding: 0 5%;
-  height: 50px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 5px 0 rgba(90, 92, 107, 0.05), 0 1px 5px 0 rgba(90, 92, 107, 0.05);
-          box-shadow: 0 1px 5px 0 rgba(90, 92, 107, 0.05), 0 1px 5px 0 rgba(90, 92, 107, 0.05);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-}
-
-body nav .nav-content .nav-search .nav-search-container .nav-search-results {
-  position: absolute;
-  top: 70px;
-  margin-left: -5%;
-  width: 100%;
-  background: #fff;
-  -webkit-box-shadow: 0 5px 30px 0 rgba(90, 92, 107, 0.07), 0 2px 9px 0 rgba(90, 92, 107, 0.08);
-          box-shadow: 0 5px 30px 0 rgba(90, 92, 107, 0.07), 0 2px 9px 0 rgba(90, 92, 107, 0.08);
-}
-
-body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item {
-  width: calc(100% - 2 * 6px);
-  padding: 6px;
-  border-bottom: 1px solid #eee;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item:hover {
-  background: #f9f9f9;
-}
-
-body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .image {
-  height: 34px;
-  width: 34px;
-  margin-right: 20px;
-}
-
-body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .image img {
-  border-radius: 4px;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > p.title {
-  margin: 0;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  text-align: left;
-  font-size: 11pt;
-  color: #262626;
-  font-family: "Ubuntu", "Lato", sans-serif;
-  padding-right: 10px;
-}
-
-body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .button, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonPrimary, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonSecondary, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonGray, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonOutline, body nav .nav-content .nav-search .nav-search-container .nav-search-results main > .content > .right > section#actions > .card > .content > .main.nav-search-result-item > .button:not([data-bookmark="true"]), body nav .nav-content .nav-search .nav-search-container .nav-search-results main section#price > .content > .actions .nav-search-result-item > .button, body main section#price > .content > .actions nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .button, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonGradient, body nav .nav-content .nav-search .nav-search-container .nav-search-results main > .content > .right > section#actions > .card > .content > .main.nav-search-result-item > .button[data-bookmark="true"] {
-  min-width: 0;
-  padding: 0;
-  height: 34px;
-  width: 34px;
-  border-radius: 4px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: #b4ec51;
-  -webkit-box-shadow: 0 5px 15px -5px rgba(180, 236, 81, 0.4);
-          box-shadow: 0 5px 15px -5px rgba(180, 236, 81, 0.4);
-}
-
-body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .button i, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonPrimary i, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonSecondary i, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonGray i, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonOutline i, body nav .nav-content .nav-search .nav-search-container .nav-search-results main > .content > .right > section#actions > .card > .content > .main.nav-search-result-item > .button:not([data-bookmark="true"]) i, body nav .nav-content .nav-search .nav-search-container .nav-search-results main section#price > .content > .actions .nav-search-result-item > .button i, body main section#price > .content > .actions nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .button i, body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item > .buttonGradient i, body nav .nav-content .nav-search .nav-search-container .nav-search-results main > .content > .right > section#actions > .card > .content > .main.nav-search-result-item > .button[data-bookmark="true"] i {
-  margin: 0;
-  font-size: 14pt;
-  color: #ffffff;
-}
-
-body nav .nav-content .nav-search .nav-search-container .nav-search-results .nav-search-result-item:last-of-type {
-  border-bottom: none;
-}
-
-body nav .nav-content .nav-search .nav-search-container img {
-  margin-right: 16px;
-  height: 16px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-body nav .nav-content .nav-search .nav-search-container input {
-  text-align: left;
-  border-radius: 0;
-  height: 30px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  background: #ffffff;
-  border: none;
-  border-bottom: 1px solid transparent;
-  color: #000000;
-  font-size: 12pt;
-  font-weight: 300;
-  text-decoration: none;
-  outline: none;
-  -webkit-transition: color 0.2s, border 0.2s, background 0.2s;
-  transition: color 0.2s, border 0.2s, background 0.2s;
-}
-
-body nav .nav-content .nav-search .nav-search-container input::-webkit-input-placeholder {
-  color: #a2a7a8;
-}
-
-body nav .nav-content .nav-search .nav-search-container input::-moz-placeholder {
-  color: #a2a7a8;
-}
-
-body nav .nav-content .nav-search .nav-search-container input:-ms-input-placeholder {
-  color: #a2a7a8;
-}
-
-body nav .nav-content .nav-search .nav-search-container input:focus, body nav .nav-content .nav-search .nav-search-container input:active {
-  color: #410eee;
-  border-bottom: 1px solid #410eee;
-  -webkit-transition: color 0.2s, border 0.2s, background 0.2s;
-  transition: color 0.2s, border 0.2s, background 0.2s;
 }
 
 body nav .nav-content .nav-menu {
@@ -2380,41 +2222,71 @@ body nav .nav-content .nav-menu {
 }
 
 body nav .nav-content .nav-menu .nav-menu-item {
-  padding: 5px 15px;
+  padding: 2px 10px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 
-body nav .nav-content .nav-menu .nav-menu-item span {
-  display: inline-block;
-  font-size: 11pt;
-  color: #2c2c2c;
-  font-weight: 400;
-  border-radius: 4px;
-  padding: 8px 10px;
+body nav .nav-content .nav-menu .nav-menu-item.active > .container > i,
+body nav .nav-content .nav-menu .nav-menu-item.active > .container > span {
+  color: #c3073f;
+}
+
+body nav .nav-content .nav-menu .nav-menu-item.active > .container:hover {
+  color: #c3073f;
+  border: 1px solid transparent;
+  background: transparent;
+  -webkit-transition: none;
+  transition: none;
+}
+
+body nav .nav-content .nav-menu .nav-menu-item.active > .container:hover > i,
+body nav .nav-content .nav-menu .nav-menu-item.active > .container:hover > span {
+  color: #c3073f;
+}
+
+body nav .nav-content .nav-menu .nav-menu-item > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 11px 15px;
+  border-radius: 6px;
   cursor: pointer;
   border: 1px solid transparent;
-  -webkit-transition: color 0.2s, border 0.2s, background 0.2s;
-  transition: color 0.2s, border 0.2s, background 0.2s;
 }
 
-body nav .nav-content .nav-menu .nav-menu-item span:hover {
-  color: #410eee;
-  -webkit-transition: color 0.2s, border 0.2s, background 0.2s;
-  transition: color 0.2s, border 0.2s, background 0.2s;
-  border: 1px solid #f5f5f5;
+body nav .nav-content .nav-menu .nav-menu-item > .container > i {
+  font-size: 13pt;
+  margin-right: 4px;
+  color: #ffffff;
+  line-height: 0.5;
+  max-width: 18px;
 }
 
-body nav .nav-content .nav-menu .nav-menu-item.active span {
-  color: #410eee;
-  background: #fafafa;
-  border: 1px solid #f5f5f5;
+body nav .nav-content .nav-menu .nav-menu-item > .container span {
+  font-size: 11pt;
+  color: #ffffff;
+  font-weight: 400;
+  padding: 0;
+  cursor: pointer;
+  border: 1px solid transparent;
 }
 
-body nav .nav-content .nav-menu .nav-menu-item.active span:hover {
-  color: #410eee;
+body nav .nav-content .nav-menu .nav-menu-item > .container span:hover {
+  color: #ffffff;
+  border: 1px solid transparent;
+  background: transparent;
+}
+
+body nav .nav-content .nav-menu .nav-menu-item > .container:hover {
+  color: #ffffff;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 body nav .nav-content .nav-account {
@@ -2448,8 +2320,10 @@ body nav .nav-content .nav-account:hover, body nav .nav-content .nav-account:act
   transition: background 0.2s, border 0.2s;
 }
 
-body nav .nav-content .nav-account:hover > div.nav-account-text > p, body nav .nav-content .nav-account:hover > div.nav-account-text > span, body nav .nav-content .nav-account:active > div.nav-account-text > p, body nav .nav-content .nav-account:active > div.nav-account-text > span {
-  color: #410eee !important;
+body nav .nav-content .nav-account:hover > div.nav-account-text > p,
+body nav .nav-content .nav-account:hover > div.nav-account-text > span, body nav .nav-content .nav-account:active > div.nav-account-text > p,
+body nav .nav-content .nav-account:active > div.nav-account-text > span {
+  color: #1a1a1d !important;
 }
 
 body nav .nav-content .nav-account:hover > div > img, body nav .nav-content .nav-account:active > div > img {
@@ -2462,8 +2336,9 @@ body nav .nav-content .nav-account.active {
   border: 1px solid #eee;
 }
 
-body nav .nav-content .nav-account.active > div.nav-account-text > p, body nav .nav-content .nav-account.active > div.nav-account-text > span {
-  color: #410eee !important;
+body nav .nav-content .nav-account.active > div.nav-account-text > p,
+body nav .nav-content .nav-account.active > div.nav-account-text > span {
+  color: #1a1a1d !important;
 }
 
 body nav .nav-content .nav-account.active > div > img {
@@ -2476,8 +2351,10 @@ body nav .nav-content .nav-account.active:hover, body nav .nav-content .nav-acco
   border: 1px solid #eee;
 }
 
-body nav .nav-content .nav-account.active:hover > div.nav-account-text > p, body nav .nav-content .nav-account.active:hover > div.nav-account-text > span, body nav .nav-content .nav-account.active:active > div.nav-account-text > p, body nav .nav-content .nav-account.active:active > div.nav-account-text > span {
-  color: #410eee !important;
+body nav .nav-content .nav-account.active:hover > div.nav-account-text > p,
+body nav .nav-content .nav-account.active:hover > div.nav-account-text > span, body nav .nav-content .nav-account.active:active > div.nav-account-text > p,
+body nav .nav-content .nav-account.active:active > div.nav-account-text > span {
+  color: #1a1a1d !important;
 }
 
 body nav .nav-content .nav-account.active:hover > div > img, body nav .nav-content .nav-account.active:active > div > img {
@@ -2536,7 +2413,7 @@ body nav .nav-content .nav-account > div.nav-account-text > p {
 body nav .nav-content .nav-account > div.nav-account-text > span {
   font-family: "Ubuntu", "Lato", sans-serif;
   font-size: 11pt;
-  color: #410eee;
+  color: #1a1a1d;
   font-weight: 500;
   min-height: 16px;
   -webkit-animation-name: prevent-blink;
@@ -2552,9 +2429,16 @@ body nav .nav-content .nav-account > div.nav-account-text > span {
 }
 
 body footer {
-  height: 300px;
-  padding: 30px 0;
-  background: #262626;
+  height: 5vh;
+  min-height: 40px;
+  max-height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #c3073f;
 }
 
 body footer > .content {
@@ -2572,8 +2456,8 @@ body footer > .content {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
 @media all and (max-width: 992px) {
@@ -2657,6 +2541,8 @@ body footer > .content > div.company {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 body footer > .content > div.company span {
@@ -2719,7 +2605,7 @@ body footer > .content > div.company span {
 
 @-webkit-keyframes loading-icon-animation {
   0% {
-    opacity: .7;
+    opacity: 0.7;
     -webkit-transform: scale(1);
             transform: scale(1);
   }
@@ -2732,7 +2618,7 @@ body footer > .content > div.company span {
 
 @keyframes loading-icon-animation {
   0% {
-    opacity: .7;
+    opacity: 0.7;
     -webkit-transform: scale(1);
             transform: scale(1);
   }
@@ -2759,13 +2645,19 @@ body footer > .content > div.company span {
 }
 
 .loading-block > .content > .icon > i {
-  color: #410eee;
+  color: #1a1a1d;
   font-size: 40px;
 }
 
 @media all and (max-width: 992px) {
+  body.menu-active nav .nav-content .nav-spacer {
+    width: 70px;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+  }
   body.menu-active nav .nav-content .nav-logo::before {
-    content: '\2715';
+    content: "\2715";
   }
   body.menu-active nav .nav-content .nav-search {
     left: 15px;
@@ -2785,6 +2677,12 @@ body footer > .content > div.company span {
         -ms-flex-align: center;
             align-items: center;
   }
+  body nav .nav-content .nav-spacer {
+    width: 70px;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+  }
   body nav .nav-content .nav-logo {
     height: 100%;
     padding: 10px 0 10px 57px;
@@ -2801,7 +2699,7 @@ body footer > .content > div.company span {
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    user-focus: none;
+    margin: 0 auto;
   }
   body nav .nav-content .nav-logo img {
     height: 100%;
@@ -2812,7 +2710,7 @@ body footer > .content > div.company span {
   body nav .nav-content .nav-logo::before {
     position: absolute;
     left: 0;
-    content: '\2630';
+    content: "\2630";
     height: 42px;
     width: 42px;
     display: -webkit-box;
@@ -2908,14 +2806,14 @@ body footer > .content > div.company span {
         -ms-flex-align: center;
             align-items: center;
     margin: 0;
-    left: -90%;
+    left: -95%;
     right: 0;
     top: 0;
     bottom: 0;
     height: 100%;
     padding: 170px 0 0;
-    width: 90%;
-    background: #fff;
+    width: 95%;
+    background: #1a1a1d;
     -webkit-box-shadow: 0 5px 30px 0 rgba(90, 92, 107, 0.07), 0 2px 9px 0 rgba(90, 92, 107, 0.08);
             box-shadow: 0 5px 30px 0 rgba(90, 92, 107, 0.07), 0 2px 9px 0 rgba(90, 92, 107, 0.08);
     -webkit-transition: left 0.2s, -webkit-box-shadow 0.2s;
@@ -3097,32 +2995,32 @@ body[data-type="buy"] > header > .content > .titleCard > .content > .price > p, 
 }
 
 body[data-type="buy"] > main > .content > div.right > section#actions > div.card {
-  -webkit-box-shadow: 0 5px 10px -5px rgba(65, 14, 238, 0.2);
-          box-shadow: 0 5px 10px -5px rgba(65, 14, 238, 0.2);
+  -webkit-box-shadow: 0 5px 10px -5px rgba(26, 26, 29, 0.2);
+          box-shadow: 0 5px 10px -5px rgba(26, 26, 29, 0.2);
 }
 
 body[data-type="buy"] > main > .content > div.right > section#actions > div.card.moving {
-  -webkit-box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5);
-          box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5);
+  -webkit-box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5);
+          box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5);
 }
 
 body[data-type="rent"] > header > .content > .titleCard {
-  -webkit-box-shadow: 0 18px 30px -12px rgba(65, 14, 238, 0.5);
-          box-shadow: 0 18px 30px -12px rgba(65, 14, 238, 0.5);
+  -webkit-box-shadow: 0 18px 30px -12px rgba(26, 26, 29, 0.5);
+          box-shadow: 0 18px 30px -12px rgba(26, 26, 29, 0.5);
 }
 
 body[data-type="rent"] > header > .content > .titleCard > .content > .price > p, body[data-type="rent"] > header > .content > .titleCard > .content > .title > p {
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 body[data-type="rent"] > main > .content > .right > section#actions > .card {
-  -webkit-box-shadow: 0 5px 10px -5px rgba(65, 14, 238, 0.2);
-          box-shadow: 0 5px 10px -5px rgba(65, 14, 238, 0.2);
+  -webkit-box-shadow: 0 5px 10px -5px rgba(26, 26, 29, 0.2);
+          box-shadow: 0 5px 10px -5px rgba(26, 26, 29, 0.2);
 }
 
 body[data-type="rent"] > main > .content > .right > section#actions > .card.moving {
-  -webkit-box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5);
-          box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5);
+  -webkit-box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5);
+          box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5);
 }
 
 body > nav > .nav-content > .nav-back {
@@ -3143,7 +3041,7 @@ body > nav > .nav-content > .nav-back > .icon {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 4px;
-  background: #410eee;
+  background: #1a1a1d;
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
   cursor: pointer;
@@ -3155,7 +3053,7 @@ body > nav > .nav-content > .nav-back > .icon > i {
 }
 
 body > nav > .nav-content > .nav-back > .icon:hover, body > nav > .nav-content > .nav-back > .icon:active {
-  background: #340bbe;
+  background: #020202;
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
 }
@@ -3409,7 +3307,7 @@ body main > .content > .left section#description > .content.about > .address {
 }
 
 body main > .content > .left section#description > .content.about > .address > i {
-  color: #410eee;
+  color: #1a1a1d;
   font-size: 14pt;
   margin-right: 10px;
 }
@@ -3418,7 +3316,7 @@ body main > .content > .left section#description > .content.about > .address > p
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  color: #410eee;
+  color: #1a1a1d;
   font-weight: 400;
   font-family: "Ubuntu", "Lato", sans-serif;
   font-size: 12pt;
@@ -3607,23 +3505,23 @@ body main > .content > .right > section#actions > .card > .content > .main > .de
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]), body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]), body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]), body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]), body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]), body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]), body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]) {
   background: transparent;
-  border: 1px solid #410eee;
+  border: 1px solid #1a1a1d;
 }
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]) .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]) .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]) .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]) .loader i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]) .loader i {
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]) i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]) i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]) i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]) i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]) i {
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]) span, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]) span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]) span, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]) span, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]) span {
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):hover, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):hover, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):active, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):active, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):active, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):active, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):active, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):active, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):active, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):focus, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):focus, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):focus, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):focus, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):focus, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):focus, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):focus {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):hover i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):hover i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):hover span, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):hover span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):hover .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):active i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):active i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):active span, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):active span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):active .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):focus i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):focus i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):focus span, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):focus span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary:not([data-bookmark="true"]):focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary:not([data-bookmark="true"]):focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray:not([data-bookmark="true"]):focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline:not([data-bookmark="true"]):focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):focus .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]):focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient:not([data-bookmark="true"]):focus .loader i {
@@ -3635,7 +3533,7 @@ body main > .content > .right > section#actions > .card > .content > .main > .bu
 }
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"], body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"], body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"], body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"], body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"], body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"], body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"] i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"] i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"] i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"] i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"] i, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] i {
@@ -3648,7 +3546,7 @@ body main > .content > .right > section#actions > .card > .content > .main > .bu
 }
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:hover, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:hover, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:hover, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:active, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:active, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:active, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:active, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:active, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:active, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:active, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:focus, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:focus, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:focus, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:focus, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:focus, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:focus, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:focus {
-  background: #3b0ed8;
+  background: #c3073f;
 }
 
 body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:hover i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:hover i, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:hover i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:hover span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:hover span, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:hover span, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:hover .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:hover .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:active i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:active i, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:active i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:active span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:active span, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:active span, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:active .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:active .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:focus i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:focus i, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:focus i, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:focus span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:focus span, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:focus span, body main > .content > .right > section#actions > .card > .content > .main > .buttonPrimary[data-bookmark="true"]:focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonSecondary[data-bookmark="true"]:focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGray[data-bookmark="true"]:focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonOutline[data-bookmark="true"]:focus .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .buttonGradient[data-bookmark="true"]:focus .loader i, body main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"]:focus .loader i {
@@ -3749,7 +3647,7 @@ body main section#map-section > .content .mapContent #floating-panel > div.close
 body main section#map-section > .content .mapContent #floating-panel > div span {
   min-width: 90px;
   font-size: 10pt;
-  color: #410eee;
+  color: #1a1a1d;
   text-align: center;
   font-family: "Ubuntu", "Lato", sans-serif;
 }
@@ -3842,23 +3740,23 @@ body main section#price > .content > .actions > *:first-of-type {
 
 body main section#price > .content > .actions .buttonPrimary, body main section#price > .content > .actions .buttonSecondary, body main section#price > .content > .actions .buttonGray, body main section#price > .content > .actions .buttonOutline, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]), body main section#price > .content > .actions .button, body main section#price > .content > .actions .buttonGradient, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] {
   background: transparent;
-  border: 1px solid #410eee;
+  border: 1px solid #1a1a1d;
 }
 
 body main section#price > .content > .actions .buttonPrimary .loader i, body main section#price > .content > .actions .buttonSecondary .loader i, body main section#price > .content > .actions .buttonGray .loader i, body main section#price > .content > .actions .buttonOutline .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) .loader i, body main section#price > .content > .actions .button .loader i, body main section#price > .content > .actions .buttonGradient .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] .loader i {
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 body main section#price > .content > .actions .buttonPrimary i, body main section#price > .content > .actions .buttonSecondary i, body main section#price > .content > .actions .buttonGray i, body main section#price > .content > .actions .buttonOutline i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button i, body main section#price > .content > .actions .buttonGradient i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] i {
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 body main section#price > .content > .actions .buttonPrimary span, body main section#price > .content > .actions .buttonSecondary span, body main section#price > .content > .actions .buttonGray span, body main section#price > .content > .actions .buttonOutline span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button span, body main section#price > .content > .actions .buttonGradient span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button[data-bookmark="true"] span {
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 body main section#price > .content > .actions .buttonPrimary:hover, body main section#price > .content > .actions .buttonSecondary:hover, body main section#price > .content > .actions .buttonGray:hover, body main section#price > .content > .actions .buttonOutline:hover, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]), body main section#price > .content > .actions .button:hover, body main section#price > .content > .actions .buttonGradient:hover, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"], body main section#price > .content > .actions .buttonPrimary:active, body main section#price > .content > .actions .buttonSecondary:active, body main section#price > .content > .actions .buttonGray:active, body main section#price > .content > .actions .buttonOutline:active, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]), body main section#price > .content > .actions .button:active, body main section#price > .content > .actions .buttonGradient:active, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"], body main section#price > .content > .actions .buttonPrimary:focus, body main section#price > .content > .actions .buttonSecondary:focus, body main section#price > .content > .actions .buttonGray:focus, body main section#price > .content > .actions .buttonOutline:focus, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]), body main section#price > .content > .actions .button:focus, body main section#price > .content > .actions .buttonGradient:focus, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"] {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 body main section#price > .content > .actions .buttonPrimary:hover i, body main section#price > .content > .actions .buttonSecondary:hover i, body main section#price > .content > .actions .buttonGray:hover i, body main section#price > .content > .actions .buttonOutline:hover i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button:hover i, body main section#price > .content > .actions .buttonGradient:hover i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"] i, body main section#price > .content > .actions .buttonPrimary:hover span, body main section#price > .content > .actions .buttonSecondary:hover span, body main section#price > .content > .actions .buttonGray:hover span, body main section#price > .content > .actions .buttonOutline:hover span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button:hover span, body main section#price > .content > .actions .buttonGradient:hover span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"] span, body main section#price > .content > .actions .buttonPrimary:hover .loader i, body main section#price > .content > .actions .buttonSecondary:hover .loader i, body main section#price > .content > .actions .buttonGray:hover .loader i, body main section#price > .content > .actions .buttonOutline:hover .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:hover:not([data-bookmark="true"]) .loader i, body main section#price > .content > .actions .button:hover .loader i, body main section#price > .content > .actions .buttonGradient:hover .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:hover[data-bookmark="true"] .loader i, body main section#price > .content > .actions .buttonPrimary:active i, body main section#price > .content > .actions .buttonSecondary:active i, body main section#price > .content > .actions .buttonGray:active i, body main section#price > .content > .actions .buttonOutline:active i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button:active i, body main section#price > .content > .actions .buttonGradient:active i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"] i, body main section#price > .content > .actions .buttonPrimary:active span, body main section#price > .content > .actions .buttonSecondary:active span, body main section#price > .content > .actions .buttonGray:active span, body main section#price > .content > .actions .buttonOutline:active span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button:active span, body main section#price > .content > .actions .buttonGradient:active span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"] span, body main section#price > .content > .actions .buttonPrimary:active .loader i, body main section#price > .content > .actions .buttonSecondary:active .loader i, body main section#price > .content > .actions .buttonGray:active .loader i, body main section#price > .content > .actions .buttonOutline:active .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:active:not([data-bookmark="true"]) .loader i, body main section#price > .content > .actions .button:active .loader i, body main section#price > .content > .actions .buttonGradient:active .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:active[data-bookmark="true"] .loader i, body main section#price > .content > .actions .buttonPrimary:focus i, body main section#price > .content > .actions .buttonSecondary:focus i, body main section#price > .content > .actions .buttonGray:focus i, body main section#price > .content > .actions .buttonOutline:focus i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]) i, body main section#price > .content > .actions .button:focus i, body main section#price > .content > .actions .buttonGradient:focus i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"] i, body main section#price > .content > .actions .buttonPrimary:focus span, body main section#price > .content > .actions .buttonSecondary:focus span, body main section#price > .content > .actions .buttonGray:focus span, body main section#price > .content > .actions .buttonOutline:focus span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]) span, body main section#price > .content > .actions .button:focus span, body main section#price > .content > .actions .buttonGradient:focus span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"] span, body main section#price > .content > .actions .buttonPrimary:focus .loader i, body main section#price > .content > .actions .buttonSecondary:focus .loader i, body main section#price > .content > .actions .buttonGray:focus .loader i, body main section#price > .content > .actions .buttonOutline:focus .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:focus:not([data-bookmark="true"]) .loader i, body main section#price > .content > .actions .button:focus .loader i, body main section#price > .content > .actions .buttonGradient:focus .loader i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .button:focus[data-bookmark="true"] .loader i {
@@ -3866,7 +3764,7 @@ body main section#price > .content > .actions .buttonPrimary:hover i, body main 
 }
 
 body main section#price > .content > .actions .active.buttonPrimary, body main section#price > .content > .actions .active.buttonSecondary, body main section#price > .content > .actions .active.buttonGray, body main section#price > .content > .actions .active.buttonOutline, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .active.button:not([data-bookmark="true"]), body main section#price > .content > .actions .active.button, body main section#price > .content > .actions .active.buttonGradient, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .active.button[data-bookmark="true"] {
-  background: #410eee;
+  background: #1a1a1d;
 }
 
 body main section#price > .content > .actions .active.buttonPrimary span, body main section#price > .content > .actions .active.buttonSecondary span, body main section#price > .content > .actions .active.buttonGray span, body main section#price > .content > .actions .active.buttonOutline span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .active.button:not([data-bookmark="true"]) span, body main section#price > .content > .actions .active.button span, body main section#price > .content > .actions .active.buttonGradient span, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .active.button[data-bookmark="true"] span, body main section#price > .content > .actions .active.buttonPrimary i, body main section#price > .content > .actions .active.buttonSecondary i, body main section#price > .content > .actions .active.buttonGray i, body main section#price > .content > .actions .active.buttonOutline i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .active.button:not([data-bookmark="true"]) i, body main section#price > .content > .actions .active.button i, body main section#price > .content > .actions .active.buttonGradient i, body main section#price > .content > .actions main > .content > .right > section#actions > .card > .content > .main > .active.button[data-bookmark="true"] i {
@@ -3933,7 +3831,7 @@ body main section#similar > .content header h2 {
 body main section#similar > .content header h2 span {
   font-weight: 600;
   font-family: "Ubuntu", "Lato", sans-serif;
-  color: #410eee;
+  color: #1a1a1d;
 }
 
 body main section#similar > .content header p {
@@ -3976,7 +3874,7 @@ body main section#similar > .content header .arrows .action a {
 }
 
 body main section#similar > .content header .arrows .action a span {
-  color: #410eee;
+  color: #1a1a1d;
   font-size: 11pt;
   text-align: center;
   font-weight: 500;
@@ -4075,27 +3973,27 @@ body main section#similar > .content-outside .slider::-webkit-scrollbar {
     color: #7ed321;
   }
   body[data-type="buy"] > main > .content > .right > section#actions > .card {
-    -webkit-box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5) !important;
-            box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5) !important;
+    -webkit-box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5) !important;
+            box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5) !important;
   }
   body[data-type="buy"] > main > .content > .right > section#actions > .card.moving {
-    -webkit-box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5) !important;
-            box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5) !important;
+    -webkit-box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5) !important;
+            box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5) !important;
   }
   body[data-type="rent"] > header > .content > .titleCard {
-    -webkit-box-shadow: 0 18px 30px -12px rgba(65, 14, 238, 0.5);
-            box-shadow: 0 18px 30px -12px rgba(65, 14, 238, 0.5);
+    -webkit-box-shadow: 0 18px 30px -12px rgba(26, 26, 29, 0.5);
+            box-shadow: 0 18px 30px -12px rgba(26, 26, 29, 0.5);
   }
   body[data-type="rent"] > header > .content > .titleCard > .content > .price > p, body[data-type="rent"] > header > .content > .titleCard > .content > .title > p {
-    color: #410eee;
+    color: #1a1a1d;
   }
   body[data-type="rent"] > main > .content > .right > section#actions > .card {
-    -webkit-box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5) !important;
-            box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5) !important;
+    -webkit-box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5) !important;
+            box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5) !important;
   }
   body[data-type="rent"] > main > .content > .right > section#actions > .card.moving {
-    -webkit-box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5) !important;
-            box-shadow: 0 10px 30px -16px rgba(65, 14, 238, 0.5) !important;
+    -webkit-box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5) !important;
+            box-shadow: 0 10px 30px -16px rgba(26, 26, 29, 0.5) !important;
   }
   body main {
     width: 100%;

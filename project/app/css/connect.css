@@ -2137,6 +2137,13 @@ body nav {
   z-index: 100;
 }
 
+body nav .nav-spacer {
+  height: 1px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 body nav .nav-content {
   height: 100%;
   max-width: calc(1160px - 2 * 20px);
@@ -2643,6 +2650,12 @@ body footer > .content > div.company span {
 }
 
 @media all and (max-width: 992px) {
+  body.menu-active nav .nav-content .nav-spacer {
+    width: 70px;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+  }
   body.menu-active nav .nav-content .nav-logo::before {
     content: "\2715";
   }
@@ -2663,6 +2676,12 @@ body footer > .content > div.company span {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  body nav .nav-content .nav-spacer {
+    width: 70px;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
   }
   body nav .nav-content .nav-logo {
     height: 100%;
@@ -2787,13 +2806,13 @@ body footer > .content > div.company span {
         -ms-flex-align: center;
             align-items: center;
     margin: 0;
-    left: -90%;
+    left: -95%;
     right: 0;
     top: 0;
     bottom: 0;
     height: 100%;
     padding: 170px 0 0;
-    width: 90%;
+    width: 95%;
     background: #1a1a1d;
     -webkit-box-shadow: 0 5px 30px 0 rgba(90, 92, 107, 0.07), 0 2px 9px 0 rgba(90, 92, 107, 0.08);
             box-shadow: 0 5px 30px 0 rgba(90, 92, 107, 0.07), 0 2px 9px 0 rgba(90, 92, 107, 0.08);
@@ -3029,6 +3048,13 @@ body header nav {
   position: relative;
   top: 0;
   z-index: 100;
+}
+
+body header nav .nav-separator {
+  height: 1px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 body header nav .nav-content {

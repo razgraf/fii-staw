@@ -1,5 +1,5 @@
 "use strict";
-const { RESOURCES } = require("./constants");
+const { RESOURCES } = require("../constants");
 
 const AWS = require("aws-sdk");
 const S3 = new AWS.S3();
