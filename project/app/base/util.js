@@ -1,6 +1,6 @@
 "use strict";
 
-import Listing from "../js/model/Listing.js";
+import { STORE_KEYS } from "./config.js";
 
 class ClassHelper {
   constructor() {}
@@ -163,7 +163,7 @@ class VanLoading {
         .querySelector("body")
         .insertAdjacentHTML(
           "afterbegin",
-          `<div class="loading-block"><div class="content"><div class="icon"><i class="material-icons-round">account_tree</i></div></div></div>`
+          `<div class="loading-block active"><div class="content"><div class="icon"><i class="material-icons-round">account_tree</i></div></div></div>`
         );
       block = document.querySelector(".loading-block");
     } else {
@@ -250,23 +250,13 @@ class Structure {
       });
 
     let name = document.querySelector(
-      "nav > .nav-content > .nav-account > .nav-account-text > span"
+      "nav li.nav-menu-item > a.container[href='account.html'] span"
     );
-    if (!ClassHelper.isEmpty(name)) {
-      if (
-        !ClassHelper.isEmpty(API) &&
-        !ClassHelper.isEmpty(API["USER"]) &&
-        !ClassHelper.isEmpty(API["USER"]["firstName"])
-      ) {
-        name.innerText = API["USER"]["firstName"];
-        document.querySelector("nav > .nav-content > .nav-account").href =
-          "./account";
-      } else {
-        name.innerText = "Visitor";
-        document.querySelector("nav > .nav-content > .nav-account").href =
-          "./login";
-      }
-    }
+
+    console.log(name, Store.get(STORE_KEYS.USERNAME));
+
+    if (name && !Store.isEmpty(STORE_KEYS.USERNAME))
+      name.innerText = `@${Store.get(STORE_KEYS.USERNAME)}'s Keys`;
   }
 }
 
@@ -283,7 +273,7 @@ class Alert {
   static showAlert(
     text,
     type = window.ALERT_TYPE_FAILURE,
-    timeout = 1400,
+    timeout = 3000,
     callback = () => {}
   ) {
     window.ALERT_INDEX++;
@@ -326,8 +316,11 @@ class Alert {
     }, 100);
 
     setTimeout(function() {
-      element.remove();
-      if (callback !== null && typeof callback === "function") callback();
+      element.classList.remove("show");
+      setTimeout(() => {
+        element.remove();
+        if (callback !== null && typeof callback === "function") callback();
+      }, 350);
     }, timeout);
   }
 }
@@ -349,7 +342,7 @@ class ButtonHelper {
       if (!element.querySelector(".loader")) {
         element.insertAdjacentHTML(
           "beforeend",
-          "<div class='loader'><i class='material-icons'>autorenew</i></div>"
+          "<div class='loader' style='position:relative; right:0;'><span style='padding-left: 5px'> ...</span></div>"
         );
       }
     } else {
@@ -387,4 +380,46 @@ class ButtonHelper {
   }
 }
 
-export { Alert, ClassHelper, Slider, ButtonHelper, VanLoading, Structure };
+class Store {
+  static get(key) {
+    return window.localStorage.getItem(key);
+  }
+
+  static set(key, value) {
+    window.localStorage.setItem(key, value);
+  }
+
+  static isEmpty(key) {
+    return ClassHelper.isEmpty(window.localStorage.getItem(key));
+  }
+
+  static remove(key) {
+    window.localStorage.removeItem(key);
+  }
+
+  static clean() {
+    window.localStorage.clear();
+  }
+
+  static panic(location = "/") {
+    Store.clean();
+    Alert.showAlert(
+      "Your session expired. Please connect again to the platform.",
+      window.ALERT_TYPE_FAILURE,
+      2000,
+      () => {
+        if (location) window.location.href = location;
+      }
+    );
+  }
+}
+
+export {
+  Alert,
+  ClassHelper,
+  Slider,
+  ButtonHelper,
+  VanLoading,
+  Structure,
+  Store
+};

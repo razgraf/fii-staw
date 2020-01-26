@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FrIC RGABIB| Connect</title>
+    <title>FrIC | Connect</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"
@@ -33,14 +33,9 @@
           <div class="nav-separator"></div>
           <menu class="nav-menu">
             <li class="nav-menu-item">
-              <a class="container" href="./"
-                ><i class="material-icons-round">public</i
-                ><span>Browse</span></a
-              >
-            </li>
-            <li class="nav-menu-item">
-              <a class="container" href="build"
-                ><i class="material-icons-round">build</i><span>Build</span></a
+              <a class="container" href="./connect.html?login"
+                ><i class="material-icons-round">emoji_objects</i
+                ><span>Connect</span></a
               >
             </li>
             <li class="nav-menu-item">
@@ -82,7 +77,7 @@
                   <input
                     id="register-username"
                     type="text"
-                    placeholder="@johnconstantine"
+                    placeholder="johnconstantine"
                   />
                   <p>Username</p>
                   <label for="register-username"></label>
@@ -91,7 +86,7 @@
                 <div class="input" style="margin-bottom: 15px">
                   <input
                     id="register-email"
-                    type="text"
+                    type="email"
                     placeholder="john.constantine@gmail.com"
                   />
                   <p>Email</p>
@@ -129,12 +124,12 @@
               <div class="main">
                 <div class="input" style="margin-bottom: 15px">
                   <input
-                    id="login-username"
-                    type="text"
-                    placeholder="@johnconstantine"
+                    id="login-email"
+                    type="email"
+                    placeholder="john.constantine@gmail.com"
                   />
-                  <p>Username</p>
-                  <label for="login-username"></label>
+                  <p>Email</p>
+                  <label for="login-email"></label>
                 </div>
 
                 <div class="input">
@@ -172,7 +167,6 @@
       </div>
     </footer>
 
-    <script src="base/config.js"></script>
     <script type="module" src="js/connect.js"></script>
   </body>
 </html>

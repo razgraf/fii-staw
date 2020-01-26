@@ -1,9 +1,20 @@
 "use strict";
+const {
+  FRACTAL_DEFINITIONS,
+  HTTP_STATUS,
+  ERRORS,
+  Generator
+} = require("../constants");
 
+const Bcrypt = require("bcryptjs");
+
+const { createCanvas } = require("canvas");
+const { t: typy } = require("typy");
+const stringify = require("json-stable-stringify");
 const Image = require("./Image");
 const Networking = require("./Networking");
 /**
- * @typedef {Object} Definition - Parameters that will describe rules and attributes for the soon-to-be generated
+ * @typedef {Object} Definition - Parameters that will describe rules and attributes for the soon-to-be computed
  * @property {number} iterations - e.g. 3
  * @property {Object} start
  * @property {string} start.symbol - start symbol for the grammar e.g. "X"
@@ -23,10 +34,74 @@ class Fractal {
     this.uuid = null;
     this.id = null;
     this.createdAt = null;
+    this.userId = null;
   }
 
   extract() {
     return this.canvas.toDataURL();
+  }
+
+  static async generate({ definition, userId, name = "Fractal" }) {
+    if (
+      typy(definition).isFalsy ||
+      typy(definition, "iterations").isFalsy ||
+      typy(definition, "start").isFalsy ||
+      typy(definition, "start.symbol").isFalsy ||
+      typy(definition, "start.x").isFalsy ||
+      typy(definition, "start.y").isFalsy ||
+      typy(definition, "rules").isFalsy ||
+      typy(definition, "angle").isFalsy
+    )
+      throw new Error(ERRORS.INVALID_FRACTAL_DEFINITION);
+
+    try {
+      const height = typy(definition, "height").isTruthy
+        ? parseInt(definition["height"])
+        : 800;
+      const width = typy(definition, "width").isTruthy
+        ? parseInt(definition["width"])
+        : 800;
+
+      const canvas = createCanvas(width, height);
+
+      const rules = typy(definition, "rules").safeArray; // TODO work on generalizing rules
+
+      const parsedDefinition = {
+        iterations: parseInt(definition.iterations),
+        start: {
+          symbol: String(definition.start.symbol),
+          x: parseInt(definition.start.x),
+          y: parseInt(definition.start.y)
+        },
+        rules,
+        angle: parseInt(definition.angle)
+      };
+
+      console.log(parsedDefinition);
+
+      const fractal = new Fractal(canvas);
+      fractal.userId = userId;
+      fractal.name = name;
+
+      const isCreated = await fractal.create("lSystem", parsedDefinition);
+      if (!isCreated) throw new Error("Couldn't create fractal.");
+
+      console.log("created");
+
+      const isInDB = await fractal.saveToDatabase();
+      if (!isInDB) throw new Error("Couldn't upload fractal to bucket.");
+
+      console.log("inDatabase");
+
+      const isInBucket = await fractal.saveToBucket();
+      if (!isInBucket) throw new Error("Couldn't upload fractal to bucket.");
+
+      console.log("inS3");
+
+      return fractal;
+    } catch (e) {
+      throw e;
+    }
   }
 
   /**
@@ -72,8 +147,24 @@ class Fractal {
   }
 
   async saveToDatabase() {
+    const rules = this.definition.rules;
+    rules.sort((a, b) => {
+      return a.left < b.left;
+    });
+
+    const hashed = await Bcrypt.hash(
+      stringify({
+        ...this.definition,
+        rules
+      }),
+      1
+    );
+
     const inserted = await Networking.insertFractalIntoDB({
-      definition: JSON.stringify(this.definition)
+      name: this.name,
+      definition: JSON.stringify(this.definition),
+      userId: this.userId,
+      hash: hashed
     });
 
     console.log(inserted);
@@ -116,7 +207,7 @@ class Fractal {
     };
 
     for (let i = 0; i < iterations; ++i) {
-      structure = this.generate(structure, rules);
+      structure = this.compute(structure, rules);
       length /= 2;
     }
 
@@ -166,7 +257,7 @@ class Fractal {
    * @param {Array<Object>} rules  - e.g. [{left : "X", right : "X+YF+"}]
    */
 
-  generate(structure, rules) {
+  compute(structure, rules) {
     var final = "";
     var found = 0;
     for (let symbol of structure) {

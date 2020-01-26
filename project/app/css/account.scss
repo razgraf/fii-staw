@@ -171,14 +171,39 @@ body {
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            margin-bottom: 40px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+
+            @keyframes showKey {
+              0% {
+                opacity: 0;
+                transform: translateY(-40px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0px);
+              }
+            }
 
             & > .key {
               margin-bottom: 20px;
               color: $colorSecondary;
               font-weight: 600;
+
+              &[data-new="true"] {
+                animation-name: showKey;
+                animation-duration: 500ms;
+                animation-timing-function: ease-in;
+                animation-fill-mode: forwards;
+              }
               & > span {
                 color: $colorPrimary;
+              }
+              i {
+                font-weight: 300;
+                color: #aaa;
+                font-style: normal;
               }
               &:before {
                 content: "#";
@@ -203,6 +228,10 @@ body {
               display: flex;
               justify-content: flex-start;
               align-items: center;
+              span {
+                color: $colorPrimary;
+                font-weight: 600;
+              }
             }
             & > button {
               min-height: 50px;

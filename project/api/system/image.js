@@ -6,7 +6,7 @@ const S3 = new AWS.S3();
 
 class Image {
   static async saveToBucket({ key, data }) {
-    const buffer = new Buffer(
+    const buffer = Buffer.from(
       data.replace(/^data:image\/\w+;base64,/, ""),
       "base64"
     );

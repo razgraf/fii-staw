@@ -433,9 +433,47 @@ template {
   pointer-events: none;
 }
 
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .initWithFade {
   -webkit-animation-name: fadein;
           animation-name: fadein;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
 }
@@ -443,6 +481,8 @@ template {
 .exitWithFade {
   -webkit-animation-name: fadeout;
           animation-name: fadeout;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
 }

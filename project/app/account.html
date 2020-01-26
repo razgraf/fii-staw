@@ -21,6 +21,8 @@
       href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Ubuntu:300,400,500,700&amp;subset=latin-ext"
       rel="stylesheet"
     />
+
+
   </head>
 
   <body id="body">
@@ -70,15 +72,15 @@
             <p>Register keys to be used with our library</p>
           </header>
           <div class="info">
-            <div class="key-list">
-                <p class="key">sadisadhsaidsaiudsaidiasdashdhuiash <span> - 28 queries left today</span> </p>
+            <div id="key-list" class="key-list">
+
             </div>
             <form class="box">
                 <div class="explain">
-                    <p>Each key has a quota of 300 queries per day.</p>
+                    <p><span>Generate API Key: </span>Each key has a quota of 300 queries per day.</p>
                 </div>
               
-                <button type="button" id="account-editButton" class="buttonPrimary"><span>Generate new key</span></button>
+                <button type="button" id="generateKeyButton" class="buttonSecondary"><span>Generate new key</span></button>
             </form>
         </div>
       </section>
@@ -124,7 +126,7 @@
         </div>
       </div>
     </footer>
-    <script src="base/config.js"></script>
+    
     <script type="module" src="js/account.js"></script>
   </body>
 </html>

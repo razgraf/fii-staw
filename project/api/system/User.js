@@ -1,8 +1,10 @@
 "use strict";
 
 const Bcrypt = require("bcryptjs");
+const JWT = require("jsonwebtoken");
 const { t: typy } = require("typy");
 const Networking = require("./Networking");
+const Key = require("./Key");
 
 const { ERRORS } = require("./../constants");
 
@@ -12,7 +14,7 @@ class User {
   }
 
   bind({ id, uuid, username, email, password, createdAt }) {
-    this.id = typy(id).safeString;
+    this.id = typy(id).safeNumber;
     this.uuid = typy(uuid).safeString;
     this.username = typy(username).safeString;
     this.email = typy(email).safeString;
@@ -21,14 +23,8 @@ class User {
   }
 
   static async create({ username, email, password }) {
-    if (
-      typy(username).isFalsy ||
-      typy(email).isFalsy ||
-      typy(password).isFalsy
-    ) {
-      console.error(ERRORS.INVALID_PARAMS);
+    if (typy(username).isFalsy || typy(email).isFalsy || typy(password).isFalsy)
       throw new Error(ERRORS.INVALID_PARAMS);
-    }
 
     const payload = {
       username: typy(username).safeString,
@@ -36,23 +32,86 @@ class User {
       password: typy(password).safeString
     };
 
-    if (Object.keys(payload).some(key => payload[key].length < 3)) {
-      console.error(ERRORS.INVALID_PARAMS);
-      throw new Error(ERRORS.INVALID_PARAMS);
-    }
+    const existingWithEmail = await Networking.getUserFromDB({
+      email: payload.email
+    });
+    const existingWithUsername = await Networking.getUserFromDB({
+      username: password.username
+    });
 
-    payload.password = await Bcrypt.hash(password, 5);
+    if (existingWithEmail || existingWithUsername)
+      throw new Error(ERRORS.CONFLICTING_USER);
+
+    if (Object.keys(payload).some(key => payload[key].length < 3))
+      throw new Error(ERRORS.INVALID_PARAMS);
+
+    payload.password = await Bcrypt.hash(password, 10);
 
     const result = await Networking.insertUserIntoDB(payload);
 
-    console.log(result);
+    console.error(result);
 
     if (!result) throw new Error(ERRORS.NETWORKING);
 
     return new User(result);
   }
 
-  get({ id, uuid, email, username }) {
+  static async login({ email, password }) {
+    /**
+     * Check validity of parameters
+     */
+    if (typy(email).isFalsy || typy(password).isFalsy)
+      throw new Error(ERRORS.INVALID_PARAMS);
+
+    const payload = {
+      email: typy(email).safeString,
+      password: typy(password).safeString
+    };
+
+    /**
+     * Check password integrity
+     */
+
+    const result = await Networking.getUserFromDB({ email: payload.email });
+
+    if (!result) throw new Error(ERRORS.MISSING_USER);
+
+    const match = await Bcrypt.compare(
+      payload.password,
+      typy(result, "password").safeString
+    );
+
+    if (!match) throw new Error(ERRORS.MISMATCH_USER_AUTH);
+
+    /**
+     * Get user profile and create new token/key
+     */
+
+    const user = new User(result);
+
+    const key = await Key.create({ userId: user.id, platform: 1 });
+
+    if (!key) throw new Error(ERRORS.NETWORKING);
+
+    /**
+     * Wrap in JWT and send it back
+     */
+
+    const jToken = JWT.sign(
+      {
+        data: {
+          userUuid: user.uuid,
+          token: key.token
+        }
+      },
+      process.env.S_JWT_SECRET,
+      { expiresIn: 2 * 24 * 60 * 60 }
+    );
+
+    return jToken;
+  }
+
+  static async get({ id, uuid, email, username }) {
     if (
       typy(id).isFalsy &&
       typy(uuid).isFalsy &&
@@ -68,34 +127,113 @@ class User {
       username: typy(username).safeString
     };
 
-    const result = Networking.getUserFromDB(payload);
+    const result = await Networking.getUserFromDB({ ...payload });
 
-    if (!result) throw new Error(ERRORS.MISSING_USER);
+    if (!result) throw new Error(ERRORS.INVALID_CREDENTIALS);
 
     return new User(result);
   }
 
-  static async login({ email, password }) {
-    if (typy(email).isFalsy || typy(password).isFalsy)
-      throw new Error(ERRORS.INVALID_PARAMS);
+  static async validate({ source = "platform", ...payload }) {
+    if (source === "platform") return User.validateForPlatform(payload);
+    else return User.validateForLibrary(payload);
+  }
 
-    const payload = {
+  static async validateForPlatform({ token }) {
+    if (typy(token).isFalsy) {
+      console.error("Missing parameteres for token validation");
+      throw new Error(ERRORS.FORBIDDEN);
+    }
+
+    const decoded = JWT.verify(token, process.env.S_JWT_SECRET);
+
+    console.log("Decoded:", decoded);
+
+    if (!decoded) {
+      console.error("Token may have been tempered with.");
+      throw new Error(ERRORS.FORBIDDEN);
+    }
+
+    const { data } = decoded;
+
+    const match = await Networking.matchUserKeyFromDB({ ...data });
+
+    if (!match) {
+      console.error("Mismatch at user-key level.");
+      throw new Error(ERRORS.FORBIDDEN);
+    }
+
+    const user = User.get({ uuid: data.userUuid });
+
+    return user;
+  }
+
+  static async validateForLibrary({ email, token }) {
+    if (typy(token).isFalsy || typy(email).isFalsy) {
+      console.error("Missing parameteres for token validation");
+      throw new Error(ERRORS.INVALID_PARAMS);
+    }
+
+    const data = {
       email: typy(email).safeString,
-      password: typy(password).safeString
+      token: typy(token).safeString
     };
 
-    const result = Networking.getUserFromDB({ email: payload.email });
+    const user = await User.get({ email });
 
-    if (!result) throw new Error(ERRORS.MISSING_USER);
+    if (!user) {
+      console.error("User does not exist.");
+      throw new Error(ERRORS.MISSING_USER);
+    }
 
-    const match = await Bcrypt.compare(
-      payload.password,
-      typy(result, "password").safeString
-    );
+    console.log("User:", user);
 
-    if (!match) throw new Error(ERRORS.MISMATCH_USER_AUTH);
+    const result = await Networking.getLibraryKeyFromDB({
+      userId: user.id,
+      token: data.token
+    });
 
-    return new User(result);
+    if (!result) {
+      console.error("Mismatch at library user-key level.");
+      throw new Error(ERRORS.FORBIDDEN);
+    }
+
+    const key = new Key(result);
+
+    if (key.quota <= 0) {
+      console.error("Mismatch at library user-key level.");
+      throw new Error(ERRORS.EXPIRED_KEY);
+    }
+
+    return user;
+  }
+
+  static async spend({ userId, token }) {
+    if (typy(userId).isFalsy || typy(token).isFalsy) {
+      console.error("Missing parameteres for token validation");
+      throw new Error(ERRORS.INVALID_PARAMS);
+    }
+
+    const key = await Networking.getLibraryKeyFromDB({
+      userId,
+      token
+    });
+
+    if (!key) {
+      console.error("Key missing at retrieve.");
+      throw new Error(ERRORS.FORBIDDEN);
+    }
+
+    const spendKey = await Networking.spendKeyQuotaIntoDB({
+      id: key.id
+    });
+
+    if (!spendKey) {
+      console.error("Key missing at spend.");
+      throw new Error(ERRORS.NETWORKING);
+    }
+
+    return spendKey.quota;
   }
 }
 

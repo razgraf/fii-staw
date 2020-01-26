@@ -405,7 +405,69 @@ template {
   -o-transition: all 0.1s;
 }
 
-.transition02, .button i, .buttonPrimary i, body > header .content > .card .actions .button-build i, .buttonSecondary i, .buttonGray i, .buttonOutline i, .buttonGradient i, .button span, .buttonPrimary span, body > header .content > .card .actions .button-build span, .buttonSecondary span, .buttonGray span, .buttonOutline span, .buttonGradient span, .button, .buttonPrimary, body > header .content > .card .actions .button-build, .buttonSecondary, .buttonGray, .buttonOutline, .buttonGradient, .button:hover, .buttonPrimary:hover, body > header .content > .card .actions .button-build:hover, .buttonSecondary:hover, .buttonGray:hover, .buttonOutline:hover, .buttonGradient:hover, .button:active, .buttonPrimary:active, body > header .content > .card .actions .button-build:active, .buttonSecondary:active, .buttonGray:active, .buttonOutline:active, .buttonGradient:active, .button:focus, .buttonPrimary:focus, body > header .content > .card .actions .button-build:focus, .buttonSecondary:focus, .buttonGray:focus, .buttonOutline:focus, .buttonGradient:focus, .button:hover i, .buttonPrimary:hover i, body > header .content > .card .actions .button-build:hover i, .buttonSecondary:hover i, .buttonGray:hover i, .buttonOutline:hover i, .buttonGradient:hover i, .button:hover span, .buttonPrimary:hover span, body > header .content > .card .actions .button-build:hover span, .buttonSecondary:hover span, .buttonGray:hover span, .buttonOutline:hover span, .buttonGradient:hover span, .button:active i, .buttonPrimary:active i, body > header .content > .card .actions .button-build:active i, .buttonSecondary:active i, .buttonGray:active i, .buttonOutline:active i, .buttonGradient:active i, .button:active span, .buttonPrimary:active span, body > header .content > .card .actions .button-build:active span, .buttonSecondary:active span, .buttonGray:active span, .buttonOutline:active span, .buttonGradient:active span, .button:focus i, .buttonPrimary:focus i, body > header .content > .card .actions .button-build:focus i, .buttonSecondary:focus i, .buttonGray:focus i, .buttonOutline:focus i, .buttonGradient:focus i, .button:focus span, .buttonPrimary:focus span, body > header .content > .card .actions .button-build:focus span, .buttonSecondary:focus span, .buttonGray:focus span, .buttonOutline:focus span, .buttonGradient:focus span, .buttonMini i, .buttonMiniPrimary i, .buttonMiniSecondary i, .buttonMiniGray i, .buttonMiniOutline i, .upload .upload-action .upload-button i, .upload .upload-action .upload-button-remove i, .buttonMiniGradient i, .buttonMini span, .buttonMiniPrimary span, .buttonMiniSecondary span, .buttonMiniGray span, .buttonMiniOutline span, .upload .upload-action .upload-button span, .upload .upload-action .upload-button-remove span, .buttonMiniGradient span, .buttonMini, .buttonMiniPrimary, .buttonMiniSecondary, .buttonMiniGray, .buttonMiniOutline, .upload .upload-action .upload-button, .upload .upload-action .upload-button-remove, .buttonMiniGradient, .buttonMini:hover, .buttonMiniPrimary:hover, .buttonMiniSecondary:hover, .buttonMiniGray:hover, .buttonMiniOutline:hover, .upload .upload-action .upload-button:hover, .upload .upload-action .upload-button-remove:hover, .buttonMiniGradient:hover, .buttonMini:active, .buttonMiniPrimary:active, .buttonMiniSecondary:active, .buttonMiniGray:active, .buttonMiniOutline:active, .upload .upload-action .upload-button:active, .upload .upload-action .upload-button-remove:active, .buttonMiniGradient:active, .buttonMini:focus, .buttonMiniPrimary:focus, .buttonMiniSecondary:focus, .buttonMiniGray:focus, .buttonMiniOutline:focus, .upload .upload-action .upload-button:focus, .upload .upload-action .upload-button-remove:focus, .buttonMiniGradient:focus, .buttonMini:hover i, .buttonMiniPrimary:hover i, .buttonMiniSecondary:hover i, .buttonMiniGray:hover i, .buttonMiniOutline:hover i, .upload .upload-action .upload-button:hover i, .upload .upload-action .upload-button-remove:hover i, .buttonMiniGradient:hover i, .buttonMini:hover span, .buttonMiniPrimary:hover span, .buttonMiniSecondary:hover span, .buttonMiniGray:hover span, .buttonMiniOutline:hover span, .upload .upload-action .upload-button:hover span, .upload .upload-action .upload-button-remove:hover span, .buttonMiniGradient:hover span, .buttonMini:active i, .buttonMiniPrimary:active i, .buttonMiniSecondary:active i, .buttonMiniGray:active i, .buttonMiniOutline:active i, .upload .upload-action .upload-button:active i, .upload .upload-action .upload-button-remove:active i, .buttonMiniGradient:active i, .buttonMini:active span, .buttonMiniPrimary:active span, .buttonMiniSecondary:active span, .buttonMiniGray:active span, .buttonMiniOutline:active span, .upload .upload-action .upload-button:active span, .upload .upload-action .upload-button-remove:active span, .buttonMiniGradient:active span, .buttonMini:focus i, .buttonMiniPrimary:focus i, .buttonMiniSecondary:focus i, .buttonMiniGray:focus i, .buttonMiniOutline:focus i, .upload .upload-action .upload-button:focus i, .upload .upload-action .upload-button-remove:focus i, .buttonMiniGradient:focus i, .buttonMini:focus span, .buttonMiniPrimary:focus span, .buttonMiniSecondary:focus span, .buttonMiniGray:focus span, .buttonMiniOutline:focus span, .upload .upload-action .upload-button:focus span, .upload .upload-action .upload-button-remove:focus span, .buttonMiniGradient:focus span, .field label, .input label, .select label, .field input:active + label, .input input:active + label, .select input:active + label, .field input:focus + label, .input input:focus + label, .select input:focus + label, .field textarea:active + label, .input textarea:active + label, .select textarea:active + label, .field textarea:focus + label, .input textarea:focus + label, .select textarea:focus + label, .input p, .input input:active ~ p, .input input:active + p, .input input:focus ~ p, .input input:focus + p, .input textarea:active ~ p, .input textarea:active + p, .input textarea:focus ~ p, .input textarea:focus + p, .upload label, .upload p, .listing-item, .listing-item > .main > .image:after, .listing-item:hover, .listing-item:hover > .main > .image:after, body nav .nav-content .nav-menu .nav-menu-item > .container, body nav .nav-content .nav-menu .nav-menu-item > .container span, body nav .nav-content .nav-menu .nav-menu-item > .container:hover, body main section#recommendations > .content header .arrows .action a, body main section#recommendations > .content header .arrows .action a:hover, body main section#recommendations > .content header .arrows .arrow, body main section#recommendations > .content header .arrows .arrow:hover, body main section#recommendations > .content header .arrows .arrow.disabled {
+.transition02, .button i, .buttonPrimary i, body > header .content > .card .actions .button-build i, .buttonSecondary i, .buttonGray i, .buttonOutline i, .buttonGradient i, .button span, .buttonPrimary span, body > header .content > .card .actions .button-build span, .buttonSecondary span, .buttonGray span, .buttonOutline span, .buttonGradient span, .button, .buttonPrimary, body > header .content > .card .actions .button-build, .buttonSecondary, .buttonGray, .buttonOutline, .buttonGradient, .button:hover, .buttonPrimary:hover, body > header .content > .card .actions .button-build:hover, .buttonSecondary:hover, .buttonGray:hover, .buttonOutline:hover, .buttonGradient:hover, .button:active, .buttonPrimary:active, body > header .content > .card .actions .button-build:active, .buttonSecondary:active, .buttonGray:active, .buttonOutline:active, .buttonGradient:active, .button:focus, .buttonPrimary:focus, body > header .content > .card .actions .button-build:focus, .buttonSecondary:focus, .buttonGray:focus, .buttonOutline:focus, .buttonGradient:focus, .button:hover i, .buttonPrimary:hover i, body > header .content > .card .actions .button-build:hover i, .buttonSecondary:hover i, .buttonGray:hover i, .buttonOutline:hover i, .buttonGradient:hover i,
+.button:hover span,
+.buttonPrimary:hover span,
+body > header .content > .card .actions .button-build:hover span,
+.buttonSecondary:hover span,
+.buttonGray:hover span,
+.buttonOutline:hover span,
+.buttonGradient:hover span, .button:active i, .buttonPrimary:active i, body > header .content > .card .actions .button-build:active i, .buttonSecondary:active i, .buttonGray:active i, .buttonOutline:active i, .buttonGradient:active i,
+.button:active span,
+.buttonPrimary:active span,
+body > header .content > .card .actions .button-build:active span,
+.buttonSecondary:active span,
+.buttonGray:active span,
+.buttonOutline:active span,
+.buttonGradient:active span, .button:focus i, .buttonPrimary:focus i, body > header .content > .card .actions .button-build:focus i, .buttonSecondary:focus i, .buttonGray:focus i, .buttonOutline:focus i, .buttonGradient:focus i,
+.button:focus span,
+.buttonPrimary:focus span,
+body > header .content > .card .actions .button-build:focus span,
+.buttonSecondary:focus span,
+.buttonGray:focus span,
+.buttonOutline:focus span,
+.buttonGradient:focus span, .buttonMini i, .buttonMiniPrimary i, .buttonMiniSecondary i, .buttonMiniGray i, .buttonMiniOutline i, .upload .upload-action .upload-button i, .upload .upload-action .upload-button-remove i, .buttonMiniGradient i, .buttonMini span, .buttonMiniPrimary span, .buttonMiniSecondary span, .buttonMiniGray span, .buttonMiniOutline span, .upload .upload-action .upload-button span, .upload .upload-action .upload-button-remove span, .buttonMiniGradient span, .buttonMini, .buttonMiniPrimary, .buttonMiniSecondary, .buttonMiniGray, .buttonMiniOutline, .upload .upload-action .upload-button, .upload .upload-action .upload-button-remove, .buttonMiniGradient, .buttonMini:hover, .buttonMiniPrimary:hover, .buttonMiniSecondary:hover, .buttonMiniGray:hover, .buttonMiniOutline:hover, .upload .upload-action .upload-button:hover, .upload .upload-action .upload-button-remove:hover, .buttonMiniGradient:hover, .buttonMini:active, .buttonMiniPrimary:active, .buttonMiniSecondary:active, .buttonMiniGray:active, .buttonMiniOutline:active, .upload .upload-action .upload-button:active, .upload .upload-action .upload-button-remove:active, .buttonMiniGradient:active, .buttonMini:focus, .buttonMiniPrimary:focus, .buttonMiniSecondary:focus, .buttonMiniGray:focus, .buttonMiniOutline:focus, .upload .upload-action .upload-button:focus, .upload .upload-action .upload-button-remove:focus, .buttonMiniGradient:focus, .buttonMini:hover i, .buttonMiniPrimary:hover i, .buttonMiniSecondary:hover i, .buttonMiniGray:hover i, .buttonMiniOutline:hover i, .upload .upload-action .upload-button:hover i, .upload .upload-action .upload-button-remove:hover i, .buttonMiniGradient:hover i,
+.buttonMini:hover span,
+.buttonMiniPrimary:hover span,
+.buttonMiniSecondary:hover span,
+.buttonMiniGray:hover span,
+.buttonMiniOutline:hover span,
+.upload .upload-action .upload-button:hover span,
+.upload .upload-action .upload-button-remove:hover span,
+.buttonMiniGradient:hover span, .buttonMini:active i, .buttonMiniPrimary:active i, .buttonMiniSecondary:active i, .buttonMiniGray:active i, .buttonMiniOutline:active i, .upload .upload-action .upload-button:active i, .upload .upload-action .upload-button-remove:active i, .buttonMiniGradient:active i,
+.buttonMini:active span,
+.buttonMiniPrimary:active span,
+.buttonMiniSecondary:active span,
+.buttonMiniGray:active span,
+.buttonMiniOutline:active span,
+.upload .upload-action .upload-button:active span,
+.upload .upload-action .upload-button-remove:active span,
+.buttonMiniGradient:active span, .buttonMini:focus i, .buttonMiniPrimary:focus i, .buttonMiniSecondary:focus i, .buttonMiniGray:focus i, .buttonMiniOutline:focus i, .upload .upload-action .upload-button:focus i, .upload .upload-action .upload-button-remove:focus i, .buttonMiniGradient:focus i,
+.buttonMini:focus span,
+.buttonMiniPrimary:focus span,
+.buttonMiniSecondary:focus span,
+.buttonMiniGray:focus span,
+.buttonMiniOutline:focus span,
+.upload .upload-action .upload-button:focus span,
+.upload .upload-action .upload-button-remove:focus span,
+.buttonMiniGradient:focus span, .field label, .input label, .select label, .field input:active + label, .input input:active + label, .select input:active + label,
+.field input:focus + label,
+.input input:focus + label,
+.select input:focus + label,
+.field textarea:active + label,
+.input textarea:active + label,
+.select textarea:active + label,
+.field textarea:focus + label,
+.input textarea:focus + label,
+.select textarea:focus + label, .input p, .input input:active ~ p,
+.input input:active + p,
+.input input:focus ~ p,
+.input input:focus + p,
+.input textarea:active ~ p,
+.input textarea:active + p,
+.input textarea:focus ~ p,
+.input textarea:focus + p, .upload label,
+.upload p, .listing-item, .listing-item > .main > .image:after, .listing-item:hover, .listing-item:hover > .main > .image:after, body nav .nav-content .nav-menu .nav-menu-item > .container, body nav .nav-content .nav-menu .nav-menu-item > .container span, body nav .nav-content .nav-menu .nav-menu-item > .container:hover, body main section#recommendations > .content header .arrows .action a, body main section#recommendations > .content header .arrows .action a:hover, body main section#recommendations > .content header .arrows .arrow, body main section#recommendations > .content header .arrows .arrow:hover, body main section#recommendations > .content header .arrows .arrow.disabled {
   transition: all 0.2s;
   -moz-transition: all 0.2s;
   -webkit-transition: all 0.2s;
@@ -750,7 +812,13 @@ STYLISH BUTTONS
   background: #e6e6e6;
 }
 
-.buttonGradient:hover i, .buttonGradient:hover span, .buttonGradient:hover .loader i, .buttonGradient:active i, .buttonGradient:active span, .buttonGradient:active .loader i, .buttonGradient:focus i, .buttonGradient:focus span, .buttonGradient:focus .loader i {
+.buttonGradient:hover i,
+.buttonGradient:hover span,
+.buttonGradient:hover .loader i, .buttonGradient:active i,
+.buttonGradient:active span,
+.buttonGradient:active .loader i, .buttonGradient:focus i,
+.buttonGradient:focus span,
+.buttonGradient:focus .loader i {
   color: #fff;
 }
 
@@ -897,11 +965,14 @@ input.default:-ms-input-placeholder {
   text-transform: uppercase;
 }
 
-.field input, .input input, .select input, .field textarea, .input textarea, .select textarea {
+.field input, .input input, .select input,
+.field textarea,
+.input textarea,
+.select textarea {
   border-radius: 5px;
   background: #ffffff;
   padding: 5px 20px;
-  border: 1px solid #E2E8EA;
+  border: 1px solid #e2e8ea;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -914,57 +985,111 @@ input.default:-ms-input-placeholder {
   outline: none;
 }
 
-.field input::-webkit-input-placeholder, .input input::-webkit-input-placeholder, .select input::-webkit-input-placeholder, .field textarea::-webkit-input-placeholder, .input textarea::-webkit-input-placeholder, .select textarea::-webkit-input-placeholder {
+.field input::-webkit-input-placeholder, .input input::-webkit-input-placeholder, .select input::-webkit-input-placeholder,
+.field textarea::-webkit-input-placeholder,
+.input textarea::-webkit-input-placeholder,
+.select textarea::-webkit-input-placeholder {
   color: #a2a7a8;
 }
 
-.field input::-moz-placeholder, .input input::-moz-placeholder, .select input::-moz-placeholder, .field textarea::-moz-placeholder, .input textarea::-moz-placeholder, .select textarea::-moz-placeholder {
+.field input::-moz-placeholder, .input input::-moz-placeholder, .select input::-moz-placeholder,
+.field textarea::-moz-placeholder,
+.input textarea::-moz-placeholder,
+.select textarea::-moz-placeholder {
   color: #a2a7a8;
 }
 
-.field input:-ms-input-placeholder, .input input:-ms-input-placeholder, .select input:-ms-input-placeholder, .field textarea:-ms-input-placeholder, .input textarea:-ms-input-placeholder, .select textarea:-ms-input-placeholder {
+.field input:-ms-input-placeholder, .input input:-ms-input-placeholder, .select input:-ms-input-placeholder,
+.field textarea:-ms-input-placeholder,
+.input textarea:-ms-input-placeholder,
+.select textarea:-ms-input-placeholder {
   color: #a2a7a8;
 }
 
-.field textarea, .input textarea, .select textarea {
+
+.field textarea,
+.input textarea,
+.select textarea {
   resize: none;
   height: 150px;
 }
 
-.field input:-webkit-autofill, .input input:-webkit-autofill, .select input:-webkit-autofill, .field textarea:-webkit-autofill, .input textarea:-webkit-autofill, .select textarea:-webkit-autofill {
+.field input:-webkit-autofill, .input input:-webkit-autofill, .select input:-webkit-autofill,
+.field textarea:-webkit-autofill,
+.input textarea:-webkit-autofill,
+.select textarea:-webkit-autofill {
   -webkit-text-fill-color: #000 !important;
   -webkit-box-shadow: 0 0 0 30px white inset !important;
   background-color: transparent !important;
 }
 
-.field input:active, .input input:active, .select input:active, .field input:focus, .input input:focus, .select input:focus, .field textarea:active, .input textarea:active, .select textarea:active, .field textarea:focus, .input textarea:focus, .select textarea:focus {
+.field input:active, .input input:active, .select input:active,
+.field input:focus,
+.input input:focus,
+.select input:focus,
+.field textarea:active,
+.input textarea:active,
+.select textarea:active,
+.field textarea:focus,
+.input textarea:focus,
+.select textarea:focus {
   border-color: #a2a7a8;
 }
 
-.field input:active + label, .input input:active + label, .select input:active + label, .field input:focus + label, .input input:focus + label, .select input:focus + label, .field textarea:active + label, .input textarea:active + label, .select textarea:active + label, .field textarea:focus + label, .input textarea:focus + label, .select textarea:focus + label {
+.field input:active + label, .input input:active + label, .select input:active + label,
+.field input:focus + label,
+.input input:focus + label,
+.select input:focus + label,
+.field textarea:active + label,
+.input textarea:active + label,
+.select textarea:active + label,
+.field textarea:focus + label,
+.input textarea:focus + label,
+.select textarea:focus + label {
   color: #8a8f90;
 }
 
-.field input.warn, .input input.warn, .select input.warn, .field textarea.warn, .input textarea.warn, .select textarea.warn {
+.field input.warn, .input input.warn, .select input.warn,
+.field textarea.warn,
+.input textarea.warn,
+.select textarea.warn {
   border-color: #f44336;
   color: #f44336;
 }
 
-.field input.warn ~ p, .input input.warn ~ p, .select input.warn ~ p, .field input.warn ~ label, .input input.warn ~ label, .select input.warn ~ label, .field textarea.warn ~ p, .input textarea.warn ~ p, .select textarea.warn ~ p, .field textarea.warn ~ label, .input textarea.warn ~ label, .select textarea.warn ~ label {
+.field input.warn ~ p, .input input.warn ~ p, .select input.warn ~ p,
+.field input.warn ~ label,
+.input input.warn ~ label,
+.select input.warn ~ label,
+.field textarea.warn ~ p,
+.input textarea.warn ~ p,
+.select textarea.warn ~ p,
+.field textarea.warn ~ label,
+.input textarea.warn ~ label,
+.select textarea.warn ~ label {
   color: #f44336;
 }
 
-.field input.warn::-webkit-input-placeholder, .input input.warn::-webkit-input-placeholder, .select input.warn::-webkit-input-placeholder, .field textarea.warn::-webkit-input-placeholder, .input textarea.warn::-webkit-input-placeholder, .select textarea.warn::-webkit-input-placeholder {
+.field input.warn::-webkit-input-placeholder, .input input.warn::-webkit-input-placeholder, .select input.warn::-webkit-input-placeholder,
+.field textarea.warn::-webkit-input-placeholder,
+.input textarea.warn::-webkit-input-placeholder,
+.select textarea.warn::-webkit-input-placeholder {
   color: #f44336;
   opacity: 0.5;
 }
 
-.field input.warn::-moz-placeholder, .input input.warn::-moz-placeholder, .select input.warn::-moz-placeholder, .field textarea.warn::-moz-placeholder, .input textarea.warn::-moz-placeholder, .select textarea.warn::-moz-placeholder {
+.field input.warn::-moz-placeholder, .input input.warn::-moz-placeholder, .select input.warn::-moz-placeholder,
+.field textarea.warn::-moz-placeholder,
+.input textarea.warn::-moz-placeholder,
+.select textarea.warn::-moz-placeholder {
   color: #f44336;
   opacity: 0.5;
 }
 
-.field input.warn:-ms-input-placeholder, .input input.warn:-ms-input-placeholder, .select input.warn:-ms-input-placeholder, .field textarea.warn:-ms-input-placeholder, .input textarea.warn:-ms-input-placeholder, .select textarea.warn:-ms-input-placeholder {
+.field input.warn:-ms-input-placeholder, .input input.warn:-ms-input-placeholder, .select input.warn:-ms-input-placeholder,
+.field textarea.warn:-ms-input-placeholder,
+.input textarea.warn:-ms-input-placeholder,
+.select textarea.warn:-ms-input-placeholder {
   color: #f44336;
   opacity: 0.5;
 }
@@ -1007,7 +1132,7 @@ Checkbox, Radio, Input, Select, ImageUpload
 
 .checkbox label:after {
   opacity: 0;
-  content: '';
+  content: "";
   position: absolute;
   width: 11.2px;
   height: 6.2px;
@@ -1036,11 +1161,11 @@ Checkbox, Radio, Input, Select, ImageUpload
   opacity: 0;
 }
 
-.checkbox input[type=checkbox]:checked + label:after {
+.checkbox input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
 
-.checkbox input[type=checkbox]:checked ~ p {
+.checkbox input[type="checkbox"]:checked ~ p {
   color: #c3073f;
 }
 
@@ -1088,7 +1213,7 @@ Checkbox, Radio, Input, Select, ImageUpload
 
 .radio label:after {
   opacity: 0;
-  content: '';
+  content: "";
   position: relative;
   width: 14px;
   height: 14px;
@@ -1112,11 +1237,11 @@ Checkbox, Radio, Input, Select, ImageUpload
   opacity: 0;
 }
 
-.radio input[type=radio]:checked + label:after {
+.radio input[type="radio"]:checked + label:after {
   opacity: 1;
 }
 
-.radio input[type=radio]:checked ~ p {
+.radio input[type="radio"]:checked ~ p {
   color: #c3073f;
 }
 
@@ -1146,15 +1271,26 @@ Checkbox, Radio, Input, Select, ImageUpload
   text-transform: uppercase;
 }
 
-.input input:active, .input input:focus, .input textarea:active, .input textarea:focus {
+.input input:active,
+.input input:focus,
+.input textarea:active,
+.input textarea:focus {
   border-color: #8a8f90;
 }
 
-.input input:active ~ p, .input input:active + p, .input input:focus ~ p, .input input:focus + p, .input textarea:active ~ p, .input textarea:active + p, .input textarea:focus ~ p, .input textarea:focus + p {
+.input input:active ~ p,
+.input input:active + p,
+.input input:focus ~ p,
+.input input:focus + p,
+.input textarea:active ~ p,
+.input textarea:active + p,
+.input textarea:focus ~ p,
+.input textarea:focus + p {
   color: #8a8f90 !important;
 }
 
-.input.force-active input, .input.force-active textarea {
+.input.force-active input,
+.input.force-active textarea {
   border-color: #c3073f;
   color: #c3073f !important;
   background: #f5f5f5;
@@ -1167,7 +1303,7 @@ Checkbox, Radio, Input, Select, ImageUpload
 .select select {
   border-radius: 5px;
   background: #ffffff;
-  border: 1px solid #E2E8EA;
+  border: 1px solid #e2e8ea;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -1214,7 +1350,8 @@ Checkbox, Radio, Input, Select, ImageUpload
           order: 2;
 }
 
-.group-checkbox, .group-radio {
+.group-checkbox,
+.group-radio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1224,7 +1361,8 @@ Checkbox, Radio, Input, Select, ImageUpload
           flex-direction: column;
 }
 
-.group-checkbox > p, .group-radio > p {
+.group-checkbox > p,
+.group-radio > p {
   margin-bottom: 5px;
   color: #a2a7a8;
   font-size: 9pt;
@@ -1233,7 +1371,8 @@ Checkbox, Radio, Input, Select, ImageUpload
   text-transform: uppercase;
 }
 
-.group-checkbox .container, .group-radio .container {
+.group-checkbox .container,
+.group-radio .container {
   display: -ms-grid !important;
   display: grid !important;
   -ms-grid-columns: 1fr 1fr !important;
@@ -1241,7 +1380,7 @@ Checkbox, Radio, Input, Select, ImageUpload
   grid-column-gap: 10px !important;
   grid-row-gap: 10px !important;
   padding: 5px !important;
-  border: 1px solid #E2E8EA;
+  border: 1px solid #e2e8ea;
   border-radius: 4px;
   min-height: 46px !important;
   -webkit-box-align: center;
@@ -1249,7 +1388,10 @@ Checkbox, Radio, Input, Select, ImageUpload
           align-items: center;
 }
 
-.group-checkbox .container .checkbox, .group-checkbox .container .radio, .group-radio .container .checkbox, .group-radio .container .radio {
+.group-checkbox .container .checkbox,
+.group-checkbox .container .radio,
+.group-radio .container .checkbox,
+.group-radio .container .radio {
   grid-column: span 1;
 }
 
@@ -1270,7 +1412,8 @@ Checkbox, Radio, Input, Select, ImageUpload
           justify-content: flex-start;
 }
 
-.upload label, .upload p {
+.upload label,
+.upload p {
   margin-bottom: 5px;
   color: #a2a7a8;
   font-size: 9pt;
@@ -1290,7 +1433,7 @@ Checkbox, Radio, Input, Select, ImageUpload
   height: 250px;
   border-radius: 5px;
   padding: 20px;
-  border: 1px solid #E2E8EA;
+  border: 1px solid #e2e8ea;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1360,7 +1503,13 @@ Checkbox, Radio, Input, Select, ImageUpload
   background: #1a1a1d;
 }
 
-.upload .upload-action .upload-button:hover i, .upload .upload-action .upload-button:hover span, .upload .upload-action .upload-button:hover .loader i, .upload .upload-action .upload-button:active i, .upload .upload-action .upload-button:active span, .upload .upload-action .upload-button:active .loader i, .upload .upload-action .upload-button:focus i, .upload .upload-action .upload-button:focus span, .upload .upload-action .upload-button:focus .loader i {
+.upload .upload-action .upload-button:hover i,
+.upload .upload-action .upload-button:hover span,
+.upload .upload-action .upload-button:hover .loader i, .upload .upload-action .upload-button:active i,
+.upload .upload-action .upload-button:active span,
+.upload .upload-action .upload-button:active .loader i, .upload .upload-action .upload-button:focus i,
+.upload .upload-action .upload-button:focus span,
+.upload .upload-action .upload-button:focus .loader i {
   color: #ffffff !important;
 }
 
@@ -1386,7 +1535,13 @@ Checkbox, Radio, Input, Select, ImageUpload
   background: #f44336;
 }
 
-.upload .upload-action .upload-button-remove:hover i, .upload .upload-action .upload-button-remove:hover span, .upload .upload-action .upload-button-remove:hover .loader i, .upload .upload-action .upload-button-remove:active i, .upload .upload-action .upload-button-remove:active span, .upload .upload-action .upload-button-remove:active .loader i, .upload .upload-action .upload-button-remove:focus i, .upload .upload-action .upload-button-remove:focus span, .upload .upload-action .upload-button-remove:focus .loader i {
+.upload .upload-action .upload-button-remove:hover i,
+.upload .upload-action .upload-button-remove:hover span,
+.upload .upload-action .upload-button-remove:hover .loader i, .upload .upload-action .upload-button-remove:active i,
+.upload .upload-action .upload-button-remove:active span,
+.upload .upload-action .upload-button-remove:active .loader i, .upload .upload-action .upload-button-remove:focus i,
+.upload .upload-action .upload-button-remove:focus span,
+.upload .upload-action .upload-button-remove:focus .loader i {
   color: #ffffff !important;
 }
 
@@ -1395,7 +1550,8 @@ Checkbox, Radio, Input, Select, ImageUpload
   color: #f44336;
 }
 
-.upload .upload-container.warn ~ p, .upload .upload-container.warn label {
+.upload .upload-container.warn ~ p,
+.upload .upload-container.warn label {
   color: #f44336;
 }
 
@@ -1668,7 +1824,7 @@ PROJECT SPECIFIC
   color: #2c2c2c;
 }
 
-.listing-item[data-type='rent'].paginator {
+.listing-item[data-type="rent"].paginator {
   background: #1a1a1d !important;
   -webkit-box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
           box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
@@ -1677,7 +1833,7 @@ PROJECT SPECIFIC
   transition: background 0.2s, border 0.2s !important;
 }
 
-.listing-item[data-type='rent'].paginator:hover, .listing-item[data-type='rent'].paginator:active {
+.listing-item[data-type="rent"].paginator:hover, .listing-item[data-type="rent"].paginator:active {
   background: #0e0e10 !important;
   -webkit-box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
           box-shadow: 0 10px 30px -15px rgba(26, 26, 29, 0.6) !important;
@@ -1686,15 +1842,16 @@ PROJECT SPECIFIC
   transition: background 0.2s, border 0.2s !important;
 }
 
-.listing-item[data-type='rent'].paginator > .main p, .listing-item[data-type='rent'].paginator > .main span {
+.listing-item[data-type="rent"].paginator > .main p,
+.listing-item[data-type="rent"].paginator > .main span {
   color: #ffffff;
 }
 
-.listing-item[data-type='rent'] > .main > .content > .heading > span:not(.title) {
+.listing-item[data-type="rent"] > .main > .content > .heading > span:not(.title) {
   color: #1a1a1d;
 }
 
-.listing-item[data-type='buy'].paginator {
+.listing-item[data-type="buy"].paginator {
   background: #005cff !important;
   -webkit-box-shadow: 0 10px 30px -15px rgba(0, 92, 255, 0.6) !important;
           box-shadow: 0 10px 30px -15px rgba(0, 92, 255, 0.6) !important;
@@ -1703,7 +1860,7 @@ PROJECT SPECIFIC
   transition: background 0.2s, border 0.2s !important;
 }
 
-.listing-item[data-type='buy'].paginator:hover, .listing-item[data-type='buy'].paginator:active {
+.listing-item[data-type="buy"].paginator:hover, .listing-item[data-type="buy"].paginator:active {
   background: #0053e6 !important;
   border: 1px solid #0053e6 !important;
   -webkit-box-shadow: 0 10px 30px -15px rgba(0, 92, 255, 0.6) !important;
@@ -1712,11 +1869,12 @@ PROJECT SPECIFIC
   transition: background 0.2s, border 0.2s !important;
 }
 
-.listing-item[data-type='buy'].paginator > .main p, .listing-item[data-type='buy'].paginator > .main span {
+.listing-item[data-type="buy"].paginator > .main p,
+.listing-item[data-type="buy"].paginator > .main span {
   color: #ffffff;
 }
 
-.listing-item[data-type='buy'] > .main > .content > .heading > span:not(.title) {
+.listing-item[data-type="buy"] > .main > .content > .heading > span:not(.title) {
   color: #005cff;
 }
 
@@ -1760,7 +1918,7 @@ PROJECT SPECIFIC
   left: 0;
   bottom: 0;
   right: 0;
-  content: 'View listing';
+  content: "View listing";
   color: #fff;
   text-align: center;
   display: -webkit-box;
@@ -1947,7 +2105,7 @@ PROJECT SPECIFIC
     left: 0;
     bottom: 0;
     right: 0;
-    content: 'View listing';
+    content: "View listing";
     color: #fff;
     text-align: center;
     display: -webkit-box;
@@ -2088,7 +2246,8 @@ ALERT
   border: 1px solid #eeeeee;
 }
 
-#customAlertContainer .customAlert.success i, #customAlertContainer .customAlert.success span {
+#customAlertContainer .customAlert.success i,
+#customAlertContainer .customAlert.success span {
   color: #1a1a1d !important;
 }
 

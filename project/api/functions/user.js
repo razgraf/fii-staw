@@ -1,19 +1,21 @@
 const User = require("../system/User");
-const { HTTP_STATUS } = require("../constants");
+const { HTTP_STATUS, Generator } = require("../constants");
 
 async function createUser(event) {
   try {
-    console.log("Body", event.body);
+    const body = JSON.parse(event.body);
 
-    const body = JSON.parse(JSON.stringify(event.body));
-
-    const created = await User.create(body);
+    const user = await User.create({ ...body });
+    const token = await User.login({ ...body });
 
     return {
       statusCode: HTTP_STATUS.CREATED,
+      headers: Generator.headers(),
       body: JSON.stringify(
         {
-          message: "Created"
+          message: "Created & Connected",
+          token: token,
+          username: user.username
         },
         null,
         2
@@ -23,14 +25,10 @@ async function createUser(event) {
     console.error(e);
     return {
       statusCode: HTTP_STATUS.BAD_REQUEST,
+      headers: Generator.headers(),
       body: JSON.stringify(
         {
-          error: {
-            name: e.name,
-            message: e.message,
-            string: e.toString()
-          },
-          body: event.body
+          message: e.message
         },
         null,
         2
@@ -39,7 +37,42 @@ async function createUser(event) {
   }
 }
 
-async function loginUser(event) {}
+async function loginUser(event) {
+  try {
+    const body = JSON.parse(event.body);
+
+    const token = await User.login({ ...body });
+
+    const user = await User.get({ ...body });
+
+    return {
+      statusCode: HTTP_STATUS.OK,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: "Connected",
+          token: token,
+          username: user.username
+        },
+        null,
+        2
+      )
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      statusCode: HTTP_STATUS.BAD_REQUEST,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: e.message
+        },
+        null,
+        2
+      )
+    };
+  }
+}
 
 module.exports.loginUser = loginUser;
 module.exports.createUser = createUser;

@@ -73,6 +73,8 @@ body {
           padding: 2px 10px;
           user-select: none;
 
+          @include initWithFade(500ms);
+
           &.active {
             & > .container {
               & > i,

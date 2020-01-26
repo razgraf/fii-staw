@@ -49,13 +49,29 @@ const FRACTAL_DEFINITIONS = {
 const ERRORS = {
   INVALID_PARAMS: "InvalidParamsError",
 
+  INVALID_CREDENTIALS: "InvalidCredentialsError",
+
   CONFLICTING_USER: "ConflictingUserError",
   MISSING_USER: "MissingUserError",
   MISMATCH_USER_AUTH: "MismatchUserAuthError",
 
+  EXPIRED_KEY: "ExpiredKeyError",
+  MISSING_KEY: "MissingKeyError",
+
+  INVALID_FRACTAL_DEFINITION: "InvalidFractalDefinition",
+
   NETWORKING: "NetworkingError"
 };
 
+const Generator = {
+  headers: () => {
+    return {
+      "Access-Control-Allow-Credentials": true,
+      "Access-Control-Allow-Origin": "*"
+    };
+  }
+};
+module.exports.Generator = Generator;
 module.exports.ERRORS = ERRORS;
 module.exports.HTTP_STATUS = HTTP_STATUS;
 module.exports.RESOURCES = RESOURCES;

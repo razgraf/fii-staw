@@ -26,7 +26,8 @@ functions:
     events:
       - http:
           path: fractal
-          method: get
+          method: post
+          cors: true
 
   createUser:
     handler: handler.createUser
@@ -37,6 +38,7 @@ functions:
       - http:
           path: user
           method: post
+          cors: true
 
   loginUser:
     handler: handler.loginUser
@@ -47,9 +49,9 @@ functions:
       - http:
           path: user/login
           method: post
-
-  createKey:
-    handler: handler.createKey
+          cors: true
+  assignKey:
+    handler: handler.assignKey
     layers:
       - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
       - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
@@ -57,6 +59,17 @@ functions:
       - http:
           path: user/key
           method: post
+          cors: true
+  listKeys:
+    handler: handler.listKeys
+    layers:
+      - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
+      - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
+    events:
+      - http:
+          path: user/keys
+          method: get
+          cors: true
 
 resources:
   Resources:
