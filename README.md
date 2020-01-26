@@ -2,7 +2,7 @@
 
 # Project for STAW course 2019-2020 (UAIC Cuza 2020, Faculty Of Computer Science)
 
-![Screenshot of the platform](fric_cover.png)
+![Screenshot of the platform](cover.png)
 
 [SCHOLARLY Documentation (~ deprecated)](http://www.fii-staw.com.s3-website.eu-west-2.amazonaws.com/docs/)
 
