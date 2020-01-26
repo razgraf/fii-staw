@@ -34,7 +34,7 @@ async function createFractal(event) {
       headers: Generator.headers(),
       body: JSON.stringify(
         {
-          message: "Done",
+          message: `Created #${fractal.name ? fractal.name : "Fractal"}`,
           url: fractal.publicUrl,
           quota
         },

@@ -19,6 +19,7 @@ provider:
 
 functions:
   createFractal:
+    timeout: 30
     handler: handler.createFractal
     layers:
       - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
@@ -38,6 +39,17 @@ functions:
       - http:
           path: user
           method: post
+          cors: true
+
+  getUser:
+    handler: handler.getUser
+    layers:
+      - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
+      - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
+    events:
+      - http:
+          path: user
+          method: get
           cors: true
 
   loginUser:

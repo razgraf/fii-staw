@@ -12,7 +12,7 @@ import FractalBuilder from "./builder.mjs";
   const DragonFractal = await FractalBuilderService.build({
     height: 800,
     width: 800,
-    iterations: 10,
+    iterations: 5,
     start: {
       symbol: "X",
       x: 400,
@@ -21,15 +21,15 @@ import FractalBuilder from "./builder.mjs";
     rules: [
       {
         left: "X",
-        right: "X+YF+"
+        right: "F+[[X]-X]-F[-FX]+X"
       },
       {
-        left: "Y",
-        right: "-FX-Y"
+        left: "F",
+        right: "FF"
       }
     ],
     angle: 25
   });
 
-  console.log(DragonFractal);
+  console.log("Dragon Fractal:", DragonFractal);
 })();

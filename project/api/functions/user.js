@@ -1,3 +1,4 @@
+const { t: typy } = require("typy");
 const User = require("../system/User");
 const { HTTP_STATUS, Generator } = require("../constants");
 
@@ -74,5 +75,54 @@ async function loginUser(event) {
   }
 }
 
+async function getUser(event) {
+  try {
+    const params = event.queryStringParameters;
+
+    let user = null;
+
+    if (typy(params, "api").isTruthy) {
+      console.log("Validating for library...");
+      user = await User.validate({ ...params, source: "library" });
+    } else {
+      console.log("Validating for platform...");
+      user = await User.validate({ ...params, source: "platform" });
+    }
+
+    console.log(user);
+
+    const profile = await User.getProfile({ id: user.id, token: params.token });
+
+    console.log(profile);
+
+    return {
+      statusCode: HTTP_STATUS.OK,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: "Profile",
+          user: profile
+        },
+        null,
+        2
+      )
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      statusCode: HTTP_STATUS.BAD_REQUEST,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: e.message
+        },
+        null,
+        2
+      )
+    };
+  }
+}
+
+module.exports.getUser = getUser;
 module.exports.loginUser = loginUser;
 module.exports.createUser = createUser;

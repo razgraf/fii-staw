@@ -64,7 +64,7 @@ class Fractal {
 
       const canvas = createCanvas(width, height);
 
-      const rules = typy(definition, "rules").safeArray; // TODO work on generalizing rules
+      const rules = typy(definition, "rules").safeArray;
 
       const parsedDefinition = {
         iterations: parseInt(definition.iterations),

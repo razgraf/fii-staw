@@ -236,6 +236,19 @@ class Networking {
 
     return typy(response).isTruthy;
   }
+
+  static async getUserHistoryFromDB({ id }) {
+    const DB = Networking.initialize();
+
+    const list = await DB.query(
+      `SELECT * FROM fractal WHERE userId = :userId ORDER BY createdAt DESC LIMIT 10`,
+      {
+        replacements: { userId: id },
+        type: Sequelize.QueryTypes.SELECT
+      }
+    );
+    return list.length > 0 ? list : [];
+  }
 }
 
 module.exports = Networking;

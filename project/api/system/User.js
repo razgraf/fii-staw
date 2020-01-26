@@ -134,6 +134,68 @@ class User {
     return new User(result);
   }
 
+  static async getProfile({ id, token }) {
+    if (typy(id).isFalsy || typy(token).isFalsy)
+      throw new Error(ERRORS.INVALID_PARAMS);
+
+    /**
+     * Retrieve user
+     */
+
+    const rawUser = await Networking.getUserFromDB({ id });
+
+    if (!rawUser) throw new Error(ERRORS.INVALID_CREDENTIALS);
+
+    const user = new User(rawUser);
+
+    /**
+     * Retrieve specific token
+     */
+
+    const rawKey = await Networking.getLibraryKeyFromDB({
+      userId: user.id,
+      token
+    });
+
+    if (!rawKey) throw new Error(ERRORS.INVALID_CREDENTIALS);
+
+    const key = new Key(rawKey);
+
+    /**
+     * Retrieve history (last 10 actions)
+     */
+
+    const history = await Networking.getUserHistoryFromDB({ id });
+
+    return {
+      identity: {
+        abstract: "Your identity inside the FrIC ecosystem.",
+        username: user.username,
+        email: user.email
+      },
+      key: {
+        abstract: "Information on the key you are using right now.",
+        ...key.toObject(true)
+      },
+      history: history.map(e => {
+        let definition = e.definition;
+        try {
+          definition = JSON.parse(definition);
+        } catch (e) {}
+
+        return {
+          abstract: "Generated fractal.",
+          identifier: e.uuid,
+          name: e.name,
+          definition: definition,
+          hash: e.hash,
+          votes: e.votes,
+          timestamp: e.createdAt
+        };
+      })
+    };
+  }
+
   static async validate({ source = "platform", ...payload }) {
     if (source === "platform") return User.validateForPlatform(payload);
     else return User.validateForLibrary(payload);
@@ -195,13 +257,13 @@ class User {
 
     if (!result) {
       console.error("Mismatch at library user-key level.");
-      throw new Error(ERRORS.FORBIDDEN);
+      throw new Error(ERRORS.INVALID_CREDENTIALS);
     }
 
     const key = new Key(result);
 
     if (key.quota <= 0) {
-      console.error("Mismatch at library user-key level.");
+      console.error("Quota below 0.");
       throw new Error(ERRORS.EXPIRED_KEY);
     }
 
