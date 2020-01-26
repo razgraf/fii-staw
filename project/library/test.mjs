@@ -31,5 +31,5 @@ import FractalBuilder from "./builder.mjs";
     angle: 25
   });
 
-  console.log("Dragon Fractal:", DragonFractal);
+  console.log("Plant Fractal:", DragonFractal);
 })();
