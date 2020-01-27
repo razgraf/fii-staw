@@ -7,6 +7,9 @@ const userFunctions = require("./functions/user");
 const keyFunctions = require("./functions/key");
 
 module.exports.createFractal = fractalFunctions.createFractal;
+module.exports.unpublishFractal = fractalFunctions.unpublishFractal;
+module.exports.publishFractal = fractalFunctions.publishFractal;
+module.exports.getFractalList = fractalFunctions.getFractalList;
 
 module.exports.createUser = userFunctions.createUser;
 module.exports.loginUser = userFunctions.loginUser;

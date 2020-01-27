@@ -32,13 +32,56 @@ class Fractal {
     this.publicUrl = null;
     this.type = null;
     this.uuid = null;
+    this.reference = null;
     this.id = null;
     this.createdAt = null;
     this.userId = null;
+    this.username = null;
   }
 
   extract() {
     return this.canvas.toDataURL();
+  }
+
+  static format(e) {
+    let definition = e.definition;
+    let image = Image.getPublicUrlFromS3(e.uuid) + ".png";
+    try {
+      definition = JSON.parse(definition);
+      if (typy(e, "reference").isTruthy)
+        image = Image.getPublicUrlFromS3(e.referene) + ".png";
+    } catch (e) {}
+
+    return {
+      image,
+      self: e.self,
+      access: e.access,
+      abstract: "Generated fractal.",
+      identifier: e.uuid,
+      reference: e.reference,
+      name: e.name,
+      definition: definition,
+      hash: e.hash,
+      votes: e.votes,
+      timestamp: e.createdAt,
+      username: e.username
+    };
+  }
+
+  static async getList({ userId, limit = 20, offset = 0 }) {
+    if (typy(userId).isFalsy) throw new Error(ERRORS.INVALID_PARAMS);
+
+    const payload = {
+      userId,
+      limit: parseInt(limit),
+      offset: parseInt(offset)
+    };
+
+    const list = await Networking.getFractalListFromDB(payload);
+
+    if (!list || list.length === 0) return [];
+
+    return list.map(e => Fractal.format({ ...e, self: e.userId === userId }));
   }
 
   static async generate({ definition, userId, name = "Fractal" }) {
@@ -172,12 +215,14 @@ class Fractal {
     if (inserted !== null) {
       this.id = inserted.id;
       this.uuid = inserted.uuid;
+      this.reference = inserted.reference;
       this.createdAt = inserted.createdAt;
       this.name = inserted.name;
       return true;
     } else {
       this.id = null;
       this.uuid = null;
+      this.reference = null;
       this.createdAt = null;
       this.name = null;
       return false;

@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   Structure.initNavigation();
 
+  if (!Store.isEmpty(STORE_KEYS.TOKEN)) window.location.href = "./index.html";
+
   const searchParams = new URLSearchParams(window.location.search);
   if (searchParams.has("register") === true) {
     document.querySelector(".card.register").style.display = "flex";

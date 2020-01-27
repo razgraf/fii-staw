@@ -4,9 +4,11 @@ const Bcrypt = require("bcryptjs");
 const JWT = require("jsonwebtoken");
 const { t: typy } = require("typy");
 const Networking = require("./Networking");
+const Fractal = require("./Fractal");
+const Image = require("./Image");
 const Key = require("./Key");
 
-const { ERRORS } = require("./../constants");
+const { ERRORS, API } = require("./../constants");
 
 class User {
   constructor(payload) {
@@ -177,22 +179,7 @@ class User {
         abstract: "Information on the key you are using right now.",
         ...key.toObject(true)
       },
-      history: history.map(e => {
-        let definition = e.definition;
-        try {
-          definition = JSON.parse(definition);
-        } catch (e) {}
-
-        return {
-          abstract: "Generated fractal.",
-          identifier: e.uuid,
-          name: e.name,
-          definition: definition,
-          hash: e.hash,
-          votes: e.votes,
-          timestamp: e.createdAt
-        };
-      })
+      history: history.map(e => Fractal.format(e))
     };
   }
 

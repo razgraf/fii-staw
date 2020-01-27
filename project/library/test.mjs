@@ -12,7 +12,7 @@ import FractalBuilder from "./builder.mjs";
   const DragonFractal = await FractalBuilderService.build({
     height: 800,
     width: 800,
-    iterations: 5,
+    iterations: 4,
     start: {
       symbol: "X",
       x: 400,

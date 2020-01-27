@@ -8,7 +8,9 @@ export const API = {
   LOGIN: `${ROOT_API}/user/login`,
   REGISTER: `${ROOT_API}/user`,
   LIST_KEYS: `${ROOT_API}/user/keys`,
-  ASSIGN_KEY: `${ROOT_API}/user/key`
+  ASSIGN_KEY: `${ROOT_API}/user/key`,
+  LIST_FRACTALS: `${ROOT_API}/fractal/list`,
+  GENERATE_FRACTAL: `${ROOT_API}/fractal`
 };
 
 export const STORE_KEYS = {

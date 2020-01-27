@@ -30,6 +30,40 @@ functions:
           method: post
           cors: true
 
+  getFractalList:
+    timeout: 30
+    handler: handler.getFractalList
+    layers:
+      - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
+      - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
+    events:
+      - http:
+          path: fractal/list
+          method: get
+          cors: true
+
+  publishFractal:
+    handler: handler.publishFractal
+    layers:
+      - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
+      - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
+    events:
+      - http:
+          path: fractal/publish
+          method: post
+          cors: true
+
+  unpublishFractal:
+    handler: handler.unpublishFractal
+    layers:
+      - arn:aws:lambda:eu-west-2:624340280785:layer:CanvasLib64Layer:2
+      - arn:aws:lambda:eu-west-2:624340280785:layer:Node10CanvasLayer:2
+    events:
+      - http:
+          path: fractal/unpublish
+          method: post
+          cors: true
+
   createUser:
     handler: handler.createUser
     layers:

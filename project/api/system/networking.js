@@ -201,10 +201,10 @@ class Networking {
       }
     );
 
-    console.log(response);
+    console.log("Response: ", response);
 
     if (!response) return null;
-    return Networking.getKeyFromDB({ id });
+    return await Networking.getKeyFromDB({ id });
   }
 
   static async getKeyListFromDB({ userId }) {
@@ -248,6 +248,63 @@ class Networking {
       }
     );
     return list.length > 0 ? list : [];
+  }
+
+  static async getFractalListFromDB({ userId, limit, offset }) {
+    const DB = Networking.initialize();
+
+    const list = await DB.query(
+      `SELECT f.*, u.username
+       FROM fractal f
+       INNER JOIN user u ON u.id = f.userId
+       WHERE (f.userId = :userId AND f.access > 0) 
+       OR f.access > 1 
+       ORDER BY f.votes DESC, f.createdAt DESC 
+       LIMIT :limit OFFSET :offset`,
+      {
+        replacements: { limit, offset, userId },
+        type: Sequelize.QueryTypes.SELECT
+      }
+    );
+    return list.length > 0 ? list : [];
+  }
+
+  static async setFractalPublishIntoDB({ id }) {
+    const DB = Networking.initialize();
+
+    const response = await DB.query(
+      `UPDATE fractal SET access = 2 WHERE id = :id`,
+      {
+        replacements: {
+          id
+        },
+        type: Sequelize.QueryTypes.UPDATE
+      }
+    );
+
+    console.log("Response: ", response);
+
+    if (!response) return null;
+    return await Networking.getFractalFromDB({ id });
+  }
+
+  static async setFractalUnpublishIntoDB({ id }) {
+    const DB = Networking.initialize();
+
+    const response = await DB.query(
+      `UPDATE fractal SET access = 1 WHERE id = :id`,
+      {
+        replacements: {
+          id
+        },
+        type: Sequelize.QueryTypes.UPDATE
+      }
+    );
+
+    console.log("Response: ", response);
+
+    if (!response) return null;
+    return await Networking.getFractalFromDB({ id });
   }
 }
 
