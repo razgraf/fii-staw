@@ -405,30 +405,24 @@ template {
   -o-transition: all 0.1s;
 }
 
-.transition02, .button i, .buttonPrimary i, body main section#search > .content > .search-bar > .container .button-buy i, .buttonSecondary i, .buttonGray i, .buttonOutline i, body main section#search > .content > .search-bar > .container .button-filter i, .buttonGradient i, .button span, .buttonPrimary span, body main section#search > .content > .search-bar > .container .button-buy span, .buttonSecondary span, .buttonGray span, .buttonOutline span, body main section#search > .content > .search-bar > .container .button-filter span, .buttonGradient span, .button, .buttonPrimary, body main section#search > .content > .search-bar > .container .button-buy, .buttonSecondary, .buttonGray, .buttonOutline, body main section#search > .content > .search-bar > .container .button-filter, .buttonGradient, .button:hover, .buttonPrimary:hover, body main section#search > .content > .search-bar > .container .button-buy:hover, .buttonSecondary:hover, .buttonGray:hover, .buttonOutline:hover, body main section#search > .content > .search-bar > .container .button-filter:hover, .buttonGradient:hover, .button:active, .buttonPrimary:active, body main section#search > .content > .search-bar > .container .button-buy:active, .buttonSecondary:active, .buttonGray:active, .buttonOutline:active, body main section#search > .content > .search-bar > .container .button-filter:active, .buttonGradient:active, .button:focus, .buttonPrimary:focus, body main section#search > .content > .search-bar > .container .button-buy:focus, .buttonSecondary:focus, .buttonGray:focus, .buttonOutline:focus, body main section#search > .content > .search-bar > .container .button-filter:focus, .buttonGradient:focus, .button:hover i, .buttonPrimary:hover i, body main section#search > .content > .search-bar > .container .button-buy:hover i, .buttonSecondary:hover i, .buttonGray:hover i, .buttonOutline:hover i, body main section#search > .content > .search-bar > .container .button-filter:hover i, .buttonGradient:hover i,
+.transition02, .button i, .buttonPrimary i, .buttonSecondary i, .buttonGray i, .buttonOutline i, .buttonGradient i, .button span, .buttonPrimary span, .buttonSecondary span, .buttonGray span, .buttonOutline span, .buttonGradient span, .button, .buttonPrimary, .buttonSecondary, .buttonGray, .buttonOutline, .buttonGradient, .button:hover, .buttonPrimary:hover, .buttonSecondary:hover, .buttonGray:hover, .buttonOutline:hover, .buttonGradient:hover, .button:active, .buttonPrimary:active, .buttonSecondary:active, .buttonGray:active, .buttonOutline:active, .buttonGradient:active, .button:focus, .buttonPrimary:focus, .buttonSecondary:focus, .buttonGray:focus, .buttonOutline:focus, .buttonGradient:focus, .button:hover i, .buttonPrimary:hover i, .buttonSecondary:hover i, .buttonGray:hover i, .buttonOutline:hover i, .buttonGradient:hover i,
 .button:hover span,
 .buttonPrimary:hover span,
-body main section#search > .content > .search-bar > .container .button-buy:hover span,
 .buttonSecondary:hover span,
 .buttonGray:hover span,
 .buttonOutline:hover span,
-body main section#search > .content > .search-bar > .container .button-filter:hover span,
-.buttonGradient:hover span, .button:active i, .buttonPrimary:active i, body main section#search > .content > .search-bar > .container .button-buy:active i, .buttonSecondary:active i, .buttonGray:active i, .buttonOutline:active i, body main section#search > .content > .search-bar > .container .button-filter:active i, .buttonGradient:active i,
+.buttonGradient:hover span, .button:active i, .buttonPrimary:active i, .buttonSecondary:active i, .buttonGray:active i, .buttonOutline:active i, .buttonGradient:active i,
 .button:active span,
 .buttonPrimary:active span,
-body main section#search > .content > .search-bar > .container .button-buy:active span,
 .buttonSecondary:active span,
 .buttonGray:active span,
 .buttonOutline:active span,
-body main section#search > .content > .search-bar > .container .button-filter:active span,
-.buttonGradient:active span, .button:focus i, .buttonPrimary:focus i, body main section#search > .content > .search-bar > .container .button-buy:focus i, .buttonSecondary:focus i, .buttonGray:focus i, .buttonOutline:focus i, body main section#search > .content > .search-bar > .container .button-filter:focus i, .buttonGradient:focus i,
+.buttonGradient:active span, .button:focus i, .buttonPrimary:focus i, .buttonSecondary:focus i, .buttonGray:focus i, .buttonOutline:focus i, .buttonGradient:focus i,
 .button:focus span,
 .buttonPrimary:focus span,
-body main section#search > .content > .search-bar > .container .button-buy:focus span,
 .buttonSecondary:focus span,
 .buttonGray:focus span,
 .buttonOutline:focus span,
-body main section#search > .content > .search-bar > .container .button-filter:focus span,
 .buttonGradient:focus span, .buttonMini i, .buttonMiniPrimary i, .buttonMiniSecondary i, .buttonMiniGray i, .buttonMiniOutline i, .upload .upload-action .upload-button i, .upload .upload-action .upload-button-remove i, .buttonMiniGradient i, .buttonMini span, .buttonMiniPrimary span, .buttonMiniSecondary span, .buttonMiniGray span, .buttonMiniOutline span, .upload .upload-action .upload-button span, .upload .upload-action .upload-button-remove span, .buttonMiniGradient span, .buttonMini, .buttonMiniPrimary, .buttonMiniSecondary, .buttonMiniGray, .buttonMiniOutline, .upload .upload-action .upload-button, .upload .upload-action .upload-button-remove, .buttonMiniGradient, .buttonMini:hover, .buttonMiniPrimary:hover, .buttonMiniSecondary:hover, .buttonMiniGray:hover, .buttonMiniOutline:hover, .upload .upload-action .upload-button:hover, .upload .upload-action .upload-button-remove:hover, .buttonMiniGradient:hover, .buttonMini:active, .buttonMiniPrimary:active, .buttonMiniSecondary:active, .buttonMiniGray:active, .buttonMiniOutline:active, .upload .upload-action .upload-button:active, .upload .upload-action .upload-button-remove:active, .buttonMiniGradient:active, .buttonMini:focus, .buttonMiniPrimary:focus, .buttonMiniSecondary:focus, .buttonMiniGray:focus, .buttonMiniOutline:focus, .upload .upload-action .upload-button:focus, .upload .upload-action .upload-button-remove:focus, .buttonMiniGradient:focus, .buttonMini:hover i, .buttonMiniPrimary:hover i, .buttonMiniSecondary:hover i, .buttonMiniGray:hover i, .buttonMiniOutline:hover i, .upload .upload-action .upload-button:hover i, .upload .upload-action .upload-button-remove:hover i, .buttonMiniGradient:hover i,
 .buttonMini:hover span,
 .buttonMiniPrimary:hover span,
@@ -470,7 +464,7 @@ body main section#search > .content > .search-bar > .container .button-filter:fo
 .input textarea:active + p,
 .input textarea:focus ~ p,
 .input textarea:focus + p, .upload label,
-.upload p, .listing-item, .listing-item > .main > .image:after, .listing-item:hover, .listing-item:hover > .main > .image:after, body nav .nav-content .nav-menu .nav-menu-item > .container, body nav .nav-content .nav-menu .nav-menu-item > .container span, body nav .nav-content .nav-menu .nav-menu-item > .container:hover, body main section#search > .content > .search-bar > .container input, body main section#search > .content > .search-bar > .container input:focus, body main section#search > .content > .search-bar > .container input:active {
+.upload p, .listing-item, .listing-item > .main > .image:after, .listing-item:hover, .listing-item:hover > .main > .image:after, body nav .nav-content .nav-menu .nav-menu-item > .container, body nav .nav-content .nav-menu .nav-menu-item > .container span, body nav .nav-content .nav-menu .nav-menu-item > .container:hover {
   transition: all 0.2s;
   -moz-transition: all 0.2s;
   -webkit-transition: all 0.2s;
@@ -652,7 +646,7 @@ DEFAULT BUTTONS
   }
 }
 
-.button, .buttonPrimary, body main section#search > .content > .search-bar > .container .button-buy, .buttonSecondary, .buttonGray, .buttonOutline, body main section#search > .content > .search-bar > .container .button-filter, .buttonGradient {
+.button, .buttonPrimary, .buttonSecondary, .buttonGray, .buttonOutline, .buttonGradient {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -677,14 +671,12 @@ DEFAULT BUTTONS
   outline: none;
 }
 
-.button .loader i, .buttonPrimary .loader i, body main section#search > .content > .search-bar > .container .button-buy .loader i, .buttonSecondary .loader i, .buttonGray .loader i, .buttonOutline .loader i, body main section#search > .content > .search-bar > .container .button-filter .loader i, .buttonGradient .loader i,
+.button .loader i, .buttonPrimary .loader i, .buttonSecondary .loader i, .buttonGray .loader i, .buttonOutline .loader i, .buttonGradient .loader i,
 .button .loader span,
 .buttonPrimary .loader span,
-body main section#search > .content > .search-bar > .container .button-buy .loader span,
 .buttonSecondary .loader span,
 .buttonGray .loader span,
 .buttonOutline .loader span,
-body main section#search > .content > .search-bar > .container .button-filter .loader span,
 .buttonGradient .loader span {
   letter-spacing: 1.8px;
   font-weight: 600;
@@ -701,14 +693,14 @@ body main section#search > .content > .search-bar > .container .button-filter .l
           animation-direction: alternate;
 }
 
-.button i, .buttonPrimary i, body main section#search > .content > .search-bar > .container .button-buy i, .buttonSecondary i, .buttonGray i, .buttonOutline i, body main section#search > .content > .search-bar > .container .button-filter i, .buttonGradient i {
+.button i, .buttonPrimary i, .buttonSecondary i, .buttonGray i, .buttonOutline i, .buttonGradient i {
   color: #ffffff;
   font-size: 16pt;
   margin-right: 10px;
   margin-left: -10px;
 }
 
-.button span, .buttonPrimary span, body main section#search > .content > .search-bar > .container .button-buy span, .buttonSecondary span, .buttonGray span, .buttonOutline span, body main section#search > .content > .search-bar > .container .button-filter span, .buttonGradient span {
+.button span, .buttonPrimary span, .buttonSecondary span, .buttonGray span, .buttonOutline span, .buttonGradient span {
   color: #ffffff;
   font-family: "Ubuntu", "Lato", sans-serif;
   font-size: 11pt;
@@ -718,15 +710,15 @@ body main section#search > .content > .search-bar > .container .button-filter .l
   text-underline: none;
 }
 
-.button:hover, .buttonPrimary:hover, body main section#search > .content > .search-bar > .container .button-buy:hover, .buttonSecondary:hover, .buttonGray:hover, .buttonOutline:hover, body main section#search > .content > .search-bar > .container .button-filter:hover, .buttonGradient:hover, .button:active, .buttonPrimary:active, body main section#search > .content > .search-bar > .container .button-buy:active, .buttonSecondary:active, .buttonGray:active, .buttonOutline:active, body main section#search > .content > .search-bar > .container .button-filter:active, .buttonGradient:active, .button:focus, .buttonPrimary:focus, body main section#search > .content > .search-bar > .container .button-buy:focus, .buttonSecondary:focus, .buttonGray:focus, .buttonOutline:focus, body main section#search > .content > .search-bar > .container .button-filter:focus, .buttonGradient:focus {
+.button:hover, .buttonPrimary:hover, .buttonSecondary:hover, .buttonGray:hover, .buttonOutline:hover, .buttonGradient:hover, .button:active, .buttonPrimary:active, .buttonSecondary:active, .buttonGray:active, .buttonOutline:active, .buttonGradient:active, .button:focus, .buttonPrimary:focus, .buttonSecondary:focus, .buttonGray:focus, .buttonOutline:focus, .buttonGradient:focus {
   outline: none;
 }
 
-.buttonPrimary, body main section#search > .content > .search-bar > .container .button-buy {
+.buttonPrimary {
   background: #1a1a1d;
 }
 
-.buttonPrimary:hover, body main section#search > .content > .search-bar > .container .button-buy:hover, .buttonPrimary:active, body main section#search > .content > .search-bar > .container .button-buy:active, .buttonPrimary:focus, body main section#search > .content > .search-bar > .container .button-buy:focus {
+.buttonPrimary:hover, .buttonPrimary:active, .buttonPrimary:focus {
   background: #020202;
 }
 
@@ -746,26 +738,25 @@ body main section#search > .content > .search-bar > .container .button-filter .l
   background: #cccccc;
 }
 
-.buttonOutline, body main section#search > .content > .search-bar > .container .button-filter {
+.buttonOutline {
   background: transparent;
   border: 1px solid #000;
 }
 
-.buttonOutline .loader i, body main section#search > .content > .search-bar > .container .button-filter .loader i,
-.buttonOutline .loader span,
-body main section#search > .content > .search-bar > .container .button-filter .loader span {
+.buttonOutline .loader i,
+.buttonOutline .loader span {
   color: #000;
 }
 
-.buttonOutline i, body main section#search > .content > .search-bar > .container .button-filter i {
+.buttonOutline i {
   color: #000;
 }
 
-.buttonOutline span, body main section#search > .content > .search-bar > .container .button-filter span {
+.buttonOutline span {
   color: #000;
 }
 
-.buttonOutline:hover, body main section#search > .content > .search-bar > .container .button-filter:hover, .buttonOutline:active, body main section#search > .content > .search-bar > .container .button-filter:active, .buttonOutline:focus, body main section#search > .content > .search-bar > .container .button-filter:focus {
+.buttonOutline:hover, .buttonOutline:active, .buttonOutline:focus {
   background: rgba(0, 0, 0, 0.04);
   -webkit-transform: none;
           transform: none;
@@ -976,17 +967,17 @@ STYLISH BUTTONS
 }
 
 @media all and (max-width: 992px) {
-  .button, .buttonPrimary, body main section#search > .content > .search-bar > .container .button-buy, .buttonSecondary, .buttonGray, .buttonOutline, body main section#search > .content > .search-bar > .container .button-filter, .buttonGradient {
+  .button, .buttonPrimary, .buttonSecondary, .buttonGray, .buttonOutline, .buttonGradient {
     min-height: 40px;
     padding: 5px 15px;
     min-width: 80px;
   }
-  .button i, .buttonPrimary i, body main section#search > .content > .search-bar > .container .button-buy i, .buttonSecondary i, .buttonGray i, .buttonOutline i, body main section#search > .content > .search-bar > .container .button-filter i, .buttonGradient i {
+  .button i, .buttonPrimary i, .buttonSecondary i, .buttonGray i, .buttonOutline i, .buttonGradient i {
     color: #ffffff;
     font-size: 12pt;
     margin-right: 5px;
   }
-  .button span, .buttonPrimary span, body main section#search > .content > .search-bar > .container .button-buy span, .buttonSecondary span, .buttonGray span, .buttonOutline span, body main section#search > .content > .search-bar > .container .button-filter span, .buttonGradient span {
+  .button span, .buttonPrimary span, .buttonSecondary span, .buttonGray span, .buttonOutline span, .buttonGradient span {
     color: #ffffff;
     font-family: "Ubuntu", "Lato", sans-serif;
     font-size: 10pt;
@@ -3268,11 +3259,11 @@ body main {
   min-height: 100vh;
 }
 
-body main section#account {
+body main section {
   width: 100%;
 }
 
-body main section#account > .content {
+body main section > .content {
   max-width: calc(1160px - 2 * 20px);
   width: calc(100% - 2 * 20px);
   margin: 0 auto;
@@ -3291,616 +3282,10 @@ body main section#account > .content {
 }
 
 @media all and (max-width: 992px) {
-  body main section#account > .content {
+  body main section > .content {
     max-width: calc(1160px - 2 * 20px);
     width: calc(100% - 2 * 20px);
   }
-}
-
-body main section#account > .content header {
-  padding: 0;
-  margin: 0 0 40px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-body main section#account > .content header h2 {
-  font-size: 28pt;
-  color: #262626;
-  font-family: "Ubuntu", "Lato", sans-serif;
-  font-weight: 600;
-  padding: 0;
-  margin: 10px 0;
-}
-
-body main section#account > .content header h2 span {
-  font-size: 28pt;
-  color: #1a1a1d;
-  font-family: "Ubuntu", "Lato", sans-serif;
-  font-weight: 600;
-  padding: 0;
-}
-
-body main section#account > .content header p {
-  font-size: 12pt;
-  color: #262626;
-  margin: 0 0 15px 0;
-  font-weight: 300;
-}
-
-body main section#account > .content > .info {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 200px;
-      grid-template-columns: 1fr 1fr 200px;
-  grid-gap: 30px;
-}
-
-body main section#account > .content > .info *.input {
-  grid-column: span 1;
-  min-width: 100%;
-}
-
-body main section#account > .content > .info *.button, body main section#account > .content > .info *.buttonPrimary, body main section#account > .content > .info section#search > .content > .search-bar > .container *.button-buy, body main section#search > .content > .search-bar > .container section#account > .content > .info *.button-buy, body main section#account > .content > .info *.buttonSecondary, body main section#account > .content > .info *.buttonGray, body main section#account > .content > .info *.buttonOutline, body main section#account > .content > .info section#search > .content > .search-bar > .container *.button-filter, body main section#search > .content > .search-bar > .container section#account > .content > .info *.button-filter, body main section#account > .content > .info *.buttonGradient {
-  margin-top: 17px;
-  margin-bottom: 15px;
-}
-
-body main section#actions {
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 60px;
-  border-top: 1px solid #eeeeee;
-}
-
-body main section#actions > .content {
-  max-width: calc(1160px - 2 * 20px);
-  width: calc(100% - 2 * 20px);
-  margin: 0 auto;
-  padding: 0 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding-top: 40px;
-  -ms-flex-direction: column;
-      flex-direction: column;
-}
-
-@media all and (max-width: 992px) {
-  body main section#actions > .content {
-    max-width: calc(1160px - 2 * 20px);
-    width: calc(100% - 2 * 20px);
-  }
-}
-
-body main section#actions > .content header {
-  padding: 0;
-  margin: 0 0 20px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-body main section#actions > .content header h2 {
-  font-size: 20pt;
-  color: #262626;
-  font-family: #262626;
-  font-weight: 600;
-  padding: 0;
-  margin: 0 0 15px 0;
-}
-
-body main section#actions > .content header h2 span {
-  font-weight: 600;
-  font-family: "Ubuntu", "Lato", sans-serif;
-  color: #262626;
-}
-
-body main section#actions > .content header p {
-  font-size: 12pt;
-  color: #262626;
-  margin: 0 0 15px 0;
-  font-weight: 300;
-}
-
-body main section#actions > .content > .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-body main section#keys {
-  width: 100%;
-  padding-top: 20px;
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-  background: #fafafa;
-}
-
-body main section#keys > .content {
-  max-width: calc(1160px - 2 * 20px);
-  width: calc(100% - 2 * 20px);
-  margin: 0 auto;
-  padding: 0 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding-top: 40px;
-  padding-bottom: 60px;
-  -ms-flex-direction: column;
-      flex-direction: column;
-}
-
-@media all and (max-width: 992px) {
-  body main section#keys > .content {
-    max-width: calc(1160px - 2 * 20px);
-    width: calc(100% - 2 * 20px);
-  }
-}
-
-body main section#keys > .content header {
-  padding: 0;
-  margin: 0 0 20px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-body main section#keys > .content header h2 {
-  font-size: 20pt;
-  color: #262626;
-  font-family: #262626;
-  font-weight: 600;
-  padding: 0;
-  margin: 0 0 15px 0;
-}
-
-body main section#keys > .content header h2 span {
-  font-weight: 600;
-  font-family: "Ubuntu", "Lato", sans-serif;
-  color: #262626;
-}
-
-body main section#keys > .content header p {
-  font-size: 12pt;
-  color: #262626;
-  margin: 0 0 15px 0;
-  font-weight: 300;
-}
-
-body main section#keys > .content > .info {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-body main section#keys > .content > .info > .key-list {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-@-webkit-keyframes showKey {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
-
-@keyframes showKey {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
-
-body main section#keys > .content > .info > .key-list > .key {
-  margin-bottom: 20px;
-  color: #c3073f;
-  font-weight: 600;
-}
-
-body main section#keys > .content > .info > .key-list > .key[data-new="true"] {
-  -webkit-animation-name: showKey;
-          animation-name: showKey;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-body main section#keys > .content > .info > .key-list > .key > span {
-  color: #1a1a1d;
-}
-
-body main section#keys > .content > .info > .key-list > .key i {
-  font-weight: 300;
-  color: #aaa;
-  font-style: normal;
-}
-
-body main section#keys > .content > .info > .key-list > .key:before {
-  content: "#";
-  margin-right: 3px;
-  color: #ddd !important;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-body main section#keys > .content > .info > .box {
-  width: calc(100% - 2 * 15px);
-  padding: 15px;
-  border: 1px solid #c3073f;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body main section#keys > .content > .info > .box > .explain {
-  min-height: 50px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body main section#keys > .content > .info > .box > .explain span {
-  color: #1a1a1d;
-  font-weight: 600;
-}
-
-body main section#keys > .content > .info > .box > button {
-  min-height: 50px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-body main section#votes {
-  width: 100%;
-}
-
-body main section#votes > .content {
-  max-width: calc(1160px - 2 * 20px);
-  width: calc(100% - 2 * 20px);
-  margin: 0 auto;
-  padding: 0 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding-top: 60px;
-  -ms-flex-direction: column;
-      flex-direction: column;
-}
-
-@media all and (max-width: 992px) {
-  body main section#votes > .content {
-    max-width: calc(1160px - 2 * 20px);
-    width: calc(100% - 2 * 20px);
-  }
-}
-
-body main section#votes > .content header {
-  padding: 0;
-  margin: 0 0 40px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-body main section#votes > .content header h2 {
-  font-size: 20pt;
-  color: #262626;
-  font-family: #262626;
-  font-weight: 600;
-  padding: 0;
-  margin: 0 0 15px 0;
-}
-
-body main section#votes > .content header h2 span {
-  font-weight: 600;
-  font-family: "Ubuntu", "Lato", sans-serif;
-  color: #262626;
-}
-
-body main section#votes > .content header p {
-  font-size: 12pt;
-  color: #262626;
-  margin: 0 0 15px 0;
-  font-weight: 300;
-}
-
-body main section#votes > .content .list {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
-}
-
-body main section#votes > .content .list .listing-item {
-  grid-column: span 1;
-  width: auto;
-  height: auto;
-}
-
-body main section#votes > .content .list .listing-item .badges {
-  display: none !important;
-}
-
-body main section#search {
-  width: 100%;
-  background: #1a1a1d;
-  -webkit-animation-name: header-color;
-          animation-name: header-color;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-body main section#search > .content {
-  max-width: calc(1160px - 2 * 20px);
-  width: calc(100% - 2 * 20px);
-  margin: 0 auto;
-  padding: 0 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media all and (max-width: 992px) {
-  body main section#search > .content {
-    max-width: calc(1160px - 2 * 20px);
-    width: calc(100% - 2 * 20px);
-  }
-}
-
-body main section#search > .content h1 {
-  font-size: 26pt;
-  color: #ffffff;
-  max-width: 600px;
-  font-family: "Ubuntu", "Lato", sans-serif;
-  font-weight: 500;
-  margin: 0 0 40px 0;
-  padding: 0;
-  text-align: center;
-  line-height: 1.4;
-}
-
-body main section#search > .content h4 {
-  font-weight: 300;
-  font-size: 13pt;
-  max-width: 800px;
-  line-height: 1.4;
-  margin: 0 0 60px 0;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  text-align: center;
-  color: #ffffff;
-}
-
-body main section#search > .content > .search-bar {
-  height: 70px;
-  width: 100%;
-  max-width: 900px;
-}
-
-body main section#search > .content > .search-bar > .container {
-  width: calc(100% - 20px);
-  height: 100%;
-  padding: 0 10px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 5px 30px 0 rgba(90, 92, 107, 0.07), 0 2px 9px 0 rgba(90, 92, 107, 0.08);
-          box-shadow: 0 5px 30px 0 rgba(90, 92, 107, 0.07), 0 2px 9px 0 rgba(90, 92, 107, 0.08);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #ffffff;
-}
-
-body main section#search > .content > .search-bar > .container img {
-  margin-right: 16px;
-  margin-left: 10px;
-  height: 20px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-body main section#search > .content > .search-bar > .container input {
-  text-align: left;
-  border-radius: 0;
-  height: 30px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  background: #ffffff;
-  border: none;
-  border-bottom: 1px solid transparent;
-  color: #000000;
-  font-size: 14pt;
-  font-weight: 300;
-  text-decoration: none;
-  outline: none;
-}
-
-body main section#search > .content > .search-bar > .container input::-webkit-input-placeholder {
-  color: #a2a7a8;
-}
-
-body main section#search > .content > .search-bar > .container input::-moz-placeholder {
-  color: #a2a7a8;
-}
-
-body main section#search > .content > .search-bar > .container input:-ms-input-placeholder {
-  color: #a2a7a8;
-}
-
-body main section#search > .content > .search-bar > .container input:focus, body main section#search > .content > .search-bar > .container input:active {
-  color: #1a1a1d;
-  border-bottom: 1px solid #1a1a1d;
-}
-
-body main section#search > .content > .search-bar > .container .button-buy {
-  margin-right: 10px;
-  margin-left: 20px;
-}
-
-body main section#search > .content > .search-bar > .container .button-filter {
-  background: transparent;
-  border: 1px solid #1a1a1d;
-}
-
-body main section#search > .content > .search-bar > .container .button-filter .loader i,
-body main section#search > .content > .search-bar > .container .button-filter .loader span {
-  color: #1a1a1d;
-}
-
-body main section#search > .content > .search-bar > .container .button-filter i {
-  color: #1a1a1d;
-}
-
-body main section#search > .content > .search-bar > .container .button-filter span {
-  color: #1a1a1d;
-}
-
-body main section#search > .content > .search-bar > .container .button-filter:hover, body main section#search > .content > .search-bar > .container .button-filter:active, body main section#search > .content > .search-bar > .container .button-filter:focus {
-  background: #1a1a1d;
-}
-
-body main section#search > .content > .search-bar > .container .button-filter:hover i,
-body main section#search > .content > .search-bar > .container .button-filter:hover span,
-body main section#search > .content > .search-bar > .container .button-filter:hover .loader i,
-body main section#search > .content > .search-bar > .container .button-filter:hover .loader span, body main section#search > .content > .search-bar > .container .button-filter:active i,
-body main section#search > .content > .search-bar > .container .button-filter:active span,
-body main section#search > .content > .search-bar > .container .button-filter:active .loader i,
-body main section#search > .content > .search-bar > .container .button-filter:active .loader span, body main section#search > .content > .search-bar > .container .button-filter:focus i,
-body main section#search > .content > .search-bar > .container .button-filter:focus span,
-body main section#search > .content > .search-bar > .container .button-filter:focus .loader i,
-body main section#search > .content > .search-bar > .container .button-filter:focus .loader span {
-  color: #fff;
 }
 
 @media all and (max-width: 992px) {
@@ -3908,133 +3293,8 @@ body main section#search > .content > .search-bar > .container .button-filter:fo
     width: 100%;
     height: 100%;
   }
-  body main section#account {
+  body main section {
     width: 100%;
   }
-  body main section#account > .content header h2 {
-    font-size: 20pt;
-  }
-  body main section#account > .content header h2 span {
-    font-size: 20pt;
-  }
-  body main section#account > .content header p {
-    font-size: 11pt;
-    color: #262626;
-    margin: 0 0 15px 0;
-    font-weight: 200;
-  }
-  body main section#account > .content > .info {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    grid-gap: 10px;
-  }
-  body main section#account > .content > .info *.input {
-    grid-column: span 1;
-    min-width: 100%;
-  }
-  body main section#account > .content > .info *.button, body main section#account > .content > .info *.buttonPrimary, body main section#account > .content > .info section#search > .content > .search-bar > .container *.button-buy, body main section#search > .content > .search-bar > .container section#account > .content > .info *.button-buy, body main section#account > .content > .info *.buttonSecondary, body main section#account > .content > .info *.buttonGray, body main section#account > .content > .info *.buttonOutline, body main section#account > .content > .info section#search > .content > .search-bar > .container *.button-filter, body main section#search > .content > .search-bar > .container section#account > .content > .info *.button-filter, body main section#account > .content > .info *.buttonGradient {
-    margin: 0;
-    grid-column: span 1;
-  }
-  body main section#listings {
-    width: 100%;
-  }
-  body main section#listings > .content {
-    max-width: calc(1160px - 2 * 20px);
-    width: calc(100% - 2 * 20px);
-    margin: 0 auto;
-    padding: 0 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: calc(100% - 2 * 20px);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 60px;
-    -ms-flex-direction: column;
-        flex-direction: column;
-  }
 }
-
-@media all and (max-width: 992px) and (max-width: 992px) {
-  body main section#listings > .content {
-    max-width: calc(1160px - 2 * 20px);
-    width: calc(100% - 2 * 20px);
-  }
-}
-
-@media all and (max-width: 992px) {
-  body main section#listings > .content .list {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-  }
-  body main section#listings > .content .list .listing-item {
-    grid-column: span 1;
-    width: auto;
-    height: auto;
-  }
-  body main section#listings > .content .list .listing-item .badges {
-    display: none !important;
-  }
-  body main section#search > .content {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    width: calc(100% - 20px);
-  }
-  body main section#search > .content h1 {
-    font-size: 22pt;
-    max-width: 90%;
-  }
-  body main section#search > .content h4 {
-    font-size: 13pt;
-    max-width: 90%;
-  }
-  body main section#search > .content > .search-bar {
-    height: 70px;
-    width: 100%;
-    max-width: 100%;
-  }
-  body main section#search > .content > .search-bar > .container {
-    width: 100%;
-    padding: 0;
-  }
-  body main section#search > .content > .search-bar > .container img {
-    margin-right: 16px;
-    margin-left: 10px;
-    height: 20px;
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
-  body main section#search > .content > .search-bar > .container input {
-    font-size: 12pt;
-  }
-  body main section#search > .content > .search-bar > .container .button-buy {
-    margin-right: 10px;
-    margin-left: 0;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  body main section#search > .content > .search-bar > .container .button-filter {
-    display: none;
-  }
-}
-
-@media all and (max-width: 768px) {
-  body main section#listings > .content .list {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    grid-gap: 20px;
-  }
-}
-/*# sourceMappingURL=account.css.map */
+/*# sourceMappingURL=build.css.map */

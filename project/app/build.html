@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FrIC | Account</title>
+    <title>FrIC | Builder</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"
@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
 
-    <link rel="stylesheet" href="css/account.css" />
+    <link rel="stylesheet" href="css/build.css" />
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
@@ -21,8 +21,6 @@
       href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Ubuntu:300,400,500,700&amp;subset=latin-ext"
       rel="stylesheet"
     />
-
-
   </head>
 
   <body id="body">
@@ -41,12 +39,12 @@
               ><i class="material-icons-round">public</i><span>Browse</span></a
             >
           </li>
-          <li class="nav-menu-item">
+          <li class="nav-menu-item active">
             <a class="container" href="build.html"
               ><i class="material-icons-round">build</i><span>Build</span></a
             >
           </li>
-          <li class="nav-menu-item active">
+          <li class="nav-menu-item">
             <a class="container" href="account.html"
               ><i class="material-icons-round">vpn_key</i
               ><span>Account & Keys</span></a
@@ -57,61 +55,11 @@
     </nav>
 
     <main role="main">
-      <section id="account">
+      <section>
         <div class="content">
           <header>
-            <h2 id="greeting">👋 Hey there, <span></span></h2>
+            <h2 id="greeting">👋 Hey there</h2>
           </header>
-        </div>
-      </section>
-
-      <section id="keys">
-        <div class="content">
-          <header>
-            <h2><span>API Keys</span></h2>
-            <p>Register keys to be used with our library</p>
-          </header>
-          <div class="info">
-            <div id="key-list" class="key-list">
-
-            </div>
-            <form class="box">
-                <div class="explain">
-                    <p><span>Generate API Key: </span>Each key has a quota of 300 queries per day.</p>
-                </div>
-              
-                <button type="button" id="generateKeyButton" class="buttonSecondary"><span>Generate new key</span></button>
-            </form>
-        </div>
-      </section>
-
-      <section id="votes">
-        <div class="content">
-          <header>
-            <h2><span>Your votes</span></h2>
-            <p>
-              See what fractals left a good impression on you. Vote one to save
-              it to the list.
-            </p>
-          </header>
-          <div class="list"></div>
-        </div>
-      </section>
-
-      <section id="actions">
-        <div class="content">
-          <header>
-            <h2><span>Actions</span></h2>
-            <p>Do more with your account</p>
-          </header>
-          <div class="info">
-            <a style="margin-right: 20px" href="./" class="buttonPrimary"
-              ><span>Explore</span></a
-            >
-            <div id="button-logOut" class="buttonGray">
-              <span>Log Out</span>
-            </div>
-          </div>
         </div>
       </section>
     </main>
@@ -126,7 +74,7 @@
         </div>
       </div>
     </footer>
-    
-    <script type="module" src="js/account.js"></script>
+
+    <script type="module" src="js/build.js"></script>
   </body>
 </html>

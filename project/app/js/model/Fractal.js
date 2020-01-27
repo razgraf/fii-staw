@@ -54,7 +54,7 @@ class Fractal {
                 : String(this.access) === "1"
                 ? `<div class="actions"> <div class="action" title="Publish"> <i class="material-icons">visibility_off</i></div></div>`
                 : ""
-              : ""
+              : `<div class="actions"> <div class="action" title="Vote"> <i class="material-icons">thumb_up</i></div></div>`
           }
         </div>
         <div class="divider"></div>
