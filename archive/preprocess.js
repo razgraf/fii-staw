@@ -26,7 +26,7 @@ let newstart2 = preprocessRules("FY", clonedRulesDragon2);
 console.log("FY", rulesDragon2);
 console.log(newstart2, clonedRulesDragon2);
 
-function preprocessRules(start, rulez) {
+function preprocessRules(start, rules) {
     let to = 'a';
     let coada = [];
     let used = new Set();
@@ -39,21 +39,21 @@ function preprocessRules(start, rulez) {
 
             while (coada.length > 0) {
                 let from = coada.pop();
-                for (let j = 0; j < rulez.length; j++) {
-                    if (rulez[j].left == from) {
-                        rulez[j].left = to;
-                        for (let k = 0; k < rulez[j].right.length; k++) {
-                            if ('A' <= rulez[j].right[k] && rulez[j].right[k] <= 'Z') {
-                                if (!used.has(rulez[j].right[k])) {
-                                    coada.push(rulez[j].right[k]);
-                                    used.add(rulez[j].right[k]);
+                for (let j = 0; j < rules.length; j++) {
+                    if (rules[j].left == from) {
+                        rules[j].left = to;
+                        for (let k = 0; k < rules[j].right.length; k++) {
+                            if ('A' <= rules[j].right[k] && rules[j].right[k] <= 'Z') {
+                                if (!used.has(rules[j].right[k])) {
+                                    coada.push(rules[j].right[k]);
+                                    used.add(rules[j].right[k]);
                                 }
                             }
 
                         }
                     }
                     if (from != 'F') {
-                        rulez[j].right = rulez[j].right.replace(from, to);
+                        rules[j].right = rules[j].right.replace(from, to);
                         start = start.replace(from, to);
                     }
                 }
@@ -62,16 +62,16 @@ function preprocessRules(start, rulez) {
             }
         }
     }
-    rulez.sort(function (a, b) {
+    rules.sort(function (a, b) {
         if (a.left < b.left) return -1;
         if (b.left < a.left) return 1;
         return 0;
     })
 
     start = start.toUpperCase();
-    for (let i = 0; i < rulez.length; i++) {
-        rulez[i].left = rulez[i].left.toUpperCase();
-        rulez[i].right = rulez[i].right.toUpperCase();
+    for (let i = 0; i < rules.length; i++) {
+        rules[i].left = rules[i].left.toUpperCase();
+        rules[i].right = rules[i].right.toUpperCase();
     }
 
     return start;
