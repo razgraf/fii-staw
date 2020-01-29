@@ -16,11 +16,15 @@ var rulesDragon2 = [{
     "right": "-FY-X"
 }];
 
-preprocessRules("FX", rulesDragon);
-console.log(rulesDragon);
+let clonedRulesDragon = JSON.parse(JSON.stringify(rulesDragon))
+let newstart = preprocessRules("FX", clonedRulesDragon);
+console.log("FX", rulesDragon);
+console.log(newstart, clonedRulesDragon);
 
-preprocessRules("FY", rulesDragon2);
-console.log(rulesDragon2);
+let clonedRulesDragon2 = JSON.parse(JSON.stringify(rulesDragon2))
+let newstart2 = preprocessRules("FY", clonedRulesDragon2);
+console.log("FY", rulesDragon2);
+console.log(newstart2, clonedRulesDragon2);
 
 function preprocessRules(start, rulez) {
     let to = 'a';
@@ -50,6 +54,7 @@ function preprocessRules(start, rulez) {
                     }
                     if (from != 'F') {
                         rulez[j].right = rulez[j].right.replace(from, to);
+                        start = start.replace(from, to);
                     }
                 }
                 to = String.fromCharCode(to.charCodeAt() + 1);
@@ -63,8 +68,11 @@ function preprocessRules(start, rulez) {
         return 0;
     })
 
+    start = start.toUpperCase();
     for (let i = 0; i < rulez.length; i++) {
         rulez[i].left = rulez[i].left.toUpperCase();
         rulez[i].right = rulez[i].right.toUpperCase();
     }
+
+    return start;
 }
