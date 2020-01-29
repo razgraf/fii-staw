@@ -126,7 +126,7 @@ class Fractal {
       fractal.userId = userId;
       fractal.name = name;
 
-      const isCreated = await fractal.create("lSystem", parsedDefinition);
+      const isCreated = await fractal.create("lSystemRec", parsedDefinition);
       if (!isCreated) throw new Error("Couldn't create fractal.");
 
       console.log("created");
@@ -159,6 +159,9 @@ class Fractal {
     switch (type) {
       case "lSystem":
         this.create_lSystem(definition);
+        break;
+      case "lSystemRec":
+        this.create_lsystemrec(definition.iterations, definition.start.symbol, definition.rules, {x : definition.start.x, y : definition.start.y, degrees : 270}, definition.angle, [], 8);
         break;
       default:
         console.eror('Unknown type. Expected one of ["lSystem"]');
@@ -231,6 +234,49 @@ class Fractal {
       return false;
     }
   }
+
+  create_lsystemrec(iterations, start, rules, state, angle, states, len) {
+    for (let s of start) {
+        if ('A' <= s && s <= 'Z') {
+            let found = 0;
+            if(iterations > 0) {
+                for (let rule of rules) {
+                    if (rule.left == s) {
+                        found = 1;
+                        lsystemrec(iterations - 1, rule.right, rules, state, angle, states, len);
+                        break;
+                    }
+                }
+            } else {
+                //mystring += s;
+            }
+            if(s == 'F' && (found == 0 || iterations == 0)) {
+                ctx.beginPath();
+                ctx.moveTo(state.x, state.y);
+                let xf = state.x + len * Math.cos(state.degrees * Math.PI / 180);
+                let yf = state.y + len * Math.sin(state.degrees * Math.PI / 180);
+                ctx.lineTo(xf, yf);
+                ctx.stroke();
+                state.x = xf;
+                state.y = yf;
+                ctx.moveTo(state.x, state.y);
+            }
+        } else if (s == "+" ) {
+            //mystring += s;
+            state.degrees += angle;
+        } else if (s == "-") {
+            //mystring += s;
+            state.degrees -= angle;
+        } else if (s == "[") {
+            //mystring += s;
+            states.push({...state});
+        } else if (s == "]") {
+            //mystring += s;
+            state = states.pop();
+            ctx.moveTo(state.x, state.y);
+        }
+    }   
+}
 
   /**
    * @param {Definition} definition
