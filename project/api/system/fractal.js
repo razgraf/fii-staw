@@ -191,14 +191,17 @@ class Fractal {
 
   async saveToDatabase() {
     const rules = this.definition.rules;
-    rules.sort((a, b) => {
-      return a.left < b.left;
-    });
+    const start = this.definition.start.symbol;
+    
+    let newstart = start;
+    let clonedrules = JSON.parse(JSON.stringify(rules))
+    newstart = this.preprocessRules(start, clonedrules);
 
     const hashed = await Bcrypt.hash(
       stringify({
         ...this.definition,
-        rules
+        rules : clonedrules,
+        start : newstart
       }),
       1
     );
@@ -319,6 +322,55 @@ class Fractal {
       }
     }
     return final;
+  }
+
+  preprocessRules(start, rules) {
+    let to = 'a';
+    let coada = [];
+    let used = new Set();
+    for (let i = 0; i < start.length; i++) {
+        if ('A' <= start[i] && start[i] <= 'Z') {
+            if (!used.has(start[i])) {
+                coada.push(start[i]);
+                used.add(start[i]);
+            }
+
+            while (coada.length > 0) {
+                let from = coada.pop();
+                for (let j = 0; j < rules.length; j++) {
+                    if (rules[j].left == from) {
+                        rules[j].left = to;
+                        for (let k = 0; k < rules[j].right.length; k++) {
+                            if ('A' <= rules[j].right[k] && rules[j].right[k] <= 'Z') {
+                                if (!used.has(rules[j].right[k])) {
+                                    coada.push(rules[j].right[k]);
+                                    used.add(rules[j].right[k]);
+                                }
+                            }
+
+                        }
+                    }
+                    if (from != 'F') {
+                        rules[j].right = rules[j].right.replace(from, to);
+                        start = start.replace(from, to);
+                    }
+                }
+                to = String.fromCharCode(to.charCodeAt() + 1);
+                if (to == 'f') String.fromCharCode(to.charCodeAt() + 1);
+            }
+        }
+    }
+    rules.sort((a, b) => {
+        return a.left < b.left;
+    });
+
+    start = start.toUpperCase();
+    for (let i = 0; i < rules.length; i++) {
+        rules[i].left = rules[i].left.toUpperCase();
+        rules[i].right = rules[i].right.toUpperCase();
+    }
+
+    return start;
   }
 }
 
