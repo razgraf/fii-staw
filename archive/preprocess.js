@@ -62,11 +62,9 @@ function preprocessRules(start, rules) {
             }
         }
     }
-    rules.sort(function (a, b) {
-        if (a.left < b.left) return -1;
-        if (b.left < a.left) return 1;
-        return 0;
-    })
+    rules.sort((a, b) => {
+        return a.left < b.left;
+    });
 
     start = start.toUpperCase();
     for (let i = 0; i < rules.length; i++) {
