@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>FrIC Documentation - Apostu Razvan & Badarau Bogdan</title>
+    <link rel="stylesheet" href="css/scholarly.min.css" />
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img
+          src="scholarly-html.svg"
+          width="227"
+          height="50"
+          alt="Scholarly HTML logo"
+        />
+        <div class="status">Public Documentation v1</div>
+      </div>
+      <h1>FrIC (FII-STAW 2019)</h1>
+    </header>
+
+    <div role="contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          <a href="https://github.com/razgraf">Apostu Razvan</a>
+          <a href="https://twitter.com/razgraf">@razgraf</a>
+          &amp;
+          <a href="https://github.com/Bloogdan">Badarau Bogdan</a>
+        </dd>
+        <dt>Public repository</dt>
+        <dd>
+          <a href="https://github.com/razgraf/fii-staw">Github</a>
+        </dd>
+      </dl>
+    </div>
+    <section id="introduction" role="doc-introduction">
+      <h2>Introduction</h2>
+      <p>
+        The main scope of the FRIC project is to build and deploy a library for
+        fractal generation. In this file you will find out how to make best use of the 
+		library and the platform we provide.
+      </p>
+    </section>
+    <section id="structure">
+      <h2>Structure</h2>
+      <p>
+        We will break down the guide into two parts:
+      </p>
+	  <section id="structure-platform">
+        <!-- review? -->
+        <h3>The platform</h3>
+        <ol>
+          <li>
+            Navigation around the platform is easily done using the nav-bar at the top of the page. <br>
+			<img style="width: 480px; object-fit:contain"
+					 alt="Nav Bar Preview"
+					 src="asset/platform_navbar.png">
+          </li>
+          <li>
+            On the browse page the user can admire other's people fractals or unpublish his fractals
+			that he's not entirely proud of. <br>
+			<img style="width: 240px; object-fit:contain"
+					 alt="Platform Like Preview"
+					 src="asset/platform_like.png">
+			<img style="width: 240px; object-fit:contain"
+					 alt="Platform Unpublish Preview"
+					 src="asset/platform_unpublish.png">
+          </li>
+		  <li>
+			On the build page the user can generate fractals using the side menu and after he is satisfied
+			with his work he can publish it on the platform for other's to see. <br>
+			<img style="width: 960px; object-fit:contain"
+					 alt="Platform Unpublish Preview"
+					 src="asset/platform_fractal.png">
+		  </li>
+		  <li>
+			Lastly there is the page used to generate keys, which we will talk about in the <a href="#structure-library">library</a> section.
+		  </li>
+        </ol>
+      </section>
+	  <section id="structure-library">
+        <!-- review? -->
+        <h3>The library</h3>
+        <ol>
+			<li>
+				First of all, to be able to use the library, one must first generate a token on the platform.
+				This is just two clicks away after creating an account. <br>
+				<img style="width: 180px; object-fit:contain"
+					 alt="My Keys Preview"
+					 src="asset/my_keys.png"> <br>
+				<img style="width: 180px; object-fit:contain"
+					 alt="Generate Key Preview"
+					 src="asset/generate_key.png">
+			</li>
+			<li>
+				Now you have a brand new key you can use to generate 300 fractals/day. <br>
+				<img style="width: 480px; object-fit:contain"
+					 alt="Queries Left Preview"
+					 src="asset/queries.png">
+			</li>
+			<li>
+				Using the key you can now initialize the fractal builder in your application. <br>
+				<img style="width: 480px; object-fit:contain"
+					 alt="Builder initialization Preview"
+					 src="asset/builder_init.png">
+			</li>
+			<li>
+				Finally you can generate your awesome fractal with your own definition. <br>
+				<img style="width: 480px; object-fit:contain"
+					 alt="Builder fractal Preview"
+					 src="asset/builder_fractal.png">
+			</li>
+			<li>
+				This will return an object containing a link to the fractal you just generated.
+			</li>
+		</ol>
+      </section>
+      
+    </section>
+  </body>
+</html>
