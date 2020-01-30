@@ -188,12 +188,7 @@ class User {
     else return User.validateForLibrary(payload);
   }
 
-  static async validateForPlatform({ token }) {
-    if (typy(token).isFalsy) {
-      console.error("Missing parameteres for token validation");
-      throw new Error(ERRORS.FORBIDDEN);
-    }
-
+  static async decodeJWTData({ token }) {
     const decoded = JWT.verify(token, process.env.S_JWT_SECRET);
 
     console.log("Decoded:", decoded);
@@ -204,17 +199,34 @@ class User {
     }
 
     const { data } = decoded;
+    return data;
+  }
 
-    const match = await Networking.matchUserKeyFromDB({ ...data });
-
-    if (!match) {
-      console.error("Mismatch at user-key level.");
+  static async validateForPlatform({ token }) {
+    if (typy(token).isFalsy) {
+      console.error("Missing parameteres for token validation");
       throw new Error(ERRORS.FORBIDDEN);
     }
 
-    const user = User.get({ uuid: data.userUuid });
+    try {
+      const data = await User.decodeJWTData({ token });
 
-    return user;
+      console.error(data, data.userUuid);
+
+      const match = await Networking.matchUserKeyFromDB({ ...data });
+
+      if (!match) {
+        console.error("Mismatch at user-key level.");
+        throw new Error(ERRORS.FORBIDDEN);
+      }
+
+      const user = User.get({ uuid: data.userUuid });
+
+      return user;
+    } catch (e) {
+      console.error(e);
+      throw new Error(ERRORS.FORBIDDEN);
+    }
   }
 
   static async validateForLibrary({ email, token }) {

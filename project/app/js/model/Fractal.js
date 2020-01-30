@@ -1,4 +1,4 @@
-import { ClassHelper, Store } from "./../../base/util.js";
+import { ClassHelper, Store, Alert } from "./../../base/util.js";
 import { API, ERRORS, HTTP_STATUS, STORE_KEYS } from "../../base/config.js";
 
 class Fractal {
@@ -13,12 +13,60 @@ class Fractal {
     this.username = ClassHelper.sanitize(payload.username, "");
     this.name = ClassHelper.sanitize(payload.name, "");
     this.votes = ClassHelper.sanitize(payload.votes, 0);
-    this.access = ClassHelper.sanitize(payload.votes, 1);
+    this.access = ClassHelper.sanitize(payload.access, 1);
 
     console.log(this);
   }
 
-  static async getList(limit = 50, offset = 0) {
+  static async publish({ uuid }) {
+    const endpoint = new URL(API.PUBLISH_FRACTAL);
+
+    const body = {
+      token: Store.get(STORE_KEYS.TOKEN),
+      uuid
+    };
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: JSON.stringify(body)
+    });
+
+    return response;
+  }
+
+  static async setPublic({ uuid }) {
+    const endpoint = new URL(API.SET_FRACTAL_PUBLIC);
+
+    const body = {
+      token: Store.get(STORE_KEYS.TOKEN),
+      uuid
+    };
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: JSON.stringify(body)
+    });
+
+    return response;
+  }
+
+  static async setPrivate({ uuid }) {
+    const endpoint = new URL(API.SET_FRACTAL_PRIVATE);
+
+    const body = {
+      token: Store.get(STORE_KEYS.TOKEN),
+      uuid
+    };
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: JSON.stringify(body)
+    });
+
+    return response;
+  }
+
+  static async getList(limit = 1000, offset = 0) {
     const endpoint = new URL(API.LIST_FRACTALS);
 
     const params = {
@@ -42,7 +90,7 @@ class Fractal {
     if (ClassHelper.isEmpty(parent)) return;
 
     const item = `
-    <div data-id="${this.identifier}" class="item" data-publish="${
+    <div data-id="${this.identifier}" class="item fractal" data-publish="${
       this.access
     }">
         <div class="header">
@@ -50,11 +98,11 @@ class Fractal {
           ${
             this.self
               ? String(this.access) === "2"
-                ? `<div class="actions"> <div class="action" title="Unpublish"> <i class="material-icons">visibility</i></div></div>`
+                ? `<div class="actions"> <div class="action" data-type="private" title="Unpublish"> <i class="material-icons">visibility_off</i></div></div>`
                 : String(this.access) === "1"
-                ? `<div class="actions"> <div class="action" title="Publish"> <i class="material-icons">visibility_off</i></div></div>`
+                ? `<div class="actions"> <div class="action" data-type="public"  title="Publish"> <i class="material-icons">visibility</i></div></div>`
                 : ""
-              : `<div class="actions"> <div class="action" title="Vote"> <i class="material-icons">thumb_up</i></div></div>`
+              : `<div class="actions"> <div class="action" data-type="vote"  title="Vote"> <i class="material-icons">thumb_up</i></div></div>`
           }
         </div>
         <div class="divider"></div>
@@ -66,6 +114,50 @@ class Fractal {
       </div>`;
 
     parent.insertAdjacentHTML("beforeend", item);
+
+    const element = parent.querySelector(`.item[data-id="${this.identifier}"]`);
+    if (element) {
+      if (this.self) {
+        if (String(this.access) === "2") {
+          const action = element.querySelector(".action[data-type='private']");
+          action.onclick = async () => {
+            action.dataset.loading = true;
+            const result = await Fractal.setPrivate({ uuid: this.identifier });
+            console.log(result);
+            action.dataset.loading = false;
+            if (result.status === HTTP_STATUS.OK) {
+              window.location.reload(true);
+            } else Alert.showAlert("Nope");
+          };
+        } else if (String(this.access) === "1") {
+          const action = element.querySelector(".action[data-type='public']");
+          action.onclick = async () => {
+            action.dataset.loading = true;
+            const result = await Fractal.setPublic({ uuid: this.identifier });
+            console.log(result);
+            action.dataset.loading = false;
+            if (result.status === HTTP_STATUS.OK) {
+              window.location.reload(true);
+            } else Alert.showAlert("Nope");
+          };
+        }
+      } else {
+        const action = element.querySelector(".action[data-type='vote']");
+        action.onclick = async () => {
+          action.dataset.loading = true;
+          const result = await Fractal.sendVote({ uuid: this.identifier });
+          console.log(result);
+          action.dataset.loading = false;
+          if (result.status === HTTP_STATUS.OK) {
+            window.location.reload(true);
+          } else Alert.showAlert("Nope");
+        };
+      }
+    } else console.warn("element ?? ");
+  }
+
+  static async sendVote({ uuid }) {
+    Alert.showAlert("Voting not implemented yet..");
   }
 }
 

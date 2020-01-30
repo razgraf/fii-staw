@@ -57,9 +57,50 @@
     <main role="main">
       <section>
         <div class="content">
-          <header>
-            <h2 id="greeting">👋 Hey there</h2>
-          </header>
+          <form class="panel">
+            <div class="box">
+              <div class="title"><h2>Rules & Definition</h2></div>
+              <div class="section configuration">
+                <p class="label">Configuration</p>
+                <div class="card">
+                  <div class="row"></div>
+                </div>
+              </div>
+
+              <div class="section rules">
+                <p class="label">Rules</p>
+                <div class="card"></div>
+              </div>
+              <div id="buttonGenerate" class="buttonSecondary">
+                <span>Generate</span>
+              </div>
+              <div id="buttonPublish" class="buttonPrimary" data-active="false">
+                <span>Publish</span>
+              </div>
+            </div>
+          </form>
+          <div class="playground">
+            <div class="box">
+              <div class="title">
+                <h2>Your creation:</h2>
+              </div>
+              <div class="container" id="showcase">
+                <div class="loader" data-visible="false">
+                  <div class="icon">
+                    <i class="material-icons-round">gesture</i>
+                  </div>
+                  <p>Loading your fractal..</p>
+                </div>
+                <div class="empty" data-visible="true">
+                  <div class="icon">
+                    <i class="material-icons-round">cast</i>
+                  </div>
+                  <p>Add a definition<br />and hit<br /><b>Generate</b></p>
+                </div>
+                <img id="showcaseHere" src="" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -498,9 +498,47 @@ body header > .content > .right > .card > .container > .actions > .button.c2a:fo
   pointer-events: none;
 }
 
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .initWithFade {
   -webkit-animation-name: fadein;
           animation-name: fadein;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
 }
@@ -508,6 +546,8 @@ body header > .content > .right > .card > .container > .actions > .button.c2a:fo
 .exitWithFade {
   -webkit-animation-name: fadeout;
           animation-name: fadeout;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
 }
@@ -587,6 +627,31 @@ DEFAULT BUTTONS
 
 ------------------
  */
+@-webkit-keyframes buttonLoader {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes buttonLoader {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 .button, .buttonPrimary, body header > .content > .right > .card > .container > .actions > .button.login, .buttonSecondary, .buttonGray, .buttonOutline, body header > .content > .right > .card > .container > .actions > .button.c2a, .buttonGradient {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -612,8 +677,28 @@ DEFAULT BUTTONS
   outline: none;
 }
 
-.button .loader i, .buttonPrimary .loader i, body header > .content > .right > .card > .container > .actions > .button.login .loader i, .buttonSecondary .loader i, .buttonGray .loader i, .buttonOutline .loader i, body header > .content > .right > .card > .container > .actions > .button.c2a .loader i, .buttonGradient .loader i {
+.button .loader i, .buttonPrimary .loader i, body header > .content > .right > .card > .container > .actions > .button.login .loader i, .buttonSecondary .loader i, .buttonGray .loader i, .buttonOutline .loader i, body header > .content > .right > .card > .container > .actions > .button.c2a .loader i, .buttonGradient .loader i,
+.button .loader span,
+.buttonPrimary .loader span,
+body header > .content > .right > .card > .container > .actions > .button.login .loader span,
+.buttonSecondary .loader span,
+.buttonGray .loader span,
+.buttonOutline .loader span,
+body header > .content > .right > .card > .container > .actions > .button.c2a .loader span,
+.buttonGradient .loader span {
+  letter-spacing: 1.8px;
+  font-weight: 600;
   color: #ffffff;
+  -webkit-animation-name: buttonLoader;
+          animation-name: buttonLoader;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 700ms;
+          animation-duration: 700ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 
 .button i, .buttonPrimary i, body header > .content > .right > .card > .container > .actions > .button.login i, .buttonSecondary i, .buttonGray i, .buttonOutline i, body header > .content > .right > .card > .container > .actions > .button.c2a i, .buttonGradient i {
@@ -666,7 +751,9 @@ DEFAULT BUTTONS
   border: 1px solid #000;
 }
 
-.buttonOutline .loader i, body header > .content > .right > .card > .container > .actions > .button.c2a .loader i {
+.buttonOutline .loader i, body header > .content > .right > .card > .container > .actions > .button.c2a .loader i,
+.buttonOutline .loader span,
+body header > .content > .right > .card > .container > .actions > .button.c2a .loader span {
   color: #000;
 }
 
@@ -720,7 +807,15 @@ MINI BUTTONS
   outline: none;
 }
 
-.buttonMini .loader i, .buttonMiniPrimary .loader i, .buttonMiniSecondary .loader i, .buttonMiniGray .loader i, .buttonMiniOutline .loader i, .upload .upload-action .upload-button .loader i, .upload .upload-action .upload-button-remove .loader i, .buttonMiniGradient .loader i {
+.buttonMini .loader i, .buttonMiniPrimary .loader i, .buttonMiniSecondary .loader i, .buttonMiniGray .loader i, .buttonMiniOutline .loader i, .upload .upload-action .upload-button .loader i, .upload .upload-action .upload-button-remove .loader i, .buttonMiniGradient .loader i,
+.buttonMini .loader span,
+.buttonMiniPrimary .loader span,
+.buttonMiniSecondary .loader span,
+.buttonMiniGray .loader span,
+.buttonMiniOutline .loader span,
+.upload .upload-action .upload-button .loader span,
+.upload .upload-action .upload-button-remove .loader span,
+.buttonMiniGradient .loader span {
   color: #ffffff;
 }
 
@@ -769,7 +864,10 @@ MINI BUTTONS
   border: 1px solid #000;
 }
 
-.buttonMiniOutline .loader i, .upload .upload-action .upload-button .loader i, .upload .upload-action .upload-button-remove .loader i {
+.buttonMiniOutline .loader i, .upload .upload-action .upload-button .loader i, .upload .upload-action .upload-button-remove .loader i,
+.buttonMiniOutline .loader span,
+.upload .upload-action .upload-button .loader span,
+.upload .upload-action .upload-button-remove .loader span {
   color: #000;
 }
 
@@ -817,11 +915,14 @@ STYLISH BUTTONS
 
 .buttonGradient:hover i,
 .buttonGradient:hover span,
-.buttonGradient:hover .loader i, .buttonGradient:active i,
+.buttonGradient:hover .loader i,
+.buttonGradient:hover .loader span, .buttonGradient:active i,
 .buttonGradient:active span,
-.buttonGradient:active .loader i, .buttonGradient:focus i,
+.buttonGradient:active .loader i,
+.buttonGradient:active .loader span, .buttonGradient:focus i,
 .buttonGradient:focus span,
-.buttonGradient:focus .loader i {
+.buttonGradient:focus .loader i,
+.buttonGradient:focus .loader span {
   color: #fff;
 }
 
@@ -852,7 +953,8 @@ STYLISH BUTTONS
   background-size: 200%;
 }
 
-.buttonMiniGradient .loader i {
+.buttonMiniGradient .loader i,
+.buttonMiniGradient .loader span {
   color: #fff !important;
 }
 
@@ -1490,7 +1592,8 @@ Checkbox, Radio, Input, Select, ImageUpload
   border: 1px solid #1a1a1d !important;
 }
 
-.upload .upload-action .upload-button .loader i {
+.upload .upload-action .upload-button .loader i,
+.upload .upload-action .upload-button .loader span {
   color: #1a1a1d !important;
 }
 
@@ -1508,11 +1611,14 @@ Checkbox, Radio, Input, Select, ImageUpload
 
 .upload .upload-action .upload-button:hover i,
 .upload .upload-action .upload-button:hover span,
-.upload .upload-action .upload-button:hover .loader i, .upload .upload-action .upload-button:active i,
+.upload .upload-action .upload-button:hover .loader i,
+.upload .upload-action .upload-button:hover .loader span, .upload .upload-action .upload-button:active i,
 .upload .upload-action .upload-button:active span,
-.upload .upload-action .upload-button:active .loader i, .upload .upload-action .upload-button:focus i,
+.upload .upload-action .upload-button:active .loader i,
+.upload .upload-action .upload-button:active .loader span, .upload .upload-action .upload-button:focus i,
 .upload .upload-action .upload-button:focus span,
-.upload .upload-action .upload-button:focus .loader i {
+.upload .upload-action .upload-button:focus .loader i,
+.upload .upload-action .upload-button:focus .loader span {
   color: #ffffff !important;
 }
 
@@ -1522,7 +1628,8 @@ Checkbox, Radio, Input, Select, ImageUpload
   border: 1px solid #f44336 !important;
 }
 
-.upload .upload-action .upload-button-remove .loader i {
+.upload .upload-action .upload-button-remove .loader i,
+.upload .upload-action .upload-button-remove .loader span {
   color: #f44336 !important;
 }
 
@@ -1540,11 +1647,14 @@ Checkbox, Radio, Input, Select, ImageUpload
 
 .upload .upload-action .upload-button-remove:hover i,
 .upload .upload-action .upload-button-remove:hover span,
-.upload .upload-action .upload-button-remove:hover .loader i, .upload .upload-action .upload-button-remove:active i,
+.upload .upload-action .upload-button-remove:hover .loader i,
+.upload .upload-action .upload-button-remove:hover .loader span, .upload .upload-action .upload-button-remove:active i,
 .upload .upload-action .upload-button-remove:active span,
-.upload .upload-action .upload-button-remove:active .loader i, .upload .upload-action .upload-button-remove:focus i,
+.upload .upload-action .upload-button-remove:active .loader i,
+.upload .upload-action .upload-button-remove:active .loader span, .upload .upload-action .upload-button-remove:focus i,
 .upload .upload-action .upload-button-remove:focus span,
-.upload .upload-action .upload-button-remove:focus .loader i {
+.upload .upload-action .upload-button-remove:focus .loader i,
+.upload .upload-action .upload-button-remove:focus .loader span {
   color: #ffffff !important;
 }
 
@@ -2389,6 +2499,12 @@ body nav .nav-content .nav-menu .nav-menu-item {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
 }
 
 body nav .nav-content .nav-menu .nav-menu-item.active > .container > i,
@@ -3524,7 +3640,13 @@ body header > .content > .right > .card > .container > .actions > .c2a.buttonPri
   transition: 0.2s box-shadow, 0.1s background, 0.2s -webkit-box-shadow;
 }
 
-body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGray .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline .loader i, body header > .content > .right > .card > .container > .actions > .c2a.button .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient .loader i {
+body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGray .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline .loader i, body header > .content > .right > .card > .container > .actions > .c2a.button .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient .loader i,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGray .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.button .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient .loader span {
   color: #c3073f;
 }
 
@@ -3552,7 +3674,13 @@ body header > .content > .right > .card > .container > .actions > .c2a.buttonSec
 body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:hover .loader i,
 body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:hover .loader i,
 body header > .content > .right > .card > .container > .actions > .c2a.button:hover .loader i,
-body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:hover .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary:active i, body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary:active i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:active i, body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:active i, body header > .content > .right > .card > .container > .actions > .c2a.button:active i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:active i,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:hover .loader i,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary:hover .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary:hover .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:hover .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:hover .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.button:hover .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:hover .loader span, body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary:active i, body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary:active i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:active i, body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:active i, body header > .content > .right > .card > .container > .actions > .c2a.button:active i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:active i,
 body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary:active span,
 body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary:active span,
 body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:active span,
@@ -3564,7 +3692,13 @@ body header > .content > .right > .card > .container > .actions > .c2a.buttonSec
 body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:active .loader i,
 body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:active .loader i,
 body header > .content > .right > .card > .container > .actions > .c2a.button:active .loader i,
-body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:active .loader i, body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary:focus i, body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary:focus i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:focus i, body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:focus i, body header > .content > .right > .card > .container > .actions > .c2a.button:focus i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:focus i,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:active .loader i,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary:active .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary:active .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:active .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:active .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.button:active .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:active .loader span, body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary:focus i, body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary:focus i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:focus i, body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:focus i, body header > .content > .right > .card > .container > .actions > .c2a.button:focus i, body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:focus i,
 body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary:focus span,
 body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary:focus span,
 body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:focus span,
@@ -3576,7 +3710,13 @@ body header > .content > .right > .card > .container > .actions > .c2a.buttonSec
 body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:focus .loader i,
 body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:focus .loader i,
 body header > .content > .right > .card > .container > .actions > .c2a.button:focus .loader i,
-body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:focus .loader i {
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:focus .loader i,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonPrimary:focus .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonSecondary:focus .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGray:focus .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonOutline:focus .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.button:focus .loader span,
+body header > .content > .right > .card > .container > .actions > .c2a.buttonGradient:focus .loader span {
   color: #fff;
 }
 

@@ -3713,6 +3713,7 @@ body main section#recommendations > .content .grid {
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 12px;
+  padding-bottom: 60px;
 }
 
 body main section#recommendations > .content .grid > .item {
@@ -3778,6 +3779,7 @@ body main section#recommendations > .content .grid > .item > .header > .actions 
 }
 
 body main section#recommendations > .content .grid > .item > .header > .actions > .action {
+  position: relative;
   height: 40px;
   width: 40px;
   border-radius: 20px;
@@ -3800,6 +3802,50 @@ body main section#recommendations > .content .grid > .item > .header > .actions 
   background-color: #eeeeee;
   -webkit-transition: background-color 200ms;
   transition: background-color 200ms;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    background-color: #c3073f;
+  }
+  100% {
+    background-color: #61031f;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #c3073f;
+  }
+  100% {
+    background-color: #61031f;
+  }
+}
+
+body main section#recommendations > .content .grid > .item > .header > .actions > .action:after {
+  pointer-events: none;
+  visibility: hidden;
+  content: "";
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  background-color: #c3073f;
+}
+
+body main section#recommendations > .content .grid > .item > .header > .actions > .action[data-loading="true"]:after {
+  pointer-events: all;
+  visibility: visible;
 }
 
 body main section#recommendations > .content .grid > .item > .header > .actions > .action > i {

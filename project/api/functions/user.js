@@ -75,6 +75,47 @@ async function loginUser(event) {
   }
 }
 
+async function getUserPlatformKey(event) {
+  try {
+    const params = event.queryStringParameters;
+
+    const user = await User.validate({ ...params, source: "platform" });
+
+    const profile = await User.get({ id: user.id, token: params.token });
+
+    const data = await User.decodeJWTData({ ...params });
+
+    return {
+      statusCode: HTTP_STATUS.OK,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: "Platform Info",
+          user: {
+            email: profile.email,
+            token: data.token
+          }
+        },
+        null,
+        2
+      )
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      statusCode: HTTP_STATUS.BAD_REQUEST,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: e.message
+        },
+        null,
+        2
+      )
+    };
+  }
+}
+
 async function getUser(event) {
   try {
     const params = event.queryStringParameters;
@@ -123,6 +164,7 @@ async function getUser(event) {
   }
 }
 
+module.exports.getUserPlatformKey = getUserPlatformKey;
 module.exports.getUser = getUser;
 module.exports.loginUser = loginUser;
 module.exports.createUser = createUser;

@@ -38,6 +38,7 @@ async function createFractal(event) {
         {
           message: `Created #${fractal.name ? fractal.name : "Fractal"}`,
           url: fractal.publicUrl,
+          uuid: fractal.uuid,
           quota
         },
         null,
@@ -97,9 +98,28 @@ async function getFractalList(event) {
 }
 
 async function publishFractal(event) {
-  // access == 2 (published)
-  // TODO
   try {
+    const body = JSON.parse(event.body);
+
+    const user = await User.validate({ ...body });
+
+    const published = await Fractal.publish({
+      ...body,
+      userId: user.id
+    });
+
+    return {
+      statusCode: HTTP_STATUS.OK,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: "Published",
+          payload: published
+        },
+        null,
+        2
+      )
+    };
   } catch (e) {
     console.error(e);
     return {
@@ -116,7 +136,87 @@ async function publishFractal(event) {
   }
 }
 
-async function unpublishFractal(event) {
+async function setFractalPublic(event) {
+  try {
+    const body = JSON.parse(event.body);
+
+    const user = await User.validate({ ...body });
+
+    const published = await Fractal.setPublish({
+      ...body,
+      userId: user.id,
+      access: 2
+    });
+
+    return {
+      statusCode: HTTP_STATUS.OK,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: "Public",
+          payload: published
+        },
+        null,
+        2
+      )
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      statusCode: HTTP_STATUS.BAD_REQUEST,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: e.message
+        },
+        null,
+        2
+      )
+    };
+  }
+}
+
+async function setFractalPrivate(event) {
+  try {
+    const body = JSON.parse(event.body);
+
+    const user = await User.validate({ ...body });
+
+    const published = await Fractal.setPublish({
+      ...body,
+      userId: user.id,
+      access: 1
+    });
+
+    return {
+      statusCode: HTTP_STATUS.OK,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: "Private",
+          payload: published
+        },
+        null,
+        2
+      )
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      statusCode: HTTP_STATUS.BAD_REQUEST,
+      headers: Generator.headers(),
+      body: JSON.stringify(
+        {
+          message: e.message
+        },
+        null,
+        2
+      )
+    };
+  }
+}
+
+async function voteFractal(event) {
   // access == 1 (published)
   // TODO
   try {
@@ -136,7 +236,9 @@ async function unpublishFractal(event) {
   }
 }
 
-module.exports.unpublishFractal = unpublishFractal;
+module.exports.voteFractal = voteFractal;
+module.exports.setFractalPublic = setFractalPublic;
+module.exports.setFractalPrivate = setFractalPrivate;
 module.exports.publishFractal = publishFractal;
 module.exports.getFractalList = getFractalList;
 module.exports.createFractal = createFractal;

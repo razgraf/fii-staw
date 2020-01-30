@@ -18,7 +18,7 @@ let FLAG_LIST_REQUESTED = false;
 
 function init() {
   Structure.initNavigation();
-  VanLoading.showBlock(() => {}, 20000);
+  VanLoading.showBlock(() => {}, 1000000);
 
   if (Store.isEmpty(STORE_KEYS.TOKEN)) window.location.href = "./connect.html";
   else retrieveFractals();

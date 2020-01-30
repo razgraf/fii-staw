@@ -10,7 +10,12 @@ export const API = {
   LIST_KEYS: `${ROOT_API}/user/keys`,
   ASSIGN_KEY: `${ROOT_API}/user/key`,
   LIST_FRACTALS: `${ROOT_API}/fractal/list`,
-  GENERATE_FRACTAL: `${ROOT_API}/fractal`
+  GENERATE_FRACTAL: `${ROOT_API}/fractal`,
+  USER_PLATFORM_KEY: `${ROOT_API}/user/key-platform`,
+
+  SET_FRACTAL_PUBLIC: `${ROOT_API}/fractal/public`,
+  SET_FRACTAL_PRIVATE: `${ROOT_API}/fractal/private`,
+  PUBLISH_FRACTAL: `${ROOT_API}/fractal/publish`
 };
 
 export const STORE_KEYS = {

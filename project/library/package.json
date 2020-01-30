@@ -1,9 +1,9 @@
 {
   "name": "fractal-builder",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Library for generating L System fractals.",
-  "main": "builder.js",
+  "main": "index.js",
   "scripts": {
     "test": "node --experimental-modules test.mjs"
   },

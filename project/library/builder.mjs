@@ -130,7 +130,8 @@ class FractalBuilder {
     if (
       !(String(attribute) in definition) ||
       definition[attribute] === null ||
-      definition[attribute] === undefined
+      definition[attribute] === undefined ||
+      String(definition[attribute]) === ""
     )
       throw new Error(
         `Missing '${String(attribute)}'${
@@ -139,7 +140,7 @@ class FractalBuilder {
       );
     if (type && typeof definition[attribute] !== type)
       throw new Error(
-        `Definition attribute '${String(attribute)}' is of wrong type${String(
+        `Definition attribute '${String(attribute)}' is of wrong type ${String(
           attribute
         )}'${errorInfo ? " " + String(errorInfo) : ""}.`
       );

@@ -58,6 +58,8 @@ const ERRORS = {
   EXPIRED_KEY: "ExpiredKeyError",
   MISSING_KEY: "MissingKeyError",
 
+  MISSING_FRACTAL: "MissingFractalKey",
+
   INVALID_FRACTAL_DEFINITION: "InvalidFractalDefinition",
 
   NETWORKING: "NetworkingError"

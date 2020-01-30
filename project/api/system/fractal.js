@@ -37,6 +37,7 @@ class Fractal {
     this.createdAt = null;
     this.userId = null;
     this.username = null;
+    this.access = null;
   }
 
   extract() {
@@ -49,7 +50,7 @@ class Fractal {
     try {
       definition = JSON.parse(definition);
       if (typy(e, "reference").isTruthy)
-        image = Image.getPublicUrlFromS3(e.referene) + ".png";
+        image = Image.getPublicUrlFromS3(e.reference) + ".png";
     } catch (e) {}
 
     return {
@@ -82,6 +83,53 @@ class Fractal {
     if (!list || list.length === 0) return [];
 
     return list.map(e => Fractal.format({ ...e, self: e.userId === userId }));
+  }
+
+  static async setPublish({ uuid, userId, access = 1 }) {
+    if (typy(userId).isFalsy || typy(uuid).isFalsy)
+      throw new Error(ERRORS.INVALID_PARAMS);
+
+    const fractal = await Networking.getFractalFromDB({ uuid });
+    console.log(fractal);
+    if (!fractal) throw new Error(ERRORS.MISSING_FRACTAL);
+
+    const published =
+      access === 2
+        ? await Networking.setFractalPublishIntoDB({ id: fractal.id })
+        : await Networking.setFractalUnpublishIntoDB({ id: fractal.id });
+
+    console.log(published);
+
+    if (!published) throw new Error(ERRORS.NETWORKING);
+
+    return Fractal.format(published);
+  }
+
+  static async publish({ uuid, userId }) {
+    if (typy(userId).isFalsy || typy(uuid).isFalsy)
+      throw new Error(ERRORS.INVALID_PARAMS);
+
+    const reference = await Networking.getFractalFromDB({ uuid });
+    console.log(reference);
+
+    if (!reference) throw new Error(ERRORS.MISSING_FRACTAL);
+
+    const fractal = await Networking.insertFractalIntoDB({
+      ...reference,
+      reference: uuid,
+      userId
+    });
+    console.log(fractal);
+    if (!fractal) throw new Error(ERRORS.NETWORKING);
+
+    const published = await Fractal.setPublish({ uuid, userId, access: 2 });
+    console.log(published);
+
+    if (!published) throw new Error(ERRORS.NETWORKING);
+
+    const result = Networking.getFractalFromDB({ uuid: fractal.uuid });
+
+    return Fractal.format(result);
   }
 
   static async generate({ definition, userId, name = "Fractal" }) {

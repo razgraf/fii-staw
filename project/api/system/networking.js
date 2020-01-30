@@ -51,7 +51,9 @@ class Networking {
     name = "Fractal",
     definition,
     hash,
-    userId
+    userId,
+    access,
+    reference = null
   }) {
     const DB = Networking.initialize();
 
@@ -63,10 +65,11 @@ class Networking {
         name = :name,
         definition = :definition,
         userId = :userId,
-        hash  = :hash
+        hash  = :hash,
+        reference = :reference
     `,
       {
-        replacements: { name, definition, userId, hash },
+        replacements: { name, definition, userId, hash, reference },
         type: Sequelize.QueryTypes.INSERT
       }
     );

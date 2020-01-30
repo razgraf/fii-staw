@@ -123,6 +123,7 @@ body {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-gap: 12px;
+          padding-bottom: 60px;
 
           & > .item {
             grid-column: span 1;
@@ -165,6 +166,7 @@ body {
                 padding-left: 10px;
 
                 & > .action {
+                  position: relative;
                   height: 40px;
                   width: 40px;
                   border-radius: 20px;
@@ -179,6 +181,38 @@ body {
                   &:active {
                     background-color: #eeeeee;
                     transition: background-color 200ms;
+                  }
+
+                  @keyframes pulse {
+                    0% {
+                      background-color: $colorSecondary;
+                    }
+                    100% {
+                      background-color: darken($colorSecondary, 20%);
+                    }
+                  }
+
+                  &:after {
+                    pointer-events: none;
+                    visibility: hidden;
+                    content: "";
+                    transform: scale(0.8);
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 20px;
+                    animation-name: pulse;
+                    animation-duration: 500ms;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    background-color: $colorSecondary;
+                  }
+
+                  &[data-loading="true"] {
+                    &:after {
+                      pointer-events: all;
+                      visibility: visible;
+                    }
                   }
 
                   & > i {
