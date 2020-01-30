@@ -95,8 +95,12 @@ async function retrieveKeys() {
 
     if (!ClassHelper.isEmpty(result.keys) && result.keys.length > 0) {
       const keys = result.keys;
+      if (document.querySelector("#noDataFound"))
+        document.querySelector("#noDataFound").remove();
       keys.map(e => new Key(e)).forEach(e => e.printElement(parent));
-    } else parent.innerHTML = "<p> You have no API Keys at the moment </p>";
+    } else
+      parent.innerHTML =
+        "<p id='noDataFound'> You have no API Keys at the moment </p>";
   } else if ([HTTP_STATUS.FORBIDDEN].includes(response.status)) {
     Store.panic();
   } else {

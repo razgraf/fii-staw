@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "fractal-builder": "^1.0.2"
+    "fractal-builder": "^1.0.3"
   },
   "devDependencies": {},
   "scripts": {

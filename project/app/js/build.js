@@ -129,6 +129,7 @@ async function doGenerate() {
       Alert.showAlert("Generated successfully!", window.ALERT_TYPE_SUCCESS);
     } else {
       document.querySelector("#showcaseHere").src = "";
+      loader.dataset.visible = false;
       empty.dataset.visible = true;
       Alert.showAlert("Couldn't generate fractal with given rules.");
     }
@@ -138,6 +139,7 @@ async function doGenerate() {
     loader.dataset.visible = false;
     empty.dataset.visible = true;
   } finally {
+    loader.dataset.visible = false;
     FLAG_IS_GENERATING = false;
     ButtonHelper.enable(button, true);
   }

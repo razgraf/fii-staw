@@ -107,9 +107,11 @@ class Fractal {
         </div>
         <div class="divider"></div>
         <div class="main">
-          <div class="content"><img alt="Loading..." src="${
+          <a href="${
             this.image
-          }" /></div>
+          }" style="display:flex" class="content" target="_blank"><img alt="Loading..." src="${
+      this.image
+    }" /></a>
         </div>
       </div>`;
 

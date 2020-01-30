@@ -174,7 +174,11 @@ class Fractal {
       fractal.userId = userId;
       fractal.name = name;
 
-      const isCreated = await fractal.create("lSystem", parsedDefinition);
+      /********** IMPORTANT BREAKING CHANGE (lSystemRec) ************/
+
+      // const isCreated = await fractal.create("lSystem", parsedDefinition);
+      const isCreated = await fractal.create("lSystemRec", parsedDefinition);
+
       if (!isCreated) throw new Error("Couldn't create fractal.");
 
       console.log("created");
@@ -207,6 +211,17 @@ class Fractal {
     switch (type) {
       case "lSystem":
         this.create_lSystem(definition);
+        break;
+      case "lSystemRec":
+        this.create_lSystemRec(
+          definition.iterations,
+          definition.start.symbol,
+          definition.rules,
+          { x: definition.start.x, y: definition.start.y, degrees: 270 },
+          definition.angle,
+          [],
+          8
+        );
         break;
       default:
         console.eror('Unknown type. Expected one of ["lSystem"]');
@@ -367,6 +382,115 @@ class Fractal {
       }
     }
     return final;
+  }
+
+  /**
+   *
+   * REC SYS
+   *
+   *
+   */
+
+  create_lSystemRec(iterations, start, rules, state, angle, states, len) {
+    if (!this.context)
+      throw new Error("The canvas context is missing or undefined.");
+
+    for (let s of start) {
+      if ("A" <= s && s <= "Z") {
+        let found = 0;
+        if (iterations > 0) {
+          for (let rule of rules) {
+            if (rule.left == s) {
+              found = 1;
+              this.create_lSystemRec(
+                iterations - 1,
+                rule.right,
+                rules,
+                state,
+                angle,
+                states,
+                len
+              );
+              break;
+            }
+          }
+        } else {
+          //mystring += s;
+        }
+        if (s == "F" && (found == 0 || iterations == 0)) {
+          this.context.beginPath();
+          this.context.moveTo(state.x, state.y);
+          let xf = state.x + len * Math.cos((state.degrees * Math.PI) / 180);
+          let yf = state.y + len * Math.sin((state.degrees * Math.PI) / 180);
+          this.context.lineTo(xf, yf);
+          this.context.stroke();
+          state.x = xf;
+          state.y = yf;
+          this.context.moveTo(state.x, state.y);
+        }
+      } else if (s == "+") {
+        //mystring += s;
+        state.degrees += angle;
+      } else if (s == "-") {
+        //mystring += s;
+        state.degrees -= angle;
+      } else if (s == "[") {
+        //mystring += s;
+        states.push({ ...state });
+      } else if (s == "]") {
+        //mystring += s;
+        state = states.pop();
+        this.context.moveTo(state.x, state.y);
+      }
+    }
+  }
+
+  preprocessRules(start, rules) {
+    let to = "a";
+    let coada = [];
+    let used = new Set();
+    for (let i = 0; i < start.length; i++) {
+      if ("A" <= start[i] && start[i] <= "Z") {
+        if (!used.has(start[i])) {
+          coada.push(start[i]);
+          used.add(start[i]);
+        }
+
+        while (coada.length > 0) {
+          let from = coada.pop();
+          for (let j = 0; j < rules.length; j++) {
+            if (rules[j].left == from) {
+              rules[j].left = to;
+              for (let k = 0; k < rules[j].right.length; k++) {
+                if ("A" <= rules[j].right[k] && rules[j].right[k] <= "Z") {
+                  if (!used.has(rules[j].right[k])) {
+                    coada.push(rules[j].right[k]);
+                    used.add(rules[j].right[k]);
+                  }
+                }
+              }
+            }
+            if (from != "F") {
+              rules[j].right = rules[j].right.replace(from, to);
+              start = start.replace(from, to);
+            }
+          }
+          to = String.fromCharCode(to.charCodeAt() + 1);
+          if (to == "f") String.fromCharCode(to.charCodeAt() + 1);
+        }
+      }
+    }
+    rules.sort((a, b) => {
+      return a.left < b.left;
+    });
+
+    start = start.toUpperCase();
+    for (let i = 0; i < rules.length; i++) {
+      rules[i].left = rules[i].left.toUpperCase();
+      rules[i].right = rules[i].right.toUpperCase();
+    }
+
+    return start;
   }
 }
 
