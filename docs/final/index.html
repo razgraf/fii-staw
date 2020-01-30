@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>FrIC Documentation - Apostu Razvan & Badarau Bogdan</title>
+    <link rel="stylesheet" href="css/scholarly.min.css" />
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img
+          src="scholarly-html.svg"
+          width="227"
+          height="50"
+          alt="Scholarly HTML logo"
+        />
+        <div class="status">Public Documentation v1</div>
+      </div>
+      <h1>FrIC (FII-STAW 2019)</h1>
+    </header>
+
+    <div role="contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          <a href="https://github.com/razgraf">Apostu Razvan</a>
+          <a href="https://twitter.com/razgraf">@razgraf</a>
+          &amp;
+          <a href="https://github.com/Bloogdan">Badarau Bogdan</a>
+        </dd>
+        <dt>Public repository</dt>
+        <dd>
+          <a href="https://github.com/razgraf/fii-staw">Github</a>
+        </dd>
+      </dl>
+    </div>
+    <section id="introduction" role="doc-introduction">
+      <h2>Introduction</h2>
+      <p>
+        The main scope of the FRIC project is to build and deploy a library for
+        fractal generation. Our final product will be delivered with a <a href="#structure-api">private API</a> and 2 large
+        components, meant for public use:
+      </p>
+      <ol>
+        <li>
+          <a href="#structure-library">The library</a>
+        </li>
+        <li>
+          <a href="#structure-platform">The platform</a>
+        </li>
+      </ol>
+    </section>
+    <section id="structure">
+      <h2>Structure</h2>
+      <p>
+        We can break down the structure of the project into:
+      </p>
+	  <section id="structure-api">
+        <!-- review? -->
+        <h3>The API</h3>
+        <p>
+          A private API made on AWS used to generate representing our entire backend. 
+		  It is used to generate keys, create fractals, publish/unpublish fractals, 
+		  create/authenticate users, etc.
+        </p>
+      </section>
+      <section id="structure-library">
+        <!-- review? -->
+        <h3>The library</h3>
+        <p>
+          A javascript module hosten on NPM that can be used to generate
+          fractals based on user provided definitions. To use the module though, one
+		  must first generate a key on <a href="#structure-platform">the platform</a>.
+        </p>
+      </section>
+      <section id="structure-platform">
+        <!-- review? -->
+        <h3>The platform</h3>
+        <p>A front facing platform with 2 main responsibilities:</p>
+        <ol>
+          <li>
+            Generating tokens that will be used to access the server
+            functionality, based on a given user quota.
+          </li>
+          <li>
+            Generating fractals through the offical UI builder. This front
+            facing part of the platform will provide the user with a UI for
+            generating fractals (without the need of explicit coding) and a
+            method of exploring other user submitted fractals.
+          </li>
+        </ol>
+      </section>
+    </section>
+
+    <section id="implementation">
+      <h2>Implementation</h2>
+      <p>
+        Following the official
+        <a role="doc-biblioref">Requirements</a>
+        we are going to build the final product(s) in a stack comprised of
+      </p>
+      <ul>
+        <li>
+          Library: ES6 pure JS (vanilla) for the library/module (later maybe
+          transpiled to ES5 syntax)
+        </li>
+        <li>Server-side: NodeJS</li>
+        <li>
+          Platform: Amazon AWS S3 for hosting the public web platform (keeping
+          it serverless)
+        </li>
+        <li>
+          Computations: Amazon Lambda Function for token management and fractal
+          generation
+        </li>
+      </ul>
+      <section id="implementation-library">
+        <h3>Library</h3>
+        <p>
+          The library is going to be exposed to the programmer through a simple
+          ES6 module (hosted maybe on NPM) that will structure all the
+          functionality (Reference: <a role="doc-biblioref">ModularJS</a>).
+        </p>
+        <p class="issue">
+          Another approach would be to use ES6 modules and transpile them using
+          babel for ES5 support, but we will take this into consideration at a
+          later date, based on the progress we make.
+        </p>
+        <section id="implementation-library-types">
+          <h4>Global types</h4>
+          <p>
+            For the sake of simplicity, we are going to use JSDOC typedef to
+            declare some objects and variables. These will be widely used
+            throught our documentation.
+          </p>
+          <ul>
+            <li>
+              <p><b>Auth</b></p>
+
+              <figure
+                typeof="schema:SoftwareSourceCode"
+                resource="#typedef-auth"
+                id="typedef-auth"
+              >
+                <pre><code>
+
+                /**
+                * @typedef {Object} Auth
+                * @property {string} email - The user's email address.
+                * @property {token} token - The value which will determine the quota of a user
+                */
+  
+                </code></pre>
+              </figure>
+              <p>
+                A user can own more than one token, based on the priviledges he
+                chooses for it.
+              </p>
+            </li>
+
+            <li>
+              <p><b>Identity</b></p>
+
+              <figure
+                typeof="schema:SoftwareSourceCode"
+                resource="#typedef-identity"
+                id="typedef-identity"
+              >
+                <pre><code>
+                  /**
+                  * @typedef {Object} Identity
+                  * @property {string} name - The unique user identification string 
+                  * @property {Object[]} history - A brief history of the recent usage of the token
+                  * @property {string} history[].timestamp - Time of creation for history item
+                  * @property {string} history[].action - Type of history item
+                  * @property {string} history[].payload - Extra data that can describe the action
+                  * @property {Object} quota - The remaining usage quota for that particular token
+                  * @property {string} quota.quantity - Remaining horse power
+                  * @property {string} quota.refresh - Timestamp for next quota refresh (if any)
+                  */
+                  </code></pre>
+              </figure>
+
+              <p class="issue">
+                We will define the remainig quota based on either computation
+                seconds or access count. Will decide this when we have a better
+                understanding of AWS pricing.
+              </p>
+            </li>
+
+            <li>
+              <p><b>Fractal</b></p>
+              <figure
+                typeof="schema:SoftwareSourceCode"
+                resource="#typedef-fractal"
+                id="typedef-fractal"
+              >
+                <pre><code>
+				/**
+				* @typedef {Object} Fractal
+				* @property {int} id - A unique identifier for the generated fractal hidden to the user
+				* @property {string} uuid - A unique identifier for the generated fractal used for front-end
+				* @property {string} url - The link for a .png image descibing the generated fractal
+				* @property {date} timestap - The timestamp when the fractal was created
+				* @property {string} owner - The user who created the fractal
+				* @property {string} name - The name of the fractal
+				* @property {Object} data - Extra data about the fractal (including but not limited to its ordered rules, its length and definition etc.)
+				*/
+                </code></pre>
+              </figure>
+              <p>
+                Reference: <a role="doc-biblioref">HTTPStatus</a>,
+                <a href="#typedef-fractal">@type {Fractal}</a>
+              </p>
+            </li>
+
+            <li>
+              <p><b>Definition</b></p>
+              <figure
+                typeof="schema:SoftwareSourceCode"
+                resource="#typedef-definition"
+                id="typedef-descripdefinitiontion"
+              >
+                <pre><code>
+                        /**
+                        * @typedef {Object} Definition - Parameters that will describe rules and attributes for the soon-to-be generated @type {Fractal}
+                        * @property {string} type - One of ["LSystem"]
+                        * [ if type === "LSystem" ]
+                        *     @property {number} iterations - e.g. 3
+                        *     @property {string} start - e.g. "X"
+                        *     @property {Array&lt;Object&gt;} rules - e.g. [{left : "X", right : "X+YF+"}]
+                        *     @property {int} x - start point on X axis e.g. 100
+                        *     @property {int} y - start point on Y axis e.g. 100
+                        *     @property {number} angle - e.g. 360
+                        */
+                        </code></pre>
+              </figure>
+            </li>
+
+            <li>
+              <p><b>Response</b></p>
+              <figure
+                typeof="schema:SoftwareSourceCode"
+                resource="#typedef-response"
+                id="typedef-response"
+              >
+                <pre><code>
+                    /**
+                    * @typedef {Object} Response
+                    * @property {string} status - A HTTP response status code of the query
+                    * @property {string} message - A contextual response message from the server e.g. "Succes" vs "Access not granted"
+                    * @property {Fractal} fractal - If everything goes smooth, it will contain the fractal definition
+                    */
+                    </code></pre>
+              </figure>
+              <p>
+                Reference: <a role="doc-biblioref">HTTPStatus</a>,
+                <a href="#typedef-fractal">@type {Fractal}</a>
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section id="implementation-library-functions">
+          <h4>Exposed methods</h4>
+          <p>
+            Because our library will rely on heavy communication with the
+            server, we are going to design most of the calls as "Promises". This
+            way, we can allow for an intuitive and controlled async experience.
+          </p>
+          <ol>
+            <li>
+              <a href="#function-init">
+                <code>FractalBuilder.init(...params)</code>
+              </a>
+            </li>
+            <li>
+              <a href="#function-who">
+                <code>FractalBuilder.who()</code>
+              </a>
+            </li>
+            <li>
+              <a href="#function-build">
+                <code>FractalBuilder.build(...params)</code>
+              </a>
+            </li>
+          </ol>
+
+          <section id="function-init">
+            <h5><code>FractalBuilder.init(...params)</code></h5>
+            <p>
+              To instantiate the module, after import a user will have to
+              initialize it, either through the
+              <code>init()</code> method.
+            </p>
+            <figure
+              typeof="schema:SoftwareSourceCode"
+              resource="#function-init-snippet"
+              id="function-init-snippet"
+            >
+              <pre><code>
+                    /**
+                     * Initializes the environment
+                     * @param {Auth} auth
+                    */
+                    FractalBuilder.init(auth)
+                    </code></pre>
+            </figure>
+
+            <p>
+              Each time the programmer is going to make use of our library, the
+              id and token will be checked for validity and available quota.
+            </p>
+            <p>
+              This authenthication object will be sent inside a header parameter
+              and wrapped in the shape of a <a role="doc-biblioref">JWT</a>.
+              This will allow us to verify if the request has been tempered with
+              through the JWT signature feature.
+            </p>
+          </section>
+          <section id="function-who">
+            <h5><code>FractalBuilder.who()</code></h5>
+            <p>
+              In order to check his/her identity based on the
+              <code>Auth</code> object data, a user can use the
+              <code>.who()</code> method. The promise will return an object
+              describing the user's identity (<a href="#typedef-identity"
+                ><code>@type {Identity}</code></a
+              >).
+            </p>
+
+            <figure
+              typeof="schema:SoftwareSourceCode"
+              resource="#function-who-snippet"
+              id="function-who-snippet"
+            >
+              <pre><code>              
+                  /**
+                   * Returns user identity based on the auth object
+                   * @returns {Promise.&lt;Identity|Error&gt;} - If the auth object is not defined yet, we'll throw an Error describing this issue
+                  */
+
+                  FractalBuilder.who(auth)
+                  .then(identity => {...})
+                  .catch(error => {...})
+                  </code></pre>
+            </figure>
+          </section>
+          <section id="function-build">
+            <h5><code>FractalBuilder.build(...params)</code></h5>
+            <p>
+              Building a fractal will be done through the build function. This
+              will return a response (<a href="#typedef-response"
+                ><code>@type {Response}</code></a
+              >) containing some flags and (if successful) the
+              <a href="#typedef-fractal"><code>@type {Fractal}</code></a>
+              object, descibing the created shape.
+            </p>
+            <figure
+              typeof="schema:SoftwareSourceCode"
+              resource="#function-who-snippet"
+              id="function-who-snippet"
+            >
+              <pre><code>              
+                /**
+                 * Returns user identity based on the auth object
+                 * @returns {Promise.&lt;Response|Error&gt;} - If the auth object is not defined yet, we'll throw an Error describing this issue
+                */
+
+                FractalBuilder.who(auth)
+                .then(response => {...})
+                .catch(error => {...})
+                </code></pre>
+            </figure>
+          </section>
+        </section>
+      </section>
+
+      <section id="implementation-server">
+        <h3>Server & Computations</h3>
+        <p>
+          Our AWS Lambda functions will handle generating the fractals.
+        </p>
+        <section id="implementation-server-how">
+          <h4>How will it work?</h4>
+          <p>
+            Our library will mainly be made up of requests. The
+            <code>build()</code> functionality will send us (among other stuff)
+            a Definition of the Fractal required by the user. If this is a valid
+            request (user is authorized and definition is valid), we'll rely on
+            a AWS Lambda function to compute the shape of the fractal, create an
+            image and drop it into our S3. Additional data will be stored in an
+            Amazon Relational Database Service (RDS).
+          </p>
+          <p>The language used to design these functions will be Node JS.</p>
+        </section>
+
+        <section id="implementation-server-how">
+          <h4>How do we validate and authorize?</h4>
+          <p>
+            In order to use the library, a user must first request a token.
+            Refernce:
+            <a href="#implementation-platform-features-stageA"
+              >3.4.1 Features - Stage A</a
+            >
+          </p>
+        </section>
+      </section>
+
+      <section id="implementation-platform">
+        <h3>Platform</h3>
+        <p>
+          Our Platform will run in a static context and it will be hosted with
+          AWS S3. It will also access Lambda Functions which will act as an API
+          for our platform. We'll design it as a mixture of SPA and MPA (hybrid,
+          but with more focus on the SPA aspect). Everything will be kept as
+          modular as possbile by employing a "synthetic React" approach (every
+          element will be wrapped in a pseudo-component that we'll use to manage
+          it when needed).
+        </p>
+        <section id="implementation-platform-api">
+          <h4>API</h4>
+          <p>
+            For a preview of the beta version of our API, we used Swagger to map
+            some of the endpoints and functionality we'll use both internally
+            (for the plaform Stage A and B) and externally/publicly (inside our
+            library).
+          </p>
+          <a href="https://app.swaggerhub.com/apis/vansoftware/FrIC/1.0.0"
+            ><img
+              style="width: 180px; object-fit:contain"
+              alt="Swagger Preview"
+              src="asset/swagger.png"
+          /></a>
+        </section>
+        <section id="implementation-platform-features">
+          <h4>Features</h4>
+          <p>
+            All the following features will be linked to AWS Lamda functions.
+          </p>
+          <ol>
+            <li>
+              <p id="implementation-platform-features-stageA">
+                Stage A: User/Token manager
+              </p>
+              <p>
+                The primary source of token generation for new users will be our
+                Token Manager Platform. The sole purpose of this webpage will be
+                to generate a user ID - Token pair, that will later be provided
+                at each use of the library. (Similar to the Google API KEY
+                system). We chose to use an ID - Token pair rather than a simple
+                Token because of the later possibility to scale and use the same
+                system for user accounts (Stage B of the Platform).
+              </p>
+              <p>Rough actions:</p>
+              <ul>
+                <li>create user</li>
+                <li>remove user</li>
+                <li>create token for user with given quota</li>
+                <li>remove token for user</li>
+                <li>extend quota for token of user</li>
+                <li>constrain quota for token of user</li>
+                <li>get user with tokens with quota</li>
+                <li><b>is user - token pair valid</b></li>
+                <li><b>is user - token (quota) available</b></li>
+              </ul>
+            </li>
+            <li>
+              <p id="implementation-platform-features-stageB">
+                Stage B: Fractal explorer and builder
+              </p>
+              <p>Pages</p>
+              <ul>
+                <li>Fractal Builder (editor + publisher)</li>
+                <li>Fractal Explorer</li>
+                <li>
+                  Fractal Leaderboard (voting system for best looking fractals)
+                </li>
+              </ul>
+              <p>Requests</p>
+              <ul>
+                <li>retrieve fractal image</li>
+                <li>retrieve fractal definition</li>
+                <li>retrieve user fractals</li>
+                <li>retrieve leaderboard fractals</li>
+                <li>retrieve latest fractals</li>
+                <li>...</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+      </section>
+    </section>
+
+    <section id="database">
+      <h2>Database</h2>
+      <p>
+        We'll use the AWS Relational Database Service (RDS) service to structure our database.
+      </p>
+      <structure id="database-structure">
+        <h3>Structure</h3>
+        <figure typeof="sa:image" style="width: 90%; max-width: 900px;">
+          <img
+            style="width: 100%; object-fit:contain"
+            alt="Database"
+            src="asset/Database.png"
+          />
+          <figcaption>
+            Partial database structure (<a
+              href="asset/Database.png"
+              rel="noopener noreferrer"
+              target="_blank"
+              >View file</a
+            >)
+          </figcaption>
+        </figure>
+      </structure>
+    </section>
+  </body>
+</html>

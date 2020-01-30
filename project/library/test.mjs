@@ -2,8 +2,8 @@ import FractalBuilder from "./builder.mjs";
 
 (async () => {
   const FractalBuilderService = new FractalBuilder({
-    email: "razvan.gabriel.apostu@gmail.com",
-    token: "V5CBB8W-C1GM3KS-PFEB748-MXW95JW"
+    email: "bogdanbadarau72@gmail.com",
+    token: "490R1HV-QBR49Y6-NDT3Q5Z-TS7Q9QT"
   });
 
   const Client = await FractalBuilderService.who();
@@ -12,24 +12,40 @@ import FractalBuilder from "./builder.mjs";
   const DragonFractal = await FractalBuilderService.build({
     height: 800,
     width: 800,
-    iterations: 4,
+    iterations: 10,
     start: {
-      symbol: "X",
-      x: 400,
-      y: 800
+      symbol: "FX",
+      x: 200,
+      y: 400
     },
-    rules: [
-      {
-        left: "X",
-        right: "F+[[X]-X]-F[-FX]+X"
-      },
-      {
-        left: "F",
-        right: "FF"
-      }
-    ],
-    angle: 25
+    rules : [{
+      "left": "X",
+      "right": "X+YF+"
+    },
+    {
+      "left": "Y",
+      "right": "-FX-Y"
+    }],
+    angle: 90
   });
 
-  console.log("Plant Fractal:", DragonFractal);
+  console.log("Dragon Fractal:", DragonFractal);
 })();
+
+var rulesDragon = [{
+  "left": "X",
+  "right": "X+YF+"
+},
+{
+  "left": "Y",
+  "right": "-FX-Y"
+}];
+
+var rulesDragon2 = [{
+  "left": "Y",
+  "right": "Y+XF+"
+},
+{
+  "left": "X",
+  "right": "-FY-X"
+}];
