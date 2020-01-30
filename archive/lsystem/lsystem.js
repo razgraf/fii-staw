@@ -45,6 +45,9 @@ function generate(S, R) {
     return new_S;
 }
 
+
+
+
 function lsystem(iterations, S, R, xs, ys, angle) {
     var len = 4096;
     var degrees = 270;
@@ -134,11 +137,8 @@ function lsystemrec(iterations, start, rules, state, angle, states, len) {
     }   
 }
 
-//lsystem(12, "F", rulesKoch, 500, canvas.height / 2, 90);
-
-// let state = {
-//     x: 300,
-//     y: canvas.height,
-//     degrees: 270
-// }
-lsystemrec(4, "F", rulesKoch, {x: 300, y: canvas.height / 2, degrees: 270}, 90, [], 2);
+var newRules = [{
+    "left": "F",
+    "right": "FF+[+F-F-F]-[-F+F+F]"
+}];
+lsystemrec(2, "F", newRules, {x: 300, y: 600, degrees: 270}, 22.5, [], 5);
