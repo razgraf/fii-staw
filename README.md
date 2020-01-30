@@ -2,9 +2,12 @@
 
 # Project for STAW course 2019-2020 (UAIC Cuza 2020, Faculty Of Computer Science)
 
-![Screenshot of the platform](cover.png)
+![Screenshot of the platform](cover.png) 
+[Video Demo (YouTube)](https://youtu.be/hkczR_cN1eE) 
 
-[SCHOLARLY Documentation (~ deprecated)](http://www.fii-staw.com.s3-website.eu-west-2.amazonaws.com/docs/)
+[FrIC Live Demo (hosted on AWS)](http://www.fii-staw.com.s3-website.eu-west-2.amazonaws.com/app/) 
+
+[SCHOLARLY Documentation (~ deprecated)](http://www.fii-staw.com.s3-website.eu-west-2.amazonaws.com/docs/) 
 
 ## Library
 
@@ -26,4 +29,4 @@ APP / Platform hosted on AWS
 Find it here:
 
 - `project > app`
-- _Public link coming soon_
+- `http://www.fii-staw.com.s3-website.eu-west-2.amazonaws.com/app/`
